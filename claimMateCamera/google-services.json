@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "504771193766",
+    "firebase_url": "https://claimmate-app-new-21.firebaseio.com",
+    "project_id": "claimmate-app-new-21",
+    "storage_bucket": "claimmate-app-new-21.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504771193766:android:fa78fd3f793d02b8",
+        "android_client_info": {
+          "package_name": "com.claimmate.claimmatecamera21"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "504771193766-es1jsgb614nsgb5590u94counh05ken8.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "504771193766-es1jsgb614nsgb5590u94counh05ken8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaUQu6Etvk1JlhVHT7ILvUzcdkJgSUz0U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

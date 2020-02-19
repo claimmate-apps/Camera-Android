@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--<Spinner-->
+        <!--android:id="@+id/spinnerRoom"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/edit_bg_grey_border_"-->
+        <!--android:entries="@array/room_name"-->
+        <!--android:paddingBottom="10dp"-->
+        <!--android:paddingTop="10dp"/>-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:layout_marginTop="12dp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<com.common.view.CEditTextView-->
+        <!--android:id="@+id/l"-->
+        <!--style="@style/txt_000_16"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@drawable/edittext_bg"-->
+        <!--android:focusable="true"-->
+        <!--android:gravity="center"-->
+        <!--android:hint="LENGTH"-->
+        <!--android:inputType="number"-->
+        <!--android:nextFocusDown="@id/w"-->
+        <!--android:padding="5dp"-->
+        <!--android:singleLine="true"-->
+        <!--android:textCursorDrawable="@null"/>-->
+
+        <!--<com.common.view.CEditTextView-->
+        <!--android:id="@+id/w"-->
+        <!--style="@style/txt_000_16"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@drawable/edittext_bg"-->
+        <!--android:focusable="true"-->
+        <!--android:gravity="center"-->
+        <!--android:hint="WIDTH"-->
+        <!--android:inputType="number"-->
+        <!--android:nextFocusDown="@id/h"-->
+        <!--android:padding="5dp"-->
+        <!--android:singleLine="true"-->
+        <!--android:textCursorDrawable="@null"/>-->
+
+        <!--<com.common.view.CEditTextView-->
+        <!--android:id="@+id/h"-->
+        <!--style="@style/txt_000_16"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@drawable/edittext_bg"-->
+        <!--android:focusable="true"-->
+        <!--android:gravity="center"-->
+        <!--android:hint="HEIGHT"-->
+        <!--android:inputType="number"-->
+        <!--android:nextFocusDown="@id/l1"-->
+        <!--android:padding="5dp"-->
+        <!--android:singleLine="true"-->
+        <!--android:textCursorDrawable="@null"/>-->
+        <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:singleLine="true"
+                android:text="Ceiling"
+                android:textCursorDrawable="@null" />
+
+            <ImageView
+                android:id="@+id/imgAddCeiling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/ic_add_circle_"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<Spinner-->
+        <!--android:id="@+id/spinner"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/edit_bg_grey_border_"-->
+        <!--android:entries="@array/work_name_5"-->
+        <!--android:paddingBottom="10dp"-->
+        <!--android:paddingTop="10dp"/>-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:layout_marginTop="12dp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<com.common.view.CEditTextView-->
+        <!--style="@style/txt_000_16"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@drawable/edittext_bg"-->
+        <!--android:focusable="true"-->
+        <!--android:gravity="center"-->
+        <!--android:hint="L"-->
+        <!--android:inputType="number"-->
+        <!--android:padding="5dp"-->
+        <!--android:singleLine="true"-->
+        <!--android:textCursorDrawable="@null"/>-->
+
+        <!--<com.common.view.CEditTextView-->
+        <!--style="@style/txt_000_16"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@drawable/edittext_bg"-->
+        <!--android:focusable="true"-->
+        <!--android:gravity="center"-->
+        <!--android:hint="W"-->
+        <!--android:inputType="number"-->
+        <!--android:padding="5dp"-->
+        <!--android:singleLine="true"-->
+        <!--android:textCursorDrawable="@null"/>-->
+
+        <!--<com.common.view.CEditTextView-->
+        <!--style="@style/txt_000_16"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@drawable/edittext_bg"-->
+        <!--android:focusable="true"-->
+        <!--android:gravity="center"-->
+        <!--android:hint="H"-->
+        <!--android:inputType="number"-->
+        <!--android:nextFocusDown="@id/l1"-->
+        <!--android:padding="5dp"-->
+        <!--android:singleLine="true"-->
+        <!--android:textCursorDrawable="@null"/>-->
+        <!--</LinearLayout>-->
+
+        <!--</LinearLayout>-->
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerCeiling"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:nestedScrollingEnabled="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:singleLine="true"
+                android:text="Walls"
+                android:textCursorDrawable="@null" />
+
+            <ImageView
+                android:id="@+id/imgAddWalls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/ic_add_circle_"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerWalls"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:nestedScrollingEnabled="false" />
+
+        <!--<com.common.view.CBButtonViewM-->
+        <!--style="@style/LightFlatWaveColorButtonRippleStyle_"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="35dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:background="@drawable/btn_bg_black"-->
+        <!--android:paddingLeft="15dp"-->
+        <!--android:paddingRight="15dp"-->
+        <!--android:text="ADD"-->
+        <!--android:textAllCaps="true"-->
+        <!--android:textColor="@color/white"/>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:singleLine="true"
+                android:text="Floor"
+                android:textCursorDrawable="@null" />
+
+            <ImageView
+                android:id="@+id/imgAddFloor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/ic_add_circle_"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerFloor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:nestedScrollingEnabled="false" />
+
+        <!--<com.common.view.CBButtonViewM-->
+        <!--android:id="@+id/btnAddFloor"-->
+        <!--style="@style/LightFlatWaveColorButtonRippleStyle_"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="35dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:background="@drawable/btn_bg_black"-->
+        <!--android:paddingLeft="15dp"-->
+        <!--android:paddingRight="15dp"-->
+        <!--android:text="ADD"-->
+        <!--android:textAllCaps="true"-->
+        <!--android:textColor="@color/white"/>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:singleLine="true"
+                android:text="Prep"
+                android:textCursorDrawable="@null" />
+
+            <ImageView
+                android:id="@+id/imgAddPrep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:src="@drawable/ic_add_circle_"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerPrep"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:nestedScrollingEnabled="false" />
+
+        <!--<com.common.view.CBButtonViewM-->
+        <!--android:id="@+id/btnAddPrep"-->
+        <!--style="@style/LightFlatWaveColorButtonRippleStyle_"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="35dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:background="@drawable/btn_bg_black"-->
+        <!--android:paddingLeft="15dp"-->
+        <!--android:paddingRight="15dp"-->
+        <!--android:text="ADD"-->
+        <!--android:textAllCaps="true"-->
+        <!--android:textColor="@color/white"/>-->
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

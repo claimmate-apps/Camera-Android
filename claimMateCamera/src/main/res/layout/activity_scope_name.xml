@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.commonsware.cwac.camera.demo.ScopeName">
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/lbltitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/primary_2"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Scope"
+            android:textColor="#ffffff"
+            android:textSize="17dp" />
+
+        <RelativeLayout
+            android:id="@+id/rlback"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/whitebackarrow" />
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/btnadd"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/addicon"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/rl_header"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/cv_typescope"
+
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_typescope"
+            android:layout_width="wrap_content"
+            android:background="@color/primary_2"
+            android:layout_height="50dp">
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="80dp"
+                android:text="R"
+                android:id="@+id/btn_r"
+                android:layout_margin="1dp"
+                android:textColor="@color/white"
+                android:background="@color/primary_2"
+                android:layout_height="match_parent" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="80dp"
+                android:text="E"
+                android:id="@+id/btn_e"
+
+                android:layout_marginTop="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="@android:color/white"
+                android:textColor="@color/primary_2"
+
+                android:layout_height="match_parent" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="80dp"
+                android:text="I"
+                android:id="@+id/btn_i"
+
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:textColor="@color/primary_2"
+
+                android:background="@android:color/white"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/ll_input"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15sp"
+        android:layout_marginLeft="15sp"
+        android:layout_below="@+id/cv_typescope"
+
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:text="L :"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_height="match_parent" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:inputType="number"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:text="W :"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_height="match_parent" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:inputType="number"
+
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:text="H :"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_height="match_parent" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:inputType="number"
+
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_building"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15sp"
+        android:layout_marginLeft="15sp"
+
+        android:layout_below="@+id/ll_input"
+
+        android:layout_height="45dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:id="@+id/btn_building"
+                android:hint="@string/building_type"
+                android:background="@android:color/transparent"
+                android:layout_height="match_parent" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="18dp"
+                android:src="@drawable/ic_downarrow"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_height="18dp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_roomtype"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15sp"
+        android:layout_marginLeft="15sp"
+        android:layout_below="@+id/cv_building"
+        android:layout_height="45dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:id="@+id/btn_type"
+                android:hint="@string/select"
+                android:background="@android:color/transparent"
+                android:layout_height="match_parent" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="18dp"
+                android:src="@drawable/ic_downarrow"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_height="18dp" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/rv_scopename"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/cv_roomtype"
+        android:layout_height="match_parent"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_nodata"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/cv_roomtype"
+        android:text="No Data Available."
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

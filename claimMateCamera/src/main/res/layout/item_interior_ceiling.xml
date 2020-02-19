@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:descendantFocusability="beforeDescendants"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!--<com.common.view.CEditTextView-->
+            <!--android:id="@+id/editTitle"-->
+            <!--style="@style/txt_000_16"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/edit_bg_grey_border_"-->
+            <!--android:inputType="text"-->
+            <!--android:padding="10dp"-->
+            <!--android:singleLine="true"-->
+            <!--android:textCursorDrawable="@null"/>-->
+
+        <Spinner
+            android:id="@+id/spinnerTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/black_rect_border"
+            android:entries="@array/ceiling"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerSign"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/black_rect_border"
+            android:entries="@array/sign"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"/>
+
+        <EditText
+            android:id="@+id/editInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/black_rect_border"
+            android:focusable="true"
+            android:gravity="center"
+            android:inputType="text"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:textCursorDrawable="@null"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:hint="Write custom text here"
+        android:visibility="gone"
+        android:id="@+id/editCustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/black_rect_border"
+        android:inputType="text"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textCursorDrawable="@null"/>
+</LinearLayout>

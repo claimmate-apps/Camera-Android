@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/llmain"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:id="@+id/rl_photoinfomenu"
+                    android:background="@color/black"
+                    android:visibility="visible">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/photo_information"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+
+
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_photo_information_submenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:gravity="center_vertical"
+                        android:paddingRight="5dp"
+                        android:text="Insured Name"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+
+                    <EditText
+                        android:id="@+id/txtfoldername"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingLeft="8dp"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+                    <CheckBox
+                        android:id="@+id/chkdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView2"
+                        android:layout_marginTop="5dp"
+                        android:checked="true"
+                        android:text="show Date &amp; Time"
+                        android:textColor="@color/black" />
+
+
+
+                    <CheckBox
+                        android:id="@+id/chkApi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/chkdate"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="41dp"
+                        android:layout_marginRight="41dp"
+                        android:layout_marginBottom="6dp"
+                        android:checked="false"
+                        android:text="Synchronize server?"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:background="@color/black"
+                    android:layout_marginTop="5dp"
+                    android:visibility="visible"
+                    android:id="@+id/rl_defaultmenu"
+                    android:layout_height="45dp">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/default_button_selections"
+                        android:textColor="@color/white"
+                        android:layout_marginStart="10dp"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        />
+
+
+
+
+                </RelativeLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/ll_default_button_submenu"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Damage"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="10dp"
+                        android:textSize="15dp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbDamageMark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mark red"
+                            android:textColor="@color/black" />
+
+                        <RadioButton
+                            android:id="@+id/rbDamageUnmark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UnMark Red"
+                            android:textColor="@color/black" />
+
+                        <RadioButton
+                            android:id="@+id/rbDamageLeave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Leave whichever"
+                            android:textColor="@color/black" />
+                    </RadioGroup>
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:background="@color/black"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_height="0.8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Area"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbAreaMark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mark red"
+                            android:textColor="@color/black" />
+
+                        <RadioButton
+                            android:id="@+id/rbAreaUnmark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UnMark Red"
+                            android:textColor="@color/black" />
+
+                        <RadioButton
+                            android:id="@+id/rbAreaLeave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Leave whichever"
+                            android:textColor="@color/black" />
+                    </RadioGroup>
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:background="@color/black"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_height="0.8dp"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Area Sub Cattegory"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbAreaSubMark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mark red"
+                            android:textColor="@color/black" />
+
+                        <RadioButton
+                            android:id="@+id/rbAreaSubUnmark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UnMark Red"
+                            android:textColor="@color/black" />
+
+                        <RadioButton
+                            android:id="@+id/rbAreaSubLeave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Leave whichever"
+                            android:textColor="@color/black" />
+                    </RadioGroup>
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:background="@color/black"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_height="0.8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Always start room with"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbCeiling"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ceiling"
+                            android:textColor="@color/black" />
+
+                        <RadioButton
+                            android:id="@+id/rbWall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Wall"
+                            android:textColor="@color/black" />
+
+                        <RadioButton
+                            android:id="@+id/rbFloor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Floor"
+                            android:textColor="@color/black" />
+                    </RadioGroup>
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:background="@color/black"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_height="0.8dp"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Material"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbMaterialMark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mark red"
+                            android:textColor="@color/black" />
+
+                        <RadioButton
+                            android:id="@+id/rbMaterialUnmark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UnMark red"
+                            android:textColor="@color/black" />
+
+                        <RadioButton
+                            android:id="@+id/rbMaterialLeave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Leave whichever"
+                            android:textColor="@color/black" />
+                    </RadioGroup>
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:background="@color/black"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="6dp"
+                        android:layout_height="0.8dp"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View Keep Current"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rbOverview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="Overview"
+                            android:textColor="@color/black" />
+
+                        <RadioButton
+                            android:id="@+id/rbCloseUp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Close up"
+                            android:textColor="@color/black" />
+
+                        <RadioButton
+                            android:id="@+id/rbBlank"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Blank"
+                            android:textColor="@color/black" />
+                    </RadioGroup>
+
+                </LinearLayout>
+                <Button
+                    android:id="@+id/btnaddclaimname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/black"
+                    android:visibility="visible"
+                    android:gravity="center_vertical|left"
+                    android:paddingLeft="10dp"
+                    android:text="Add Claim Name"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:background="@color/black"
+                    android:id="@+id/rl_menuoption"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="45dp">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="Menu Options"
+                        android:textColor="@color/white"
+                        android:layout_marginStart="10dp"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        />
+
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/ll_menu_options_submenu"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/btnmacroadd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="5dp"
+                        android:textAllCaps="false"
+                        android:background="@android:color/transparent"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical|left"
+                        android:text="Add Macro"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:background="@color/black"
+
+                        android:layout_height="0.8dp"/>
+
+
+                    <Button
+                        android:id="@+id/btnroofadd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAllCaps="false"
+
+                        android:textStyle="bold"
+                        android:layout_alignParentRight="true"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical|left"
+                        android:text="Add Roof"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:background="@color/black"
+
+                        android:layout_height="0.8dp"/>
+
+
+                    <Button
+                        android:id="@+id/btnaddelevations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                      android:textStyle="bold"
+                        android:textAllCaps="false"
+
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical|left"
+                        android:text="Add Elevations"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:background="@color/black"
+
+                        android:layout_height="0.8dp"/>
+
+
+                    <Button
+                        android:id="@+id/btnaddinterior"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical|left"
+                        android:text="Add Interior"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+
+                        android:textColor="@color/black"
+                        android:textSize="14dp"
+                        android:visibility="visible" />
+
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:background="@color/black"
+
+                        android:layout_height="0.8dp"/>
+
+
+
+                    <Button
+                        android:id="@+id/btnesubcatgry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:gravity="center_vertical|left"
+                        android:text="Add Interior Subcategory"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:background="@color/black"
+                        android:layout_height="0.8dp"/>
+
+
+                    <Button
+                        android:id="@+id/btnadddamage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_vertical|left"
+                        android:text="Add Damage"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
+
+
+
+
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:background="@color/black"
+                    android:gravity="center_vertical|left"
+                    android:text="Logout"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="6dp"
+                    android:textAllCaps="false"
+                    android:textSize="14dp"
+                    android:paddingLeft="10dp"
+
+                    android:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</RelativeLayout>

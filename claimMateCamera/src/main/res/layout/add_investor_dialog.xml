@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ff82aad3" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0dip" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center_vertical" android:background="#ff2b3856" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Add Insured Detail" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="20.0dip">
+        <EditText android:id="@+id/editTextInsured" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="Insured Name" android:ems="10" android:singleLine="true" android:imeOptions="actionNext" />
+        <EditText android:id="@+id/editTextAdjuster" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="Adjuster Name" android:ems="10" android:singleLine="true" android:imeOptions="actionNext" />
+        <EditText android:id="@+id/editTextCustomtext" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="Custom text" android:ems="10" android:singleLine="true" android:imeOptions="actionDone" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/btnHolderLL" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="48.0dip" android:weightSum="2.0">
+            <Button android:textColor="@color/gaana.red" android:id="@+id/dialogbuttoncancel" android:background="@drawable/white_button_selector_whitebg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="DISCARD" android:layout_weight="1.0" android:layout_toLeftOf="@+id/middleLine"  />
+            <View android:id="@+id/middleLine" android:background="@color/gaana.red" android:layout_width="0.5dip" android:layout_height="fill_parent" android:layout_centerHorizontal="true" />
+            <Button android:textColor="@color/gaana.red" android:id="@+id/dialogbuttonstop" android:background="@drawable/white_button_selector_whitebg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="OK" android:layout_weight="1.0" android:layout_toRightOf="@+id/middleLine"  />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#009688</color>
+    <color name="primary_2">#00A4D4</color>
+    <color name="primary_dark">#00796B</color>
+    <color name="primary_light">#e4a92c</color>
+    <color name="accent">#FF5252</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="colorAccent">#000000</color>
+    <color name="gaana_listview_divider">#80434343</color>
+    <color name="gaana_tap">#ff434343</color>
+    <color name="gaana.red">#ffe4a92c</color>
+    <color name="payment_method_playstore">#ff46c6c5</color>
+    <color name="payment_method_operator">#ffee4035</color>
+    <color name="payment_method_paytm">#ff45cff8</color>
+    <color name="payment_method_hermes">#ffff8a00</color>
+    <color name="gaana_grey">#ff121314</color>
+    <color name="payment_offer_yellow_bg">#ffffcc00</color>
+    <color name="grid_text_bar_bgcolor">#ff222326</color>
+    <color name="payment_method_card_bg">#ff424242</color>
+    <color name="home.list.divider">#ffbcbabb</color>
+    <color name="home.list.item.header">#ff6d6d6d</color>
+    <color name="home.list.item.subheader">#ff969696</color>
+    <color name="home_header_view_background">#ffe5e4e0</color>
+    <color name="home_live_text_color">#ffc9f4d0</color>
+    <color name="black">#ff000000</color>
+    <color name="black_alfa_10">#1a000000</color>
+    <color name="black_alfa_20">#33000000</color>
+    <color name="black_alfa_30">#4d000000</color>
+    <color name="black_alfa_40">#66000000</color>
+    <color name="black_alfa_5">#0d000000</color>
+    <color name="black_alfa_50">#80000000</color>
+    <color name="black_alfa_60">#99000000</color>
+    <color name="black_alfa_70">#b3000000</color>
+    <color name="black_alfa_80">#cc000000</color>
+    <color name="black_alfa_90">#e6000000</color>
+    <color name="blue">#ff0e6fa0</color>
+
+    <string-array name="movie_serial_bg">
+        <item>#24c6d5</item>
+        <item>#57dd86</item>
+        <item>#ad7dcf</item>
+        <item>#ff484d</item>
+        <item>#fcba59</item>
+        <item>#24c6d5</item>
+    </string-array>
+
+    <color name="SeekbarProgressColor">#ffe1a82f</color>
+    <color name="SeekbarSecondaryProgressColor">#19ffb600</color>
+    <color name="gaana.headertxtcolor">#ff616161</color>
+    <color name="gaana.red_alfa_10">#1ae4a92c</color>
+    <color name="gaana.red_alfa_20">#33e4a92c</color>
+    <color name="gaana.red_alfa_30">#4de4a92c</color>
+    <color name="gaana.red_alfa_40">#66e4a92c</color>
+    <color name="gaana.red_alfa_50">#80e4a92c</color>
+    <color name="gaana.red_alfa_60">#99e4a92c</color>
+    <color name="gaana.red_alfa_70">#b3e4a92c</color>
+    <color name="gaana.red_alfa_80">#cce4a92c</color>
+    <color name="gaana.red_alfa_90">#e6e4a92c</color>
+    <color name="gaana_alfa_60">#99feeccc</color>
+    <color name="gaana_download_shadow1">#ffcccccc</color>
+    <color name="gaana_download_shadow2">#ff626262</color>
+    <color name="gaana_grey_alfa_10">#1a121314</color>
+    <color name="gaana_grey_alfa_20">#33121314</color>
+    <color name="gaana_grey_alfa_30">#4d121314</color>
+    <color name="gaana_grey_alfa_40">#66121314</color>
+    <color name="gaana_grey_alfa_50">#80121314</color>
+    <color name="gaana_grey_alfa_60">#99121314</color>
+    <color name="gaana_grey_alfa_70">#b3121314</color>
+    <color name="gaana_grey_alfa_80">#cc121314</color>
+    <color name="gaana_grey_alfa_90">#e6121314</color>
+    <color name="gaana_orange">#fff59331</color>
+    <color name="gaana_orange_text">#ffff3500</color>
+    <color name="second_line_color">#b3ffffff</color>
+    <color name="secondary_text_default_material_dark">#b3ffffff</color>
+    <color name="secondary_text_default_material_light">#8a000000</color>
+    <color name="secondary_text_disabled_material_dark">#36ffffff</color>
+    <color name="secondary_text_disabled_material_light">#24000000</color>
+    <color name="first_line_color">#ffffffff</color>
+    <color name="white">#ffffffff</color>
+    <color name="white_alfa_10">#1affffff</color>
+    <color name="white_alfa_20">#33ffffff</color>
+    <color name="white_alfa_30">#4dffffff</color>
+    <color name="white_alfa_40">#66ffffff</color>
+    <color name="white_alfa_5">#0d000000</color>
+    <color name="white_alfa_50">#80ffffff</color>
+    <color name="white_alfa_60">#99ffffff</color>
+    <color name="white_alfa_70">#b3ffffff</color>
+    <color name="white_alfa_80">#ccffffff</color>
+    <color name="white_alfa_90">#e6ffffff</color>
+     <color name="gaana_text_firstline">#ff696969</color>
+    <color name="gaana_text_secondline">#ff9a9a9a</color>
+    <color name="setting_subheader_text">#ff9a9a9a</color>
+    <color name="gray">#ff585858</color>
+    <color name="setting_titlestrip_text">#ffff3c38</color>
+     <color name="item_header_color">#ff888888</color>
+    <color name="left_menu_buttons">#ffa5a5a5</color>
+    <color name="left_navigation_bgcolor">#ff252525</color>
+    <color name="left_navigation_submenu_bgcolor">#ff1b1b1b</color>
+    <color name="leftmenu_selection_color">#ff2a7fff</color>
+
+
+
+    <color name="darkblue">#0099cc</color>
+    <color name="red">#ff4444</color>
+    <color name="grayStart">#adadad</color>
+    <color name="grayEnd">#ffffff</color>
+    <color name="bg_handle_pressed">#a0a0a0</color>
+    
+</resources>

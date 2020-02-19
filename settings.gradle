@@ -1,0 +1,3 @@
+//include ':camera', ':draglibrary', ':scanlibrary', ':webrtc-client'
+include ':camera', ':draglibrary', ':webrtc-client'
+include ':claimMateCamera'

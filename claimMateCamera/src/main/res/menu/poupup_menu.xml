@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/itemAddInvester"
+        android:title="Add Investor Detail"/>
+    <item
+        android:id="@+id/itemAutoSaveSetting"
+        android:checkable="true"
+        android:checked="true"
+        android:showAsAction="never"
+        android:title="Auto save setting"/>
+    <item
+        android:id="@+id/itemIncludeTime"
+        android:checkable="true"
+        android:checked="true"
+        android:showAsAction="never"
+        android:title="Include Time"/>
+    <item
+        android:id="@+id/itemIncludeHeader"
+        android:checkable="true"
+        android:checked="true"
+        android:showAsAction="never"
+        android:title="Include First Header and Coverage"/>
+    <item
+        android:id="@+id/itemNothingSetting"
+        android:checkable="true"
+        android:checked="true"
+        android:showAsAction="never"
+        android:title="Nothing"/>
+    <item
+        android:id="@+id/addCustomText"
+        android:title="Add Custom Text"/>
+
+</menu>

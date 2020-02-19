@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ff82aad3"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="#ff2b3856"
+        android:gravity="center"
+        android:padding="5.0dip"
+        android:text="Add New Items"
+        android:textColor="#ffffffff"
+        android:textSize="20.0dip"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10.0dip"
+        android:entries="@array/options"
+        android:prompt="@string/select_text" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/layout_for_addroom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="left"
+                android:padding="2.0dip"
+                android:text="Add Room/Area"
+                android:textColor="#ffffffff"
+                android:textSize="14.0dip" />
+
+            <EditText
+                android:id="@+id/editTextRoom"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Add Room/Area" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_for_addSubArea"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Spinner
+                android:id="@+id/spinnerArea"
+            
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10.0dip"
+                android:prompt="@string/select_text" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="left"
+                android:padding="2.0dip"
+                android:text="Add Sub Area"
+                android:textColor="#ffffffff"
+                android:textSize="14.0dip" />
+
+            <EditText
+                android:id="@+id/editTextSubArea"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Sub Area Name" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_for_addMaterail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Spinner
+                android:id="@+id/spinnerAreaM"
+                
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10.0dip"
+                android:prompt="@string/select_text" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="left"
+                android:padding="2.0dip"
+                android:text="Add Materail"
+                android:textColor="#ffffffff"
+                android:textSize="14.0dip" />
+
+            <EditText
+                android:id="@+id/editTextSubMaterail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Materail Name" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_for_addDamage"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="left"
+                android:padding="2.0dip"
+                android:text="Add Damage"
+                android:textColor="#ffffffff"
+                android:textSize="14.0dip" />
+
+            <EditText
+                android:id="@+id/editTextDamage"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Damage Name" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/btnHolderLL"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48.0dip"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2.0" >
+
+            <Button
+                android:id="@+id/dialogbuttoncancel"
+                
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_toLeftOf="@+id/middleLine"
+                android:layout_weight="1.0"
+                android:background="@drawable/white_button_selector_whitebg"
+                android:text="CANCEL"
+                android:textColor="@color/gaana.red" />
+
+            <View
+                android:id="@+id/middleLine"
+                android:layout_width="0.5dip"
+                android:layout_height="fill_parent"
+                android:layout_centerHorizontal="true"
+                android:background="@color/gaana.red" />
+
+            <Button
+                android:id="@+id/dialogbuttonstop"
+                
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_toRightOf="@+id/middleLine"
+                android:layout_weight="1.0"
+                android:background="@drawable/white_button_selector_whitebg"
+                android:text="OK"
+                android:textColor="@color/gaana.red" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

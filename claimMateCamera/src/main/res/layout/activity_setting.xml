@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.commonsware.cwac.camera.demo.activities.SettingActivity">
+
+    <RelativeLayout
+        android:background="#4db3a2"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/relativeLayout6">
+
+        <TextView
+            android:id="@+id/lbltitle"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_margin="1dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Setting"
+            android:textColor="@color/white"
+            android:textSize="17dp" />
+
+        <RelativeLayout
+            android:id="@+id/rlBack"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/whitebackarrow" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:focusable="false"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:paddingRight="5dp"
+                android:text="Insured Name :"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/edtFolderName"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/textView2"
+                android:paddingLeft="8dp"
+                android:textColor="@color/black"
+                android:textSize="14dp" />
+
+            <CheckBox
+                android:id="@+id/chkdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:checked="true"
+                android:text="show Date &amp; Time"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/chkApi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/chkdate"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="41dp"
+                android:layout_marginRight="41dp"
+                android:checked="false"
+                android:text="Synchronize server?"
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:id="@+id/llDamageBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/chkdate"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/black_rect_border"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Damage Button"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbDamageMark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mark red"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/rbDamageUnmark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UnMark Red"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/rbDamageLeave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Leave whichever"
+                        android:textColor="@color/black" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llAreaBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llDamageBtn"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/black_rect_border"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Area Button"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbAreaMark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mark red"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/rbAreaUnmark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UnMark Red"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/rbAreaLeave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Leave whichever"
+                        android:textColor="@color/black" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llSubAreaBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llAreaBtn"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/black_rect_border"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Area Sub Cattegory Button"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbAreaSubMark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mark red"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/rbAreaSubUnmark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UnMark Red"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/rbAreaSubLeave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Leave whichever"
+                        android:textColor="@color/black" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llRoom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llSubAreaBtn"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/black_rect_border"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Always start room with"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbCeiling"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ceiling"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/rbWall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wall"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/rbFloor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Floor"
+                        android:textColor="@color/black" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llMatrial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llRoom"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/black_rect_border"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Material"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbMaterialMark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mark red"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/rbMaterialUnmark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UnMark red"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/rbMaterialLeave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Leave whichever"
+                        android:textColor="@color/black" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llMatrial"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/black_rect_border"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View Keep Current"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbOverview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Overview"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/rbCloseUp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Close up"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/rbBlank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Blank"
+                        android:textColor="@color/black" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnaddclaimname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llView"
+                android:layout_alignStart="@+id/llView"
+                android:layout_alignLeft="@+id/llView"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bottom_line"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="5dp"
+                android:text="Add Claim Name"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/btnmacroadd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnaddclaimname"
+                android:layout_alignStart="@+id/chkdate"
+                android:layout_alignLeft="@+id/chkdate"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bottom_line"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="5dp"
+                android:text="Add Macro"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/btnroofadd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnmacroadd"
+                android:layout_alignStart="@+id/chkdate"
+                android:layout_alignLeft="@+id/chkdate"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bottom_line"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="5dp"
+                android:text="Add Roof"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/btnaddelevations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnroofadd"
+                android:layout_alignStart="@+id/btnroofadd"
+                android:layout_alignLeft="@+id/btnroofadd"
+                android:layout_alignEnd="@+id/btnroofadd"
+                android:layout_alignRight="@+id/btnroofadd"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bottom_line"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="5dp"
+                android:text="Add Elevations"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/btnaddinterior"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnaddelevations"
+                android:layout_alignStart="@+id/btnaddelevations"
+                android:layout_alignLeft="@+id/btnaddelevations"
+                android:layout_alignEnd="@+id/btnaddelevations"
+                android:layout_alignRight="@+id/btnaddelevations"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bottom_line"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="5dp"
+                android:text="Add Interior"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/btnesubcatgry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnaddinterior"
+                android:layout_alignStart="@+id/btnaddelevations"
+                android:layout_alignLeft="@+id/btnaddelevations"
+                android:layout_alignEnd="@+id/btnaddelevations"
+                android:layout_alignRight="@+id/btnaddelevations"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bottom_line"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="5dp"
+                android:text="Add Interior Subcategory"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/btnadddamage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnesubcatgry"
+                android:layout_alignStart="@+id/btnaddinterior"
+                android:layout_alignLeft="@+id/btnaddinterior"
+                android:layout_alignEnd="@+id/btnaddinterior"
+                android:layout_alignRight="@+id/btnaddinterior"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bottom_line"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="5dp"
+                android:text="Add Damage"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/btnAddDocument"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnadddamage"
+                android:layout_alignStart="@+id/btnaddinterior"
+                android:layout_alignLeft="@+id/btnaddinterior"
+                android:layout_alignEnd="@+id/btnaddinterior"
+                android:layout_alignRight="@+id/btnaddinterior"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bottom_line"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="5dp"
+                android:text="Add Document"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnAddDocument"
+                android:layout_alignStart="@+id/btnaddinterior"
+                android:layout_alignLeft="@+id/btnaddinterior"
+                android:layout_alignEnd="@+id/btnaddinterior"
+                android:layout_alignRight="@+id/btnaddinterior"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bottom_line"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="5dp"
+                android:text="Logout"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/btnLogout"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                <Button
+                    android:id="@+id/btnOk"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/textView3"
+                    android:layout_toRightOf="@+id/textView3"
+                    android:background="@drawable/black_rect_border"
+                    android:text="Ok"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toStartOf="@+id/textView3"
+                    android:layout_toLeftOf="@+id/textView3"
+                    android:background="@drawable/black_rect_border"
+                    android:text="Cancel"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:visibility="visible" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

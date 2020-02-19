@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="7.0" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1.0"
+        android:orientation="horizontal"
+        android:weightSum="6.0" >
+
+        <android.support.v7.widget.Toolbar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/toolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="45.0dip"
+            android:background="#33000000" />
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.0"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/chnageOrientation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="30.0dip"
+            android:layout_marginRight="5.0dip"
+            android:src="@drawable/change_orintation" />
+
+        <ImageView
+            android:id="@+id/imageViewSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/toggleButton1"
+            android:layout_marginBottom="10.0dip"
+            android:layout_marginLeft="20.0dip"
+            android:src="@drawable/settings" />
+
+        <ImageView
+            android:id="@+id/takePhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="20.0dip"
+       
+            android:padding="10.0dip"
+       android:src="@drawable/squarecamera__capture_photo_button"  />
+
+        <Button
+            android:id="@+id/toggleButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="25.0dip"
+            android:layout_marginLeft="5.0dip"
+            android:layout_weight="1.0"
+            android:background="@drawable/button_background"
+            android:text="Overview"
+            android:textOff="Close up"
+            android:textOn="Overview" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10.0dip"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/buttonShowPopup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:freezesText="true"
+                android:text="Show Popup"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/selectArea"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3.0dip"
+                android:layout_marginRight="3.0dip"
+                android:background="@drawable/button_background"
+                android:freezesText="true"
+                android:paddingLeft="3.0dip"
+                android:paddingRight="3.0dip"
+                android:singleLine="true"
+                android:text="Select Area" />
+
+           
+
+            <Button
+                android:id="@+id/selectSubArea"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3.0dip"
+                android:layout_marginRight="3.0dip"
+                android:background="@drawable/button_background"
+                android:freezesText="true"
+                android:paddingLeft="3.0dip"
+                android:paddingRight="3.0dip"
+                android:singleLine="true"
+                android:text="Select Sub Area" />
+
+            <Button
+                android:id="@+id/selectMaterail"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3.0dip"
+                android:layout_marginRight="3.0dip"
+                android:layout_toRightOf="@+id/selectSubArea"
+                android:background="@drawable/button_background"
+                android:freezesText="true"
+                android:paddingLeft="3.0dip"
+                android:paddingRight="3.0dip"
+                android:singleLine="true"
+                android:text="Select Material" />
+
+            <Button
+                android:id="@+id/selectDamage"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3.0dip"
+                android:layout_marginRight="3.0dip"
+                android:layout_toRightOf="@+id/selectMaterail"
+                android:background="@drawable/button_background"
+                android:freezesText="true"
+                android:paddingLeft="3.0dip"
+                android:paddingRight="3.0dip"
+                android:singleLine="true"
+                android:text="Select Damage" />
+            
+              
+             <Button
+                android:id="@+id/selectCovA"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:background="@drawable/button_background"
+                android:paddingLeft="3.0dip"
+                android:paddingRight="3.0dip"
+                android:text="Cov A" />
+        </LinearLayout>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:id="@+id/btnsection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:paddingLeft="3.0dip"
+            android:paddingRight="3.0dip"
+            android:text="Interior"
+            android:layout_alignBottom="@+id/imageViewSetting"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="5dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:id="@+id/btnsubsection"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:paddingLeft="3.0dip"
+            android:paddingRight="3.0dip"
+            android:text="Room names that are added in the settings"
+            android:singleLine="true"
+            android:layout_alignBottom="@+id/imageViewSetting"
+            android:layout_toRightOf="@+id/btnsection"
+            android:layout_toEndOf="@+id/btnsection"
+            android:layout_marginLeft="5dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:paddingLeft="3.0dip"
+            android:paddingRight="3.0dip"
+            android:text="Overview"
+            android:layout_alignTop="@+id/btnsubsection"
+            android:layout_toRightOf="@+id/btnsubsection"
+            android:layout_toEndOf="@+id/btnsubsection"
+            android:layout_marginLeft="5dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:paddingLeft="3.0dip"
+            android:paddingRight="3.0dip"
+            android:text="CloseUp"
+            android:layout_alignTop="@+id/button2"
+            android:layout_toRightOf="@+id/button2"
+            android:layout_toEndOf="@+id/button2"
+            android:layout_marginLeft="5dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:paddingLeft="3.0dip"
+            android:paddingRight="3.0dip"
+            android:text="Blank"
+            android:layout_alignTop="@+id/button6"
+            android:layout_toRightOf="@+id/button6"
+            android:layout_toEndOf="@+id/button6"
+            android:layout_marginLeft="5dp" />
+    </RelativeLayout>
+
+</LinearLayout>

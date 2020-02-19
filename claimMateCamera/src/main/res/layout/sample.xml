@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical"
+        android:weightSum="14.0" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_weight="13.0"
+            android:background="#33000000"
+            android:orientation="vertical" >
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:padding="2.0dip"
+                        android:text="Need to select number of LAYERS and if DRIP EDGE is present or not"
+                        android:textColor="#ffffffff"
+                        android:textSize="14.0dip"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:orientation="horizontal"
+                        android:weightSum="4.0" >
+
+                        <kankan.wheel.widget.WheelView
+                            android:id="@+id/roof_option_one"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_below="@+id/city"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="2.0dip"
+                            android:layout_weight="1.1" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:padding="2.0dip"
+                            android:text="Layer of roofing"
+                            android:textColor="#ffffffff"
+                            android:textSize="16.0dip"
+                            android:textStyle="bold" />
+
+                        <kankan.wheel.widget.WheelView
+                            android:id="@+id/roof_option_one_desc"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_below="@+id/city"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="2.0dip"
+                            android:layout_weight="0.8" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.1"
+                            android:gravity="center"
+                            android:padding="2.0dip"
+                            android:text="drip edge"
+                            android:textColor="#ffffffff"
+                            android:textSize="16.0dip"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:padding="2.0dip"
+                        android:text="Type of shingle - 4 Main options plus a custum Text option"
+                        android:textColor="#ffffffff"
+                        android:textSize="14.0dip"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@color/primary_light"
+                        android:orientation="horizontal"
+                        android:weightSum="4.0" >
+
+                        <kankan.wheel.widget.WheelView
+                            android:id="@+id/roof_option_two"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_below="@+id/city"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="2.0dip"
+                            android:layout_weight="4.0" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:padding="2.0dip"
+                        android:text="Roof Pitch will be a number selected 1-12"
+                        android:textColor="#ffffffff"
+                        android:textSize="14.0dip"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@color/primary_light"
+                        android:orientation="horizontal"
+                        android:weightSum="2.0" >
+
+                        <kankan.wheel.widget.WheelView
+                            android:id="@+id/roof_option_three"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_below="@+id/city"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="2.0dip"
+                            android:layout_weight="1.0" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:padding="2.0dip"
+                            android:text="/12 Roof Pitch"
+                            android:textColor="#ffffffff"
+                            android:textSize="14.0dip"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:padding="2.0dip"
+                        android:text="Gutter size is either 5 or 6, or  Custom text"
+                        android:textColor="#ffffffff"
+                        android:textSize="14.0dip"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@color/primary_light"
+                        android:orientation="horizontal"
+                        android:weightSum="2.0" >
+
+                        <kankan.wheel.widget.WheelView
+                            android:id="@+id/roof_option_four"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_below="@+id/city"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="2.0dip"
+                            android:layout_weight="1.0" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:padding="2.0dip"
+                        android:text="Need the Ability to select a number 1-48"
+                        android:textColor="#ffffffff"
+                        android:textSize="14.0dip"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@color/primary_light"
+                        android:orientation="horizontal"
+                        android:weightSum="3.0" >
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:padding="2.0dip"
+                            android:text="Soffit is"
+                            android:textColor="#ffffffff"
+                            android:textSize="14.0dip"
+                            android:textStyle="bold" />
+
+                        <kankan.wheel.widget.WheelView
+                            android:id="@+id/roof_option_five"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_below="@+id/city"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="2.0dip"
+                            android:layout_weight="1.0" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.0"
+                            android:gravity="center"
+                            android:padding="2.0dip"
+                            android:text=" Inches wide on this dwelling"
+                            android:textColor="#ffffffff"
+                            android:textSize="14.0dip"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/btnHolderLL"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="48.0dip"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2.0" >
+
+                    <Button
+                        android:id="@+id/dialogbuttoncancel"
+                        
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_toLeftOf="@+id/middleLine"
+                        android:layout_weight="1.0"
+                        android:background="@drawable/white_button_selector_whitebg"
+                        android:text="CANCEL"
+                        android:textColor="@color/gaana.red" />
+
+                    <View
+                        android:id="@+id/middleLine"
+                        android:layout_width="0.5dip"
+                        android:layout_height="fill_parent"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/gaana.red" />
+
+                    <Button
+                        android:id="@+id/dialogbuttonstop"
+                        
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_toRightOf="@+id/middleLine"
+                        android:layout_weight="1.0"
+                        
+                        android:text="OK"
+                        android:textColor="#ffffffff" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

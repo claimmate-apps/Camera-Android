@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.commonsware.cwac.camera.demo.activities.ReportActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/lbltitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#4db3a2"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Report"
+            android:textColor="#fff"
+            android:textSize="17dp" />
+
+        <RelativeLayout
+            android:id="@+id/rlback"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/whitebackarrow" />
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/btnadd"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/addicon"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:text="Name"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Name"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Cause of loss"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtCauseOfLoss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Cause of loss"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Date of loss"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtDateOfLoss"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/black_rect_border"
+                    android:gravity="center"
+                    android:hint="Date of loss"
+                    android:padding="7dp" />
+
+                <ImageButton
+                    android:id="@+id/imgDateOfLoss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/ic_date_range_black_24dp" />
+            </LinearLayout>
+
+            <TextView
+                android:text="Mortgage"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtMortgage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Mortgage"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Labor Min"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtLaborMin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Labor Min"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Company"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtCompany"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Company"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Of Stories"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtOfStories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Of Stories"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Type of construction"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtTypeOfConstruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Type of construction"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Residential/Commercial/Industrial"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtRCI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Residential/Commercial/Industrial"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Single Family"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtSingleFamily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Single Family"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Garages attached or detached"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtGaragesDetached"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Garages attached or detached"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Type of exterior siding"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtTypeOfExteriorSiding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Type of exterior siding"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Insured person present"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtInsuredPersonPresent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Insured person present"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Inspection date"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtInspectionDate"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/black_rect_border"
+                    android:gravity="center"
+                    android:hint="Inspection date"
+                    android:padding="7dp" />
+
+                <ImageButton
+                    android:id="@+id/imgInspectionDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/ic_date_range_black_24dp" />
+            </LinearLayout>
+
+            <TextView
+                android:text="O&amp;P"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtOP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="O&amp;P"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Depreciation"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtDepreciation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Depreciation"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Contents"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtContents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Contents"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Salvage"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtSalvage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Salvage"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="Subrogation"
+                android:layout_marginTop="5sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtSubrogation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/black_rect_border"
+                android:hint="Subrogation"
+                android:padding="5dp"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/btnSave"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:background="#4db3a2"
+                android:layout_margin="8dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ClaimMate Camera</string>
+    <string name="standard">Standard</string>
+    <string name="ffc">Front-Facing</string>
+    <string name="record">Record Video</string>
+    <string name="stop">Stop</string>
+    <string name="lock_to_landscape">Lock to Landscape</string>
+
+    <string name="take_picture">Take Picture</string>
+    <string name="auto_focus">Auto-focus</string>
+    <string name="single_shot_mode">Single-Shot Mode</string>
+    <string name="no_image">There was no image to show!</string>
+    <string name="show_zoom">Show Zoom</string>
+    <string name="flash">Flash</string>
+    <string name="launch_full_screen">Launch Full-Screen</string>
+    <string name="mirror_ffc">Mirror FFC</string>
+
+    <string name="select_text">Select</string>
+    <string name="title_activity_homeactivity">homeactivity</string>
+
+    <string name="title_activity_camview">camview</string>
+    <string name="title_activity_torchactivity">torchactivity</string>
+
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="select_remove_mode">Remove modes</string>
+    <string name="select_drag_init_mode">Start-drag modes</string>
+    <string name="select_enables">Enable/Disable</string>
+
+    <string-array name="arrayNames">
+        <item>Mr.</item>
+        <item>Ms.</item>
+        <item>Mr. &amp; Ms.</item>
+        <item>None</item>
+    </string-array>
+
+    <string-array name="jazz_artist_names">
+        <item>Claim Name 1</item>
+        <item>Claim Name 2</item>
+        <item>Claim Name 3</item>
+        <item>Claim Name 4</item>
+        <item>Claim Name 5</item>
+        <item>Claim Name 6</item>
+        <item>Claim Name 7</item>
+        <item>Claim Name 8</item>
+        <item>Claim Name 9</item>
+        <item>Claim Name 10</item>
+        <item>Claim Name 11</item>
+        <item>Claim Name 12</item>
+        <item>Claim Name 13</item>
+        <item>Claim Name 14</item>
+        <item>Claim Name 15</item>
+
+    </string-array>
+
+    <string-array name="story">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="type_of_construction">
+        <item>Conventional wood framed</item>
+        <item>Brick</item>
+        <item>Insert custom data</item>
+    </string-array>
+
+    <string-array name="rci">
+        <item>Residential</item>
+        <item>Commercial</item>
+        <item>Industrial</item>
+        <item></item>
+        <item>Insert custom data</item>
+    </string-array>
+
+    <string-array name="single_family">
+        <item>Single Family Dwelling</item>
+        <item>Condo</item>
+        <item></item>
+        <item>Insert custom data</item>
+    </string-array>
+
+    <string-array name="garage_attached">
+        <item>one car garage attached to the dwelling</item>
+        <item>two car garage attached to the dwelling</item>
+        <item>with no garage.</item>
+        <item>Two car garage is detached from the dwelling.</item>
+        <item></item>
+        <item>Insert custom data</item>
+    </string-array>
+
+    <string-array name="type_of_exterior_siding">
+        <item>Brick veneer and vinyl siding</item>
+        <item>Brick veneer and aluminum siding</item>
+        <item>All brick exterior</item>
+        <item>Vinyl siding exterior</item>
+        <item>Aluminum siding exterior</item>
+        <item>Insert custom data</item>
+    </string-array>
+
+    <string-array name="prep">
+        <item></item>
+        <item>CrownS</item>
+        <item>CrownP</item>
+        <item>CasingS</item>
+        <item>CasingP</item>
+        <item>BaseS</item>
+        <item>BaseP</item>
+        <item>Custom Text</item>
+    </string-array>
+
+    <string-array name="sign">
+        <item>+</item>
+        <item>-</item>
+        <item>&amp;</item>
+        <item>M</item>
+        <item>I</item>
+    </string-array>
+
+    <string-array name="ceiling">
+        <item></item>
+        <item>Drywall</item>
+        <item>Insulation</item>
+        <item>Seal</item>
+        <item>Paint</item>
+        <item>Plaster</item>
+        <item>tile</item>
+        <item>Paint</item>
+        <item>Crown molding</item>
+        <item>Light</item>
+        <item>Ceiling fan</item>
+        <item>Wall paper</item>
+        <item>Texture </item>
+        <item>Trim</item>
+        <item>Custom Text</item>
+    </string-array>
+
+    <string-array name="wall">
+        <item></item>
+        <item>Drywall</item>
+        <item>Insulation</item>
+        <item>Seal</item>
+        <item>Paint</item>
+        <item>Plaster</item>
+        <item>tile</item>
+        <item>Paint</item>
+        <item>Light</item>
+        <item>Wall paper</item>
+        <item>Texture</item>
+        <item>Door</item>
+        <item>Window </item>
+        <item>Cabinet</item>
+        <item>Countertop</item>
+        <item>Tile</item>
+        <item>Insulation</item>
+        <item>Custom Text</item>
+    </string-array>
+
+    <string-array name="floor">
+        <item></item>
+        <item>Tile</item>
+        <item>Vinyl</item>
+        <item>Wood</item>
+        <item>Laminate</item>
+        <item>Subfloor</item>
+        <item>Carpet</item>
+        <item>Pad</item>
+        <item>Custom Text</item>
+    </string-array>
+
+    <string-array name="sign_">
+        <item>&amp;</item>
+        <item>Clean</item>
+    </string-array>
+
+    <string name="error_permission"><![CDATA[The app needs permissions, please enable from Settings>installed app > ClaimMate Camera > Permissions > Enable all]]></string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_data_not_found">Data Not Found</string>
+
+    <string name="some_string">\u0020</string>
+    <string name="select">Select</string>
+    <string name="save">Save</string>
+    <string name="building_type">Building Type</string>
+    <string name="replace">REPLACE</string>
+    <string name="photo_information">Photo Information</string>
+    <string name="default_button_selections">Default Button Selections</string>
+
+</resources>

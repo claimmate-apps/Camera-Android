@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="450dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Room Name" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/btnRoomName"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="2"
+                    android:background="@android:color/transparent"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true"
+                    android:text="Room" />
+
+                <Button
+                    android:id="@+id/btnRCnt"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="2"
+                    android:background="@android:color/transparent"
+                    android:gravity="left|center_vertical"
+                    android:text="0" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                android:weightSum="10">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="4" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Length" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Width" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Height" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Ceiling" />
+
+                <EditText
+                    android:id="@+id/edtCOption1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/black_rect_border"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:text="+" />
+
+                <Button
+                    android:id="@+id/btnCMaterial1"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="2"
+                    android:background="@android:color/transparent"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true"
+                    android:text="Material" />
+
+                <EditText
+                    android:id="@+id/edtCWidth1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/black_rect_border"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/edtCHeight1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/black_rect_border"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3" />
+
+                <EditText
+                    android:id="@+id/edtCOption2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/black_rect_border"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:text="D" />
+
+                <Button
+                    android:id="@+id/btnCMaterial2"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="2"
+                    android:background="@android:color/transparent"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true"
+                    android:text="Material" />
+
+                <EditText
+                    android:id="@+id/edtCWidth2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/black_rect_border"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/edtCHeight2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/black_rect_border"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3" />
+
+                <EditText
+                    android:id="@+id/edtCOption3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/black_rect_border"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:text="D" />
+
+                <Button
+                    android:id="@+id/btnCMaterial3"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="2"
+                    android:background="@android:color/transparent"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true"
+                    android:text="Material" />
+
+                <EditText
+                    android:id="@+id/edtCWidth3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/black_rect_border"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/edtCHeight3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/black_rect_border"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Wall" />
+
+                <EditText
+                    android:id="@+id/edtWOption1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/black_rect_border"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:text=";+" />
+
+                <Button
+                    android:id="@+id/btnWMaterial1"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="2"
+                    android:background="@android:color/transparent"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true"
+                    android:text="Material" />
+
+                <EditText
+                    android:id="@+id/edtWWidth1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/black_rect_border"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/edtWHeight1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/black_rect_border"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3" />
+
+                <EditText
+                    android:id="@+id/edtWOption2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/black_rect_border"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:text="D" />
+
+                <Button
+                    android:id="@+id/btnWMaterial2"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="2"
+                    android:background="@android:color/transparent"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true"
+                    android:text="Material" />
+
+                <EditText
+                    android:id="@+id/edtWWidth2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/black_rect_border"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/edtWHeight2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/black_rect_border"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3" />
+
+                <EditText
+                    android:id="@+id/edtWOption3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/black_rect_border"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:text="D" />
+
+                <Button
+                    android:id="@+id/btnWMaterial3"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="2"
+                    android:background="@android:color/transparent"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true"
+                    android:text="Material" />
+
+                <EditText
+                    android:id="@+id/edtWWidth3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/black_rect_border"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/edtWHeight3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/black_rect_border"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                android:weightSum="10">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Floor" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/black_rect_border"
+                    android:gravity="center"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:text=";+"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/btnFMaterial1"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="2"
+                    android:background="@android:color/transparent"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true"
+                    android:text="Material" />
+
+                <EditText
+                    android:id="@+id/edtFWidth1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/black_rect_border"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/edtFHeight1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2"
+                    android:background="@drawable/black_rect_border"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Save" />
+</LinearLayout>

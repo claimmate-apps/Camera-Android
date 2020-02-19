@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rlmain"
+
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+
+   <android.support.v7.widget.AppCompatTextView
+       android:layout_width="match_parent"
+       android:layout_height="45dp"
+       android:textColor="@color/white"
+       android:id="@+id/tv_title"
+       android:text="Title"
+       android:gravity="center_vertical"
+       android:paddingLeft="10dp"
+       android:textSize="16dp"
+       android:background="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+       android:orientation="horizontal"
+        android:layout_height="40dp">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:id="@+id/tv_damage_item"
+            android:textSize="16dp"
+            android:text="Drywall"
+            android:layout_weight="0.3"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+
+            android:textColor="@color/black"
+            android:layout_height="match_parent" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:id="@+id/tv_damage_type"
+            android:textSize="16dp"
+            android:text="Hail Damage"
+            android:layout_weight="0.3"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:layout_height="match_parent" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:id="@+id/tv_quantity"
+            android:textSize="16dp"
+            android:text="6"
+            android:enabled="true"
+            android:layout_weight="0.2"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+
+            android:textColor="@color/black"
+            android:layout_height="match_parent" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:text="@string/save"
+            android:gravity="center"
+            android:id="@+id/tv_save"
+            android:layout_weight="0.2"
+            android:layout_marginRight="10dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</LinearLayout>
