@@ -15,5 +15,6 @@ public class Constants {
     public static  List<String> RoofMaterial  ;
     public static  List<String> EvationaMaterial  ;
 
+    public static  String addclaimname = ""  ;
 
 }

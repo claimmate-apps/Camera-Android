@@ -2290,38 +2290,38 @@
 
                 <Button
                     android:id="@+id/btnCeiling"
-                    android:layout_width="100dp"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_background"
                     android:singleLine="true"
                     android:tag="1"
-                    android:text="Ceiling"
+                    android:text="C"
                     android:textColor="#ffffff"
                     android:textSize="14dp"
                     android:visibility="visible" />
 
                 <Button
                     android:id="@+id/btnWall"
-                    android:layout_width="100dp"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/button_background"
                     android:singleLine="true"
                     android:tag="2"
-                    android:text="Wall"
+                    android:text="W"
                     android:textColor="#ffffff"
                     android:textSize="14dp"
                     android:visibility="visible" />
 
                 <Button
                     android:id="@+id/btnFloor"
-                    android:layout_width="100dp"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/button_background"
                     android:singleLine="true"
                     android:tag="3"
-                    android:text="Floor"
+                    android:text="F"
                     android:textColor="#ffffff"
                     android:textSize="14dp"
                     android:visibility="visible" />
@@ -3251,8 +3251,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
-
-                            <!--  <RadioButton
+<!--
+                          <RadioButton
                                 android:id="@+id/rbDamageMark"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -3301,7 +3301,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <!--   <RadioButton
+                          <!--   <RadioButton
                                 android:id="@+id/rbAreaMark"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -3350,7 +3350,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <!--   <RadioButton
+                         <!--   <RadioButton
                                 android:id="@+id/rbAreaSubMark"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -3399,7 +3399,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <!--   <RadioButton
+                         <!--  <RadioButton
                                 android:id="@+id/rbCeiling"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -3447,7 +3447,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <!--    <RadioButton
+                       <!--    <RadioButton
                                 android:id="@+id/rbMaterialMark"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -3496,7 +3496,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <!--  <RadioButton
+                           <!-- <RadioButton
                                 android:id="@+id/rbOverview"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"

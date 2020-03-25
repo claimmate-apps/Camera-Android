@@ -366,10 +366,11 @@ public class AddClaimNameActivity extends Activity implements DragSortListView.D
                     if (TextUtils.isEmpty(edtClaimName.getText())) {
                         edtClaimName.setError("Please Enter Claim Name");
                         edtClaimName.requestFocus();
-                    } else if (TextUtils.isEmpty(edtShortName.getText())) {
+                    } /*else if (TextUtils.isEmpty(edtShortName.getText())) {
                         edtShortName.setError("Please Enter Short Name");
                         edtShortName.requestFocus();
-                    } else {
+                    }*/
+                    else {
                         Utility.showProgress(mContext);
                         ApiClient.getClient().create(APIInterface.class).addClaim(pref.getString("user_id", "0"), edtClaimName.getText().toString()).enqueue(new Callback<String>() {
                             @Override

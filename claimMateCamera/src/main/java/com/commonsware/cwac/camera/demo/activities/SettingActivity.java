@@ -120,7 +120,7 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
 //            lastimageeditor.putString("appfoldername", txtfoldername.getText().toString().trim());
 //            lastimageeditor.commit();
 //            appfoldername = txtfoldername.getText().toString().trim();
-//            mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
+//            mydir = new File(Environment.getExternalStorageDirectory(), appfoldername);
 //            rlsetting.setVisibility(View.GONE);
 //            btnabc.setText("None");
         } else if (view.getId() == btnCancel.getId()) {

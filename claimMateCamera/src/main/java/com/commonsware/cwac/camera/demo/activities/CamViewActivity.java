@@ -380,7 +380,11 @@ public class CamViewActivity extends Activity implements SurfaceHolder.Callback,
         photoindex = lastpathpf.getInt("photoindex", 1);
         riskindex = lastpathpf.getInt("riskindex", 1);
 
-        mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
+        mydir = new File(Environment.getExternalStorageDirectory(), appfoldername);
+        if(!mydir.exists())
+        {
+            mydir.mkdir();
+        }
 
         rlsetting = (RelativeLayout)findViewById(R.id.rlsetting);
 
@@ -1972,7 +1976,7 @@ public class CamViewActivity extends Activity implements SurfaceHolder.Callback,
             lastimageeditor.putString("appfoldername", "ClaimMate");
             lastimageeditor.commit();
             appfoldername = "ClaimMate";
-            mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
+            mydir = new File(Environment.getExternalStorageDirectory(), appfoldername);
             btnabc.setText("None");
         }
         Cur.close();
@@ -1988,7 +1992,7 @@ public class CamViewActivity extends Activity implements SurfaceHolder.Callback,
                 lastimageeditor.putString("appfoldername", arg0.getTitle().toString());
                 lastimageeditor.commit();
                 appfoldername = arg0.getTitle().toString();
-                mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
+                mydir = new File(Environment.getExternalStorageDirectory(), appfoldername);
                 btnabc.setText("None");
 
                 return false;
@@ -2845,7 +2849,7 @@ public class CamViewActivity extends Activity implements SurfaceHolder.Callback,
                 lastimageeditor.putString("appfoldername", txtfoldername.getText().toString().trim());
                 lastimageeditor.commit();
                 appfoldername = txtfoldername.getText().toString().trim();
-                mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
+                mydir = new File(Environment.getExternalStorageDirectory(), appfoldername);
                 rlsetting.setVisibility(View.GONE);
                 btnabc.setText("None");
             } else if (vid == btnroofadd.getId()) {

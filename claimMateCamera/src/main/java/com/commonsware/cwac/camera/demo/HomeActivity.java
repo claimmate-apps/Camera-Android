@@ -27,8 +27,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import androidx.*;
-import android.media.MediaMetadataRetriever;
+
 import android.media.ExifInterface;
 import android.media.MediaScannerConnection;
 import android.net.ConnectivityManager;
@@ -107,11 +106,13 @@ import com.commonsware.cwac.camera.demo.activities.LiveStreamingActivity;
 import com.commonsware.cwac.camera.demo.activities.LoginActivity;
 import com.commonsware.cwac.camera.demo.activities.ReportActivity;
 import com.commonsware.cwac.camera.demo.activities.SwipeUpActivity;
+import com.commonsware.cwac.camera.demo.activities.addclaimname;
 import com.commonsware.cwac.camera.demo.adpt.SlopListAdapter;
 import com.commonsware.cwac.camera.demo.db.ClaimSqlLiteDbHelper;
 import com.commonsware.cwac.camera.demo.model.ClaimModel;
 import com.commonsware.cwac.camera.demo.model.QueModel;
 import com.commonsware.cwac.camera.demo.model.SlopCount;
+import com.commonsware.cwac.camera.demo.other.Constants;
 import com.commonsware.cwac.camera.demo.other.FocusMarkerLayout;
 import com.commonsware.cwac.camera.demo.other.Helper;
 import com.commonsware.cwac.camera.demo.other.MultipartUtility;
@@ -165,7 +166,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     final Context context = this;
     Bitmap b1;
     int i = 0;
-    File savefile1, savefile, mydir, subdir, reidir;
+    File appdir,savefile1, savefile, mydir, subdir, reidir,maindir;
 
     String strrei = "R";
     Button btnlastphoto;
@@ -452,6 +453,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     String repairno = "1";
     String replaceno = "1";
 
+    LinearLayout ll_default_button_submenu;
+    RelativeLayout rl_defaultmenu;
 
     int repairvalue = 5;
 
@@ -545,6 +548,12 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         refreshCamera();
 
         setToken();
+
+
+        if(!Constants.addclaimname.trim().equalsIgnoreCase(""))
+        {
+            AddClaimName(Constants.addclaimname.trim());
+        }
     }
 
     @Override
@@ -1020,8 +1029,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         appfoldername = lastpathpf.getString("appfoldername", "ClaimMate");
 
 
-
-
         claimDbHelper = new ClaimSqlLiteDbHelper(this);
 
 
@@ -1052,7 +1059,20 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         leftslopeimgindex = lastpathpf.getInt("leftslopeimgindex", 1);
 
 
-        mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
+        appdir = new File(Environment.getExternalStorageDirectory(), getResources().getString(R.string.app_name));
+        if(!appdir.exists())
+        {
+            appdir.mkdir();
+        }
+
+        mydir = new File(appdir, appfoldername);
+
+        if(!mydir.exists())
+        {
+            mydir.mkdir();
+        }
+
+//        mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
 
         rlsetting = findViewById(R.id.rlsetting);
 
@@ -1065,6 +1085,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         rlBottomView2 = findViewById(R.id.rlBottomView2);
         btnsave = findViewById(R.id.btnsave);
         btnBcancel = findViewById(R.id.btnBcancel);
+
+
+        ll_default_button_submenu = findViewById(R.id.ll_default_button_submenu);
+        rl_defaultmenu = findViewById(R.id.rl_defaultmenu);
+
+
+
 
 
         btnroofadd = findViewById(R.id.btnroofadd);
@@ -1710,6 +1737,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         btne.setOnClickListener(this);
 
 
+        rl_defaultmenu.setOnClickListener(this);
+
+
+
         setDamageSelect();
 
         focusMarkerLayout = new FocusMarkerLayout(HomeActivity.this);
@@ -2322,6 +2353,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             @Override
             public boolean onMenuItemClick(MenuItem arg0) {
 
+                btnmatrialsubmenu.setText("0");
+
 
                 if (arg0.getTitle().toString().equals("Custom")) {
                     subcatalert();
@@ -2389,7 +2422,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     }
 
     private void addRoofDataApi() {
-        String userId = PrefManager.getUserId(), claimId = PrefManager.getClaimId();
+        String userId = PrefManager.getUserId();
+        String claimId = PrefManager.getClaimId();
 
         Callback<String> callback = new Callback<String>() {
             @Override
@@ -2453,7 +2487,19 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     }
 
     private void addRiskMacroDataApi() {
-        String userId = PrefManager.getUserId(), claimId = PrefManager.getClaimId(), story = txtStory.getText().toString(), dwl_first, dwl_first_custom, dwl_second, dwl_second_custom, dwl_third, dwl_third_custom, dwl_fourth, dwl_fourth_custom = "", dwl_fifth, dwl_fifth_custom;
+        String userId = PrefManager.getUserId();
+        String claimId = PrefManager.getClaimId();
+        String story = txtStory.getText().toString();
+        String dwl_first = "";
+        String dwl_first_custom = "";
+        String dwl_second = "";
+        String dwl_second_custom= "";
+        String dwl_third="";
+        String dwl_third_custom="";
+        String dwl_fourth="";
+        String  dwl_fourth_custom = "";
+        String dwl_fifth="";
+        String dwl_fifth_custom="";
 
         if (btnTypeOfConstruction.getTag().toString().equalsIgnoreCase("Insert custom data")) {
             dwl_first = btnTypeOfConstruction.getTag().toString();
@@ -2735,30 +2781,47 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 }
 
 
+                mydir = new File(appdir, appfoldername);
+
+                if(!mydir.exists())
+                {
+                    mydir.mkdir();
+                }
+
+
+
                 String mydirpath = mydir.getAbsolutePath();
 
                 Log.e("GetPath", "==>" + mydirpath);
                 Log.e("GetPathdate", "==>" + FolderTimeStamp);
 
-                if (!mydirpath.contains(FolderTimeStamp.toString())) {
-                    String[] arr = mydirpath.split("/");
+                File fileTimeStamp = new File(mydir,FolderTimeStamp);
 
-                    String fname = arr[arr.length - 1];
-                    String Save_file_name = fname + " " + FolderTimeStamp;
-
-                    mydirpath = mydirpath.replace(fname, Save_file_name);
-
-                    mydir = new File(mydirpath);
+                if(!fileTimeStamp.exists())
+                {
+                    fileTimeStamp.mkdir();
                 }
 
-                if (!mydir.exists())
+
+                /*if (!mydirpath.contains(FolderTimeStamp.toString()))
+                {
+
+                    String[] arr = mydirpath.split("/");
+                    String fname = arr[arr.length - 1];
+                    String Save_file_name = fname + " " + FolderTimeStamp;
+                    mydirpath = mydirpath.replace(fname, Save_file_name);
+                    mydir = new File(mydirpath);
+                }*/
+
+
+           /*     if (!mydir.exists())
                     mydir.mkdirs();
                 else
                     Log.d("error", "dir. already exists");
-
-                if (isBottomShow) {
-                    mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
-                    subdir = new File(mydir, "Screenshots");
+*/
+                if (isBottomShow)
+                {
+                    subdir = new File(fileTimeStamp, "Screenshots");
 
                     if (!subdir.exists())
                         subdir.mkdirs();
@@ -2767,9 +2830,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
                     savefile1 = subdir;
                 } else if (btnabc.getText().toString().equals("None")) {
-                    savefile1 = mydir;
+                    savefile1 = fileTimeStamp;
                 } else {
-                    subdir = new File(mydir, btncat.getText().toString() + " " + btnabc.getText().toString());
+                    subdir = new File(fileTimeStamp, btncat.getText().toString() + " " + btnabc.getText().toString());
 
                     if (!subdir.exists())
                         subdir.mkdirs();
@@ -3039,6 +3102,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
 
                         if(!btntype2.getTag().equals("1")|| btnrei.getText().toString().equalsIgnoreCase("i"))
+                        {if(btnrei.getText().toString().equalsIgnoreCase("i"))
                         {
                             if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text") )
                             {
@@ -3063,6 +3127,34 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                                 }
 
                             }
+
+                        }
+                        else
+                        {
+                            if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text") )
+                            {
+                                strmaterial = matrialcostmtext + "   ";
+                            }
+                            else
+                            {
+                                if(btnmaterial.getText().toString().equals("Material"))
+                                {
+                                    strmaterial = "";
+                                }else {
+
+                                    strmaterial = ""+btnmaterial.getText().toString().trim() + "   ";
+                                }
+
+                            }
+                        }
+
+                            Log.e("strmaterial_if",""+strmaterial);
+
+                        }
+                        else
+                        {
+                            Log.e("strmaterial_else",""+strmaterial);
+
                         }
 
                         strmaterial = strmaterial+" ";
@@ -3070,7 +3162,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         if (btnrei.getText().toString().endsWith("I")) {
                             strname = strreitype + ((areaname.equalsIgnoreCase(" Ceiling") || areaname.equalsIgnoreCase(" wall")) ? " " : "") + areaname + strdamagetype + strnodamage + strmaterial +/*(btnocb.getTag().toString().equals("1")?"  ":" ") +*/" " + strboctype.trim() + " ";
                         } else {
-                            strname = strreitype + (btnrei.getText().toString().trim().equals("R") ? "Slope" : "Elevation") + strmaterial + strdamagetype + strnodamage + " " + (btnocb.getTag().equals("1") ? "Overview" : (btnocb.getTag().equals("2") ? "Close up" : "")) + " ";
+                            strname = strreitype + (btnrei.getText().toString().trim().equals("R") ? "Roof" : "Elevation") + strmaterial + strdamagetype + strnodamage + " " + (btnocb.getTag().equals("1") ? "Overview" : (btnocb.getTag().equals("2") ? "Close up" : "")) + " ";
                         }
 
                         Log.e("getstrname", "==>" + strname);
@@ -3850,7 +3942,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 String roomtype= "";
                 String no = "";
 
-                areaname = btnCeiling.getText().toString();
+                areaname = "Ceiling";//btnCeiling.getText().toString();
                 no =  btnmatrialsubmenu.getText().toString();
 
                 if(!btniteriortype.getText().toString().equalsIgnoreCase("Room"))
@@ -3892,7 +3984,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 String roomtype= "";
                 String no = "";
 
-                areaname = btnWall.getText().toString();
+                areaname = "Wall";//btnWall.getText().toString();
                 no =  btnmatrialsubmenu.getText().toString();
 
                 if(!btniteriortype.getText().toString().equalsIgnoreCase("Room"))
@@ -3934,7 +4026,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 String roomtype= "";
                 String no = "";
 
-                areaname = btnWall.getText().toString();
+                areaname = "Floor";//btnWall.getText().toString();
                 no =  btnmatrialsubmenu.getText().toString();
 
                 if(!btniteriortype.getText().toString().equalsIgnoreCase("Room"))
@@ -4662,32 +4754,61 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 }
             }*/
 
-          if(!btntype2.getTag().equals("1")|| btnrei.getText().toString().equalsIgnoreCase("i"))
-          {
-              if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text") )
-              {
-                  strmaterial = matrialcostmtext + "   ";
-              }
-              else
-              {
-                  if(btnmaterial.getText().toString().equals("Material"))
-                  {
-                      strmaterial = "";
-                  }else {
+            if(!btntype2.getTag().equals("1")|| btnrei.getText().toString().equalsIgnoreCase("i"))
+            {if(btnrei.getText().toString().equalsIgnoreCase("i"))
+            {
+                if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text") )
+                {
+                    strmaterial = matrialcostmtext + "   ";
+                }
+                else
+                {
+                    if(btnmaterial.getText().toString().equals("Material"))
+                    {
+                        strmaterial = "";
+                    }else {
 
 
-                      if(btnSubAreaTogal.getVisibility() == View.VISIBLE && btnSubAreaTogal.getTag().toString().equalsIgnoreCase("2"))
-                      {
-                          strmaterial = ""+btnmaterial.getText().toString().trim() + "   ";
-                      }
-                      else
-                      {
-                          strmaterial = "";
-                      }
-                  }
+                        if(btnSubAreaTogal.getVisibility() == View.VISIBLE && btnSubAreaTogal.getTag().toString().equalsIgnoreCase("2"))
+                        {
+                            strmaterial = ""+btnmaterial.getText().toString().trim() + "   ";
+                        }
+                        else
+                        {
+                            strmaterial = "";
+                        }
+                    }
 
-              }
-          }
+                }
+
+            }
+            else
+            {
+                if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text") )
+                {
+                    strmaterial = matrialcostmtext + "   ";
+                }
+                else
+                {
+                    if(btnmaterial.getText().toString().equals("Material"))
+                    {
+                        strmaterial = "";
+                    }else {
+
+                        strmaterial = ""+btnmaterial.getText().toString().trim() + "   ";
+                    }
+
+                }
+            }
+
+                Log.e("strmaterial_if",""+strmaterial);
+
+            }
+            else
+            {
+                Log.e("strmaterial_else",""+strmaterial);
+
+            }
 
 
             if (strboctype.equals("Blank"))
@@ -5288,6 +5409,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             }*/
 
             if(!btntype2.getTag().equals("1")|| btnrei.getText().toString().equalsIgnoreCase("i"))
+            {if(btnrei.getText().toString().equalsIgnoreCase("i"))
             {
                 if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text") )
                 {
@@ -5299,10 +5421,46 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     {
                         strmaterial = "";
                     }else {
-                        strmaterial = btnmaterial.getText().toString().trim() + "   ";
+
+
+                        if(btnSubAreaTogal.getVisibility() == View.VISIBLE && btnSubAreaTogal.getTag().toString().equalsIgnoreCase("2"))
+                        {
+                            strmaterial = ""+btnmaterial.getText().toString().trim() + "   ";
+                        }
+                        else
+                        {
+                            strmaterial = "";
+                        }
                     }
 
                 }
+
+            }
+            else
+            {
+                if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text") )
+                {
+                    strmaterial = matrialcostmtext + "   ";
+                }
+                else
+                {
+                    if(btnmaterial.getText().toString().equals("Material"))
+                    {
+                        strmaterial = "";
+                    }else {
+
+                        strmaterial = ""+btnmaterial.getText().toString().trim() + "   ";
+                    }
+
+                }
+            }
+
+                Log.e("strmaterial_if",""+strmaterial);
+
+            }
+            else
+            {
+                Log.e("strmaterial_else",""+strmaterial);
 
             }
 
@@ -5954,6 +6112,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
             @Override
             public boolean onMenuItemClick(MenuItem arg0) {
+
+
+                btnmatrialsubmenu.setText("0");
 
                 if(btnnodamages.getTag().equals("2"))
                 {
@@ -9487,7 +9648,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         lastimageeditor.putString("appfoldername", arrayListClaim.get(i).getName());
         lastimageeditor.commit();
         appfoldername = arrayListClaim.get(i).getName();
-        mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
+        mydir = new File(appdir, appfoldername);
         btnabc.setText("None");
         txtalphaname2.setVisibility(View.INVISIBLE);
         getalphaname();
@@ -9575,7 +9736,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             lastimageeditor.putString("appfoldername", claimModel.getName());
                             lastimageeditor.commit();
                             appfoldername = claimModel.getName();
-                            mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
+                            mydir = new File(appdir, appfoldername);
                             btnabc.setText("None");
                             txtalphaname2.setVisibility(View.INVISIBLE);
 
@@ -9596,7 +9757,12 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     }
 
     private void addClaim() {
-        final Dialog dialog = new Dialog(mContext);
+
+        Constants.addclaimname = "";
+        Intent addclaimname_act = new Intent(getApplicationContext(), addclaimname.class);
+        startActivity(addclaimname_act);
+
+        /*final Dialog dialog = new Dialog(mContext);
         if (arrayListClaim == null || arrayListClaim.size() == 0)
             dialog.setCancelable(false);
         dialog.setContentView(R.layout.popup_add_claim);
@@ -9607,54 +9773,52 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         dialog.findViewById(R.id.btnSave).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dialog.dismiss();
 
-                if (Utility.haveInternet(mContext, true)) {
-                    if (TextUtils.isEmpty(edtClaimName.getText())) {
-                        edtClaimName.setError("Please Enter Claim Name");
-                        edtClaimName.requestFocus();
-                    }
-//                    else if (TextUtils.isEmpty(edtShortName.getText())) {
-//                        edtShortName.setError("Please Enter Short Name");
-//                        edtShortName.requestFocus();
-//                    }
-                    else {
-                        final String claimname = edtClaimName.getText().toString();
-                        Utility.showProgress(mContext);
-                        ApiClient.getClient().create(APIInterface.class).addClaim(PrefManager.getUserId(), edtClaimName.getText().toString()).enqueue(new Callback<String>() {
-                            @Override
-                            public void onResponse(Call<String> call, Response<String> response) {
-                                Utility.dismissProgress();
-                                Log.i(TAG, "addClaimRes = " + response.body());
-
-                                if (response.body() == null) {
-                                    Utility.errorDialog(mContext, getString(R.string.error_data_not_found));
-                                    return;
-                                }
-
-                                try {
-                                    JSONObject jsonObject = new JSONObject(response.body());
-                                    Toast.makeText(mContext, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
-                                    if (jsonObject.getString("success").equals("success")) {
-                                        dialog.dismiss();
-                                        appfoldername =  claimname;
-                                        getClaimList();
-                                    }
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-
-                            @Override
-                            public void onFailure(Call<String> call, Throwable t) {
-                                Utility.dismissProgress();
-                                Log.i(TAG, "addClaimError = " + t.toString());
-                            }
-                        });
-                    }
-                }
+                AddClaimName(edtClaimName.getText().toString());
             }
         });
-        dialog.show();
+        dialog.show();*/
+    }
+
+    private void AddClaimName(final String claimname) {
+
+
+        if (Utility.haveInternet(mContext, true))
+        {
+//                final String claimname = edtClaimName.getText().toString();
+                Utility.showProgress(mContext);
+                ApiClient.getClient().create(APIInterface.class).addClaim(PrefManager.getUserId(), claimname).enqueue(new Callback<String>() {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+                        Utility.dismissProgress();
+                        Log.i(TAG, "addClaimRes = " + response.body());
+
+                        if (response.body() == null) {
+                            Utility.errorDialog(mContext, getString(R.string.error_data_not_found));
+                            return;
+                        }
+
+                        try {
+                            JSONObject jsonObject = new JSONObject(response.body());
+                            Toast.makeText(mContext, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                            if (jsonObject.getString("success").equals("success")) {
+                                appfoldername =  claimname;
+                                getClaimList();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+                        Utility.dismissProgress();
+                        Log.i(TAG, "addClaimError = " + t.toString());
+                    }
+                });
+
+        }
     }
 
     private void addClaimDescription() {
@@ -10240,6 +10404,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             @Override
             public boolean onMenuItemClick(MenuItem arg0) {
 
+                btnmatrialsubmenu.setText("0");
                 damagetypeoptionselect(arg0,false);
 
 //                GetPhotoName();
@@ -11074,6 +11239,19 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             }
 
         }
+        else if (vid == rl_defaultmenu.getId())
+        {
+//            ll_default_button_submenu
+
+                if(ll_default_button_submenu.getVisibility() == View.VISIBLE)
+                {
+                    ll_default_button_submenu.setVisibility(View.GONE);
+                }
+                else
+                {
+                    ll_default_button_submenu.setVisibility(View.VISIBLE);
+                }
+        }
         else if (vid == btne.getId()) {
 
             clickonView("btne");
@@ -11212,10 +11390,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         } else if (vid == btnCeiling.getId() || vid == btnWall.getId() || vid == btnFloor.getId()) {
 
             if (vid == btnCeiling.getId()) {
+
+
+
                 clickonView("btnCeiling");
 
-                btnarea.setText(btnCeiling.getText().toString());
-                btnarea.setTag(btnCeiling.getText().toString());
+                btnarea.setText("Ceiling");
+                btnarea.setTag("Ceiling");
                 btnWall.setBackgroundResource(R.drawable.button_background);
                 btnFloor.setBackgroundResource(R.drawable.button_background);
                 //  btnCeiling.setBackgroundResource(R.drawable.red_button_background);
@@ -11227,6 +11408,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
                     btnCeiling.setBackgroundResource(R.drawable.red_button_background);
                     btnCeiling.setTag("2");
+                    btnmatrialsubmenu.setText("0");
 
 
 
@@ -11245,8 +11427,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             {
                 clickonView("btnWall");
 
-                btnarea.setText(btnWall.getText().toString());
-                btnarea.setTag(btnWall.getText().toString());
+                btnarea.setText("Wall");
+                btnarea.setTag("Wall");
                 // btnWall.setBackgroundResource(R.drawable.red_button_background);
                 btnCeiling.setBackgroundResource(R.drawable.button_background);
                 btnFloor.setBackgroundResource(R.drawable.button_background);
@@ -11257,6 +11439,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 if (btnWall.getTag().equals("1")) {
                     btnWall.setBackgroundResource(R.drawable.red_button_background);
                     btnWall.setTag("2");
+                    btnmatrialsubmenu.setText("0");
 
 
 
@@ -11277,8 +11460,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 clickonView("btnFloor");
 
 
-                btnarea.setText(btnFloor.getText().toString());
-                btnarea.setTag(btnFloor.getText().toString());
+                btnarea.setText("Floor");
+                btnarea.setTag("Floor");
                 //    btnFloor.setBackgroundResource(R.drawable.red_button_background);
                 btnCeiling.setBackgroundResource(R.drawable.button_background);
                 btnWall.setBackgroundResource(R.drawable.button_background);
@@ -11289,6 +11472,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 if (btnFloor.getTag().equals("1")) {
                     btnFloor.setBackgroundResource(R.drawable.red_button_background);
                     btnFloor.setTag("2");
+                    btnmatrialsubmenu.setText("0");
 
 
 
@@ -12817,6 +13001,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 btntype2.setBackgroundResource(R.drawable.button_background);
                 btntype2.setTag("1");
             }
+
+            getalphaname();
         } else if (vid == btnnodamages.getId()) {
 
             clickonView("btnnodamages");
@@ -13285,17 +13471,16 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 clickonView("btnok");
 
 
-                if (txtfoldername.getText().toString().trim().equals("")) {
-                    Toast.makeText(getApplicationContext(), "Please enter name", Toast.LENGTH_LONG).show();
-                    return;
+                if (!txtfoldername.getText().toString().trim().equals("")) {
+                    btncat.setText(txtfoldername.getText().toString().trim());
+                    lastimageeditor.putString("appfoldername", txtfoldername.getText().toString().trim());
+                    lastimageeditor.commit();
+                    appfoldername = txtfoldername.getText().toString().trim();
+                    mydir = new File(appdir, appfoldername);
+
                 }
 
-                btncat.setText(txtfoldername.getText().toString().trim());
-                lastimageeditor.putString("appfoldername", txtfoldername.getText().toString().trim());
-                lastimageeditor.commit();
-                appfoldername = txtfoldername.getText().toString().trim();
-                mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
-                rlsetting.setVisibility(View.GONE);
+                              rlsetting.setVisibility(View.GONE);
                 btnabc.setText("None");
             } else if (vid == btnroofadd.getId()) {
                 clickonView("btnroofadd");
@@ -13846,17 +14031,22 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             selectocb();
             strboc = "1";
             strboctype = "Overview";
+            selectocb();
         } else if (rbCloseUp.isChecked()) {
             btnocb.setTag("2");
             btnocb.setText("C");
             strboc = "2";
             strboctype = "Close up";
+            selectocb();
+
         } else if (rbBlank.isChecked()) {
             btnocb.setTag("3");
             btnocb.setText("B");
             strboc = "3";
             strboctype = "Blank";
+            selectocb();
         }
+
         btniteriortype.setTag("0");
         btniteriortype.setText("Room");
 

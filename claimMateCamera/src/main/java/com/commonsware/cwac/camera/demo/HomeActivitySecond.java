@@ -974,8 +974,11 @@ public class HomeActivitySecond extends Activity implements SimpleGestureFilter.
         leftslopeimgindex = lastpathpf.getInt("leftslopeimgindex", 1);
 
 
-        mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
-
+        mydir = new File(Environment.getExternalStorageDirectory(), appfoldername);
+        if(!mydir.exists())
+        {
+            mydir.mkdir();
+        }
         rlsetting = findViewById(R.id.rlsetting);
 
         llline = findViewById(R.id.llline);
@@ -2368,7 +2371,12 @@ public class HomeActivitySecond extends Activity implements SimpleGestureFilter.
                     Log.d("error", "dir. already exists");
 
                 if (isBottomShow) {
-                    mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
+                    mydir = new File(Environment.getExternalStorageDirectory(), appfoldername);
+                    if(!mydir.exists())
+                    {
+                        mydir.mkdir();
+                    }
+
                     subdir = new File(mydir, "Screenshots");
 
                     if (!subdir.exists())
@@ -7552,7 +7560,7 @@ public class HomeActivitySecond extends Activity implements SimpleGestureFilter.
             lastimageeditor.putString("appfoldername", "ClaimMate");
             lastimageeditor.commit();
             appfoldername = "ClaimMate";
-            mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
+            mydir = new File(Environment.getExternalStorageDirectory(), appfoldername);
             btnabc.setText("None");
             txtalphaname2.setVisibility(View.INVISIBLE);
         }
@@ -7568,7 +7576,7 @@ public class HomeActivitySecond extends Activity implements SimpleGestureFilter.
                 lastimageeditor.putString("appfoldername", arg0.getTitle().toString());
                 lastimageeditor.commit();
                 appfoldername = arg0.getTitle().toString();
-                mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
+                mydir = new File(Environment.getExternalStorageDirectory(), appfoldername);
                 btnabc.setText("None");
 
 //                PrefManager.setClaimId(arg0.getTitle().toString());
@@ -7659,7 +7667,11 @@ public class HomeActivitySecond extends Activity implements SimpleGestureFilter.
                             lastimageeditor.putString("appfoldername", claimModel.getName());
                             lastimageeditor.commit();
                             appfoldername = claimModel.getName();
-                            mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
+                            mydir = new File(Environment.getExternalStorageDirectory(), appfoldername);
+                            if(!mydir.exists())
+                            {
+                                mydir.mkdir();
+                            }
                             btnabc.setText("None");
                             txtalphaname2.setVisibility(View.INVISIBLE);
 
@@ -11158,7 +11170,11 @@ public class HomeActivitySecond extends Activity implements SimpleGestureFilter.
                 lastimageeditor.putString("appfoldername", txtfoldername.getText().toString().trim());
                 lastimageeditor.commit();
                 appfoldername = txtfoldername.getText().toString().trim();
-                mydir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), appfoldername);
+                mydir = new File(Environment.getExternalStorageDirectory(), appfoldername);
+                if(!mydir.exists())
+                {
+                    mydir.mkdir();
+                }
                 rlsetting.setVisibility(View.GONE);
                 btnabc.setText("None");
             } else if (vid == btnroofadd.getId()) {
