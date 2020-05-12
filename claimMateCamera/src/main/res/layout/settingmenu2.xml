@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -528,7 +528,7 @@
                 android:textSize="15dp"
                 android:visibility="visible" />
 
-            <android.support.v7.widget.AppCompatEditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/edtrepair"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -546,7 +546,7 @@
                 android:textSize="15dp"
                 android:visibility="visible" />
 
-            <android.support.v7.widget.AppCompatEditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/edtreplace"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -623,7 +623,7 @@
                     android:visibility="visible" />
             </RelativeLayout>
         </RelativeLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
 

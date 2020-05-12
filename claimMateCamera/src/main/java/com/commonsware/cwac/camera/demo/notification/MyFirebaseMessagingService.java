@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.commonsware.cwac.camera.demo.HomeActivity;
+import com.commonsware.cwac.camera.demo.other.Helper;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -14,6 +16,14 @@ import org.json.JSONObject;
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "MyFirebaseMsgService";
+
+    @Override
+    public void onNewToken(String token) {
+
+        Log.i(TAG, "token = " + token);
+        new Helper(this);
+        Helper.setToken(FirebaseInstanceId.getInstance().getToken());
+    }
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {

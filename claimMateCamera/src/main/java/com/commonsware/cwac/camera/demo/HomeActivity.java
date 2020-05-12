@@ -36,13 +36,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.speech.RecognizerIntent;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.AppCompatEditText;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.Html;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -105,7 +105,6 @@ import com.commonsware.cwac.camera.demo.activities.AddValueActivity;
 import com.commonsware.cwac.camera.demo.activities.LiveStreamingActivity;
 import com.commonsware.cwac.camera.demo.activities.LoginActivity;
 import com.commonsware.cwac.camera.demo.activities.ReportActivity;
-import com.commonsware.cwac.camera.demo.activities.SwipeUpActivity;
 import com.commonsware.cwac.camera.demo.activities.addclaimname;
 import com.commonsware.cwac.camera.demo.adpt.SlopListAdapter;
 import com.commonsware.cwac.camera.demo.db.ClaimSqlLiteDbHelper;
@@ -403,7 +402,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
     Button btnlength, btnwidth, btnheight;
     Button btnareatogal;
-    boolean isBottomShow = false, isFlashOn = false;
+    boolean isBottomShow = false, isFlashOn = false, isCameraOn = false;
     static Camera.Parameters parameters;
 
     public static RadioButton rbDamageMark, rbDamageUnmark, rbDamageLeave;
@@ -525,8 +524,11 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         int numCams = Camera.getNumberOfCameras();
         if (numCams > 0) {
             try {
-                camera = Camera.open(0);
-                camera.startPreview();
+                if (!isCameraOn) {
+                    camera = Camera.open(0);
+                    camera.startPreview();
+                    isCameraOn = true;
+                }
                 parameters = camera.getParameters();
             } catch (RuntimeException ex) {
                 ex.printStackTrace();
@@ -955,6 +957,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         myPath = claimDbHelper.claimdb_PATH + claimDbHelper.claimdb_NAME;
         DB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
     }
+
+
+
 
     private void closedatabase() {
         DB.close();
@@ -1736,10 +1741,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         btnr.setOnClickListener(this);
         btne.setOnClickListener(this);
 
-
         rl_defaultmenu.setOnClickListener(this);
-
-
 
         setDamageSelect();
 
@@ -1769,33 +1771,23 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             serdefaultvalue();
         }
 
-
-
         btn_replace_front.setOnClickListener(this);
         btn_replace_right.setOnClickListener(this);
         btn_replace_rear.setOnClickListener(this);
         btn_replace_left.setOnClickListener(this);
 
-
         btn_repair_front.setOnClickListener(this);
         btn_repair_right.setOnClickListener(this);
         btn_repair_rear.setOnClickListener(this);
         btn_repair_left.setOnClickListener(this);
-
-
-
-
-
     }
 
     private void Select_Replace_Repair(AppCompatButton btn_Select_Replace_Repair, String slopno)
     {
-
         if(slopno.equalsIgnoreCase("1"))
         {
             btn_replace_front.setBackgroundColor(Color.parseColor("#645B5B"));
             btn_repair_front.setBackgroundColor(Color.parseColor("#645B5B"));
-
         }
         else if(slopno.equalsIgnoreCase("2"))
         {
@@ -1812,14 +1804,11 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             btn_replace_left.setBackgroundColor(Color.parseColor("#645B5B"));
             btn_repair_left.setBackgroundColor(Color.parseColor("#645B5B"));
         }
-
-
         btn_Select_Replace_Repair.setBackgroundColor(Color.parseColor("#FF0000"));
     }
 
     private void SetSlopNumberDate(String selectno)
     {
-
         data = new ArrayList<>();
 
         SlopCount slopCountdata = new SlopCount();
@@ -1877,8 +1866,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         slopCountdata.setNo(10);
         data.add(slopCountdata);
 
-
-
         int select = Integer.parseInt(selectno);
         for (int i=0;i<data.size();i++)
         {
@@ -1892,12 +1879,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             @Override
             public void onItemClick(View v, int position)
             {
-
-
                 if (selectslop_cur.equals("1")) {
                     no_frontslope = ""+data.get(position).getNo();
                     txt_frontslope.setText(no_frontslope);
-
                     if(data.get(position).getNo()<repairvalue)
                     {
                         btn_repair_front.performClick();
@@ -1905,24 +1889,18 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     else
                     {
                         btn_replace_front.performClick();
-
                     }
-
                 } else if (selectslop_cur.equals("2")) {
                     no_rightslope = ""+data.get(position).getNo();
                     txt_rightslope.setText(no_rightslope);
-
                     if(data.get(position).getNo()<repairvalue)
                     {
                         btn_repair_right.performClick();
-
                     }
                     else
                     {
                         btn_replace_right.performClick();
-
                     }
-
                 } else if (selectslop_cur.equals("3")) {
                     no_rearslope = ""+data.get(position).getNo();
                     txt_rearslope.setText(no_rearslope);
@@ -1930,44 +1908,32 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     if(data.get(position).getNo()<repairvalue)
                     {
                         btn_repair_rear.performClick();
-
                     }
                     else
                     {
                         btn_replace_rear.performClick();
-
                     }
-
                 } else if (selectslop_cur.equals("4")) {
                     no_leftslope = ""+data.get(position).getNo();
                     txt_leftslope.setText(no_leftslope);
-
                     if(data.get(position).getNo()<repairvalue)
                     {
                         btn_repair_left.performClick();
-
                     }
                     else
                     {
                         btn_replace_left.performClick();
-
                     }
-
                 }
             }
         });
-
         rv_slopno.setAdapter(slopListAdapter);
     }
 
     private void serdefaultvalue()
     {
-
-
         appfoldername = lastpathpf.getString("appfoldername", "ClaimMate");
         Log.e("calldefault","==>serdefaultvalue");
-
-
 //        imgtop.performClick();
         showdamagetypeoption(false);
         showmaterialoption(false);
@@ -2005,7 +1971,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     }
 
     private void calluncheckdata() {
-
         if (mchko.isChecked() && mchkc.isChecked()) {
 
         } else {
@@ -2071,19 +2036,14 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
     private void focusOnTouch(MotionEvent event) {
         if (camera != null) {
-
             Camera.Parameters parameters = camera.getParameters();
             if (parameters.getMaxNumMeteringAreas() > 0) {
-
                 focusMarkerLayout.focus(event.getX(), event.getY());
-
                 Rect rect = calculateFocusArea(event.getX(), event.getY());
-
                 parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
                 List<Camera.Area> meteringAreas = new ArrayList<>();
                 meteringAreas.add(new Camera.Area(rect, 800));
                 parameters.setFocusAreas(meteringAreas);
-
                 try {
                     camera.setParameters(parameters);
                     camera.autoFocus(mAutoFocusTakePictureCallback);
@@ -2098,7 +2058,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     private Rect calculateFocusArea(float x, float y) {
         int left = clamp(Float.valueOf((x / surfaceView.getWidth()) * 2000 - 1000).intValue(), FOCUS_AREA_SIZE);
         int top = clamp(Float.valueOf((y / surfaceView.getHeight()) * 2000 - 1000).intValue(), FOCUS_AREA_SIZE);
-
         return new Rect(left, top, left + FOCUS_AREA_SIZE, top + FOCUS_AREA_SIZE);
     }
 
@@ -2130,17 +2089,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     };
 
     private void showlengthoption() {
-
         popupMenu2 = new PopupMenu(this, findViewById(R.id.btnlength));
-
         for (int i = 0; i < 50; i++) {
             popupMenu2.getMenu().add(Menu.NONE, 0, Menu.NONE, "" + (i + 1));
         }
-
         popupMenu2.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem arg0) {
-
                 btnlength.setText(arg0.getTitle().toString());
                 return false;
             }
@@ -2149,17 +2104,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     }
 
     private void showwidthoption() {
-
         popupMenu2 = new PopupMenu(this, findViewById(R.id.btnwidth));
-
         for (int i = 0; i < 50; i++) {
             popupMenu2.getMenu().add(Menu.NONE, 0, Menu.NONE, "" + (i + 1));
         }
-
         popupMenu2.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem arg0) {
-
                 btnwidth.setText(arg0.getTitle().toString());
                 return false;
             }
@@ -2168,17 +2119,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     }
 
     private void showheightoption() {
-
         popupMenu2 = new PopupMenu(this, findViewById(R.id.btnheight));
-
         for (int i = 0; i < 50; i++) {
             popupMenu2.getMenu().add(Menu.NONE, 0, Menu.NONE, "" + (i + 1));
         }
-
         popupMenu2.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem arg0) {
-
                 btnheight.setText(arg0.getTitle().toString());
                 return false;
             }
@@ -2187,14 +2134,12 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     }
 
     private void setDamageSelect() {
-
         if (btndamagetype.getText().toString().equals("Damage")) {
             btndamagetype.setText("Damage");
             btntype.setVisibility(View.INVISIBLE);
         } else {
             btntype.setVisibility(View.VISIBLE);
         }
-
         if (rbDamageMark.isChecked()) {
             btntype.setBackgroundResource(R.drawable.red_button_background);
             btntype.setTag("2");
@@ -2202,7 +2147,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             btntype.setBackgroundResource(R.drawable.button_background);
             btntype.setTag("1");
         }
-
         btnnodamages.setTag("1");
         btnnodamages.setBackgroundResource(R.drawable.button_background);
 
@@ -2210,16 +2154,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         btnnc.setBackgroundResource(R.drawable.button_background);
         btno.setTag("1");
         btno.setBackgroundResource(R.drawable.red_button_background);
-
         if (btntype.getText().toString().equalsIgnoreCase("BLANK")) {
             btntype.setVisibility(View.INVISIBLE);
         }
-
         getalphaname();
     }
 
     private void checkAuth() {
-
         if (Utility.haveInternet(mContext, false)) {
             ApiClient.getClient().create(APIInterface.class).checkStatus(PrefManager.getUserId()).enqueue(new Callback<String>() {
                 @Override
@@ -2237,7 +2178,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         e.printStackTrace();
                     }
                 }
-
                 @Override
                 public void onFailure(Call<String> call, Throwable t) {
                     Log.i(TAG, "checkStatusError = " + t.toString());
@@ -2245,17 +2185,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             });
         }
         /*final String struid = PrefManager.getUserId();
-
         String loginurl = "http://adjuster.claimmate.com/api/LoginAuth/CheckUserStatus";
-
         RequestQueue mRequestQueue = Volley.newRequestQueue(getApplicationContext());
-
         StringRequest stringRequest = new StringRequest(Request.Method.POST, loginurl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject jobj = new JSONObject(response);
-
                     if (jobj.getString("success").equals("success")) {
                         if (jobj.getString("response").equals("1")) {
                             rlmainview.setVisibility(View.VISIBLE);
@@ -2284,12 +2220,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 return params;
             }
         };
-
         mRequestQueue.add(stringRequest);*/
     }
 
     private void showalert(String msg) {
-
         AlertDialog.Builder dialog = new AlertDialog.Builder(HomeActivity.this);
         dialog.setCancelable(false);
         dialog.setTitle("ClaimMate");
@@ -2297,7 +2231,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-
                 Intent i = new Intent(HomeActivity.this,
                         LoginActivity.class);
                 startActivity(i);
@@ -2308,8 +2241,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
         final AlertDialog alert = dialog.create();
         alert.show();
-
-
     }
 
     private void getAllMenu() {
@@ -2319,48 +2250,34 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     private void getsumcat() {
         value = 0;
         popupsubcat = new PopupMenu(this, findViewById(R.id.btnabc));
-
-
         opendatabase();
-
         SELECT_SQL = "SELECT * FROM tblsubcat";
         Cur = DB.rawQuery(SELECT_SQL, null);
         if (Cur != null && Cur.getCount() > 0) {
             Cur.moveToFirst();
             do {
-
                 String strname = Cur.getString(Cur.getColumnIndex("name"));
                 popupsubcat.getMenu().add(Menu.NONE, value, Menu.NONE, strname);
-
                 value++;
             }
             while (Cur.moveToNext());
         }
         Cur.close();
         DB.close();
-
         popupsubcat.getMenu().add(Menu.NONE, value, Menu.NONE, "Custom");
-
-
 //        popupsubcat.getMenu().add(Menu.NONE, 0, Menu.NONE, "None");
 //        popupsubcat.getMenu().add(Menu.NONE, 1, Menu.NONE, "Garage");
 //        popupsubcat.getMenu().add(Menu.NONE, 2, Menu.NONE, "Shed");
 //        popupsubcat.getMenu().add(Menu.NONE, 3, Menu.NONE, "Fence");
 //        popupsubcat.getMenu().add(Menu.NONE, 4, Menu.NONE, "Custom");
-
         popupsubcat.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-
             @Override
             public boolean onMenuItemClick(MenuItem arg0) {
-
                 btnmatrialsubmenu.setText("0");
-
-
                 if (arg0.getTitle().toString().equals("Custom")) {
                     subcatalert();
                 } else {
                     btnabc.setText(arg0.getTitle());
-
                     if (arg0.getTitle().toString().equals("Fence")) {
                         btndamagetype.setVisibility(View.VISIBLE);
                         btndamagetype.setText("Damage");
@@ -2369,7 +2286,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         btndamagetype.setVisibility(View.INVISIBLE);
                         showsubmenuview();
                     }
-
                     if (btnabc.getText().toString().equalsIgnoreCase("none")) {
                         txtalphaname2.setVisibility(View.INVISIBLE);
                     } else {
@@ -2384,7 +2300,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     }
 
     private void showsubmenuview() {
-
         btnrei.setVisibility(View.INVISIBLE);
         btnmaterial.setVisibility(View.VISIBLE);
         btndamagetype.setVisibility(View.VISIBLE);
@@ -2394,15 +2309,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         btniteriortype.setVisibility(View.VISIBLE);
         btntype.setVisibility(View.VISIBLE);
         btntype2.setVisibility(View.VISIBLE);
-
         setbackmenu();
-
         nextPhoto("Aditional Photo");
-
         rladdtionalback.setVisibility(View.GONE);
-
         btnimgmacro.setText("Macro");
-
         if (btnrei.getText().toString().equals("I")) {
             rliteriortype.setVisibility(View.VISIBLE);
             if (!btnarea.getText().equals("Area")) {
@@ -2415,7 +2325,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             rliteriortype.setVisibility(View.GONE);
             btnQty.setVisibility(View.VISIBLE);
         }
-
         getalphaname();
         btnimgmacrosub.setVisibility(View.GONE);
         btnimgmacro.setVisibility(View.VISIBLE);
@@ -2424,28 +2333,23 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     private void addRoofDataApi() {
         String userId = PrefManager.getUserId();
         String claimId = PrefManager.getClaimId();
-
         Callback<String> callback = new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 Log.i(TAG, "addRoof" + btnrisk.getText().toString() + "Res = " + response.body());
             }
-
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 Log.i(TAG, "addRoof" + btnrisk.getText().toString() + "Error = " + t.toString());
             }
         };
-
         if (btnrisk.getText().toString().trim().equals("Layers")) { // 1987
             String noLayer = btnLayersmenu1.getText().toString();
             String layerType = btnLayersmenu.getText().toString();
-
             if (!Utility.haveInternet(mContext, false)) {
                 claimDbHelper.addRoofLayer(userId, claimId, noLayer, layerType);
                 return;
             }
-
             ApiClient.getClient().create(APIInterface.class).addRoofLayer(userId, claimId, noLayer, layerType).enqueue(callback);
             System.out.println("layerType:-" + layerType);
             //System.out.println("pitchvalue id:-" + pitchvalue);
@@ -2461,7 +2365,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 claimDbHelper.addRoofPitch(userId, claimId, pitchvalue, slope);
                 return;
             }
-
             ApiClient.getClient().create(APIInterface.class).addRoofPitch(userId, claimId, pitchvaluestorevalue, slope).enqueue(callback);
 //            System.out.println("user id:-" + userId);
 //            System.out.println("claimId id:-" + claimId);
@@ -2472,12 +2375,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         } else if (btnrisk.getText().toString().trim().equals("Shingle")) { //2030
             String years = btnshinglemenu1.getText().toString();
             String tab = btnshinglemenu2.getText().toString();
-
             if (!Utility.haveInternet(mContext, false)) {
                 claimDbHelper.addRoofShingle(userId, claimId, years, tab);
                 return;
             }
-
             ApiClient.getClient().create(APIInterface.class).addRoofShingle(userId, claimId, years, tab).enqueue(callback);
             System.out.println("user id" + userId);
             System.out.println("claimId id" + claimId);
@@ -2508,8 +2409,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             dwl_first = btnTypeOfConstruction.getText().toString();
             dwl_first_custom = "";
         }
-
-
         if (btnRCI.getTag().toString().equalsIgnoreCase("Insert custom data")) {
             dwl_second = btnRCI.getTag().toString();
             dwl_second_custom = btnRCI.getText().toString();
@@ -2517,7 +2416,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             dwl_second = btnRCI.getText().toString();
             dwl_second_custom = "";
         }
-
         if (btnSingleFamily.getTag().toString().equalsIgnoreCase("Insert custom data") || btnRCI.getText().toString().equalsIgnoreCase("Residential") || btnRCI.getText().toString().equalsIgnoreCase("Commercial")) {
             dwl_third = "Insert custom data";
             dwl_third_custom = btnSingleFamily.getText().toString();
@@ -2525,7 +2423,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             dwl_third = btnSingleFamily.getText().toString();
             dwl_third_custom = "";
         }
-
         JSONArray jsonArray = new JSONArray();
         JSONObject jsonObject = new JSONObject();
         try {
@@ -2543,7 +2440,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             dwl_fourth = btnGarageAttached.getText().toString();
             dwl_fourth_custom = "";
         }*/
-
         if (btnTypeOfExteriorSiding.getTag().toString().equalsIgnoreCase("Insert custom data")) {
             dwl_fifth = btnTypeOfExteriorSiding.getTag().toString();
             dwl_fifth_custom = btnTypeOfExteriorSiding.getText().toString();
@@ -2551,18 +2447,15 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             dwl_fifth = btnTypeOfExteriorSiding.getText().toString();
             dwl_fifth_custom = "";
         }
-
         if (!Utility.haveInternet(mContext, false)) {
 //            claimDbHelper.addRiskMacroDes(userId, claimId, story, typeOfConstruction, rci, singleFamily, garageAttached, typeOfExteriorSiding);
             return;
         }
-
         ApiClient.getClient().create(APIInterface.class).addRiskMacroDes(userId, claimId, story, dwl_first, dwl_first_custom, dwl_second, dwl_second_custom, dwl_third, dwl_third_custom, dwl_fourth, dwl_fourth_custom, dwl_fifth, dwl_fifth_custom).enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 Log.i(TAG, "addRiskMacroDesRes = " + response.body());
             }
-
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 Log.i(TAG, "addRiskMacroDesError = " + t.toString());
@@ -2572,7 +2465,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
     private void addRoofElevationInteriorDataApi() {
         String userId = PrefManager.getUserId(), claimId = PrefManager.getClaimId(), material = btnmaterial.getText().toString(), qty = btnQty.getText().toString().equalsIgnoreCase("Quantity") ? "N/A" : btnQty.getText().toString(), damage = "N/A";
-
         if (btnnodamages.getTag().equals("2")) {
             damage = "N/D";
         } else {
@@ -2588,48 +2480,36 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         }
 
         if (btnrei.getText().toString().equalsIgnoreCase("R")) {
-
             String slope = (selectslope.equals("") ? "N/A" : selectslope).trim();
             material = material.equalsIgnoreCase("Material") ? "N/A" : material;
-
             Log.i(TAG, "addRoofParam material = " + material + ", quantity = " + qty + ", slope = " + slope + ", damage = " + damage);
-
             if (!Utility.haveInternet(mContext, false)) {
                 claimDbHelper.addRoof(userId, claimId, material, qty, slope, damage);
                 return;
             }
-
             ApiClient.getClient().create(APIInterface.class).addRoof(userId, claimId, material, qty, slope, damage).enqueue(new Callback<String>() {
                 @Override
                 public void onResponse(Call<String> call, Response<String> response) {
                     Log.i(TAG, "addRoofRes = " + response.body());
                 }
-
                 @Override
-
-
                 public void onFailure(Call<String> call, Throwable t) {
                     Log.i(TAG, "addRoofError = " + t.toString());
                 }
             });
         } else if (btnrei.getText().toString().equalsIgnoreCase("e")) {
-
             String elevation = (selectslope.equals("") ? "N/A" : selectslope).trim();
             material = material.equalsIgnoreCase("Material") ? "N/A" : material;
-
             Log.i(TAG, "addElevationParam material = " + material + ", quantity = " + qty + ", elevation = " + elevation + ", damage = " + damage);
-
             if (!Utility.haveInternet(mContext, false)) {
                 claimDbHelper.addElevation(userId, claimId, material, qty, elevation, damage);
                 return;
             }
-
             ApiClient.getClient().create(APIInterface.class).addElevation(userId, claimId, material, qty, elevation, damage).enqueue(new Callback<String>() {
                 @Override
                 public void onResponse(Call<String> call, Response<String> response) {
                     Log.i(TAG, "addElevationRes = " + response.body());
                 }
-
                 @Override
                 public void onFailure(Call<String> call, Throwable t) {
                     Log.i(TAG, "addElevationError = " + t.toString());
@@ -2637,26 +2517,21 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             });
         } else if (!btnarea.getText().toString().equalsIgnoreCase("area")) {
             String areaType = btnarea.getText().toString(), insulation = btnInsulation.getText().toString().equals("Insulation") ? "N/A" : btnInsulation.getText().toString();
-
             Log.i(TAG, "addInteriorDataApiParam  areaType = " + areaType + ", material = " + material + ", insulation = " + insulation + ", qty = " + qty);
-
             System.out.println("areaType =:-" + areaType);
             System.out.println("material =:-" + material);
             System.out.println("insulation =:-" + insulation);
             System.out.println("qty =:-" + qty);
-
             if (!Utility.haveInternet(mContext, false)) {
                 claimDbHelper.addInteriorArea(userId, claimId, areaType, material, insulation, qty);
                 return;
             }
-
             ApiClient.getClient().create(APIInterface.class).addInteriorArea(userId, claimId, areaType, material, insulation, qty).enqueue(new Callback<String>() {
                 @Override
                 public void onResponse(Call<String> call, Response<String> response) {
                     Log.i(TAG, "addInteriorAreaRes = " + response.body());
                     System.out.println("addInteriorArea response:-" + response.body());
                 }
-
                 @Override
                 public void onFailure(Call<String> call, Throwable t) {
                     Log.i(TAG, "addInteriorAreaError = " + t.toString());
@@ -2668,13 +2543,11 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     private void addInteriorRoomMacroApi() {
         String userId = PrefManager.getUserId(), claimId = PrefManager.getClaimId();
         String areaType = btnInteriorNewMacro.getText().toString(), material = btnIntNewMaterialRed.getTag().toString().equals("1") ? btnIntNewMaterial.getText().toString() : "Blank", insulation = btnIntNewInsulation.getText().toString().equals("Insulation") ? "N/A" : btnIntNewInsulation.getText().toString(), qty = btnIntNewQty.getText().toString().equalsIgnoreCase("Quantity") ? "N/A" : btnIntNewQty.getText().toString();
-
         ApiClient.getClient().create(APIInterface.class).addInteriorArea(userId, claimId, areaType, material, insulation, qty).enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 Log.i(TAG, "addInteriorAreaRes = " + response.body());
             }
-
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 Log.i(TAG, "addInteriorAreaError = " + t.toString());
@@ -2688,7 +2561,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             ocb = "Overview";
         else if (btnocb.getText().toString().equalsIgnoreCase("C"))
             ocb = "Close up";
-
         JSONArray jsonArray = new JSONArray();
         for (HashMap<String, String> hm : arrayListLWHRoomMacro) {
             JSONObject jsonObject = new JSONObject();
@@ -2702,7 +2574,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             }
         }
         LWH = jsonArray.toString();
-
         HashMap<String, String> hmParam = new HashMap<>();
         hmParam.put("user_id", PrefManager.getUserId());
         hmParam.put("claim_id", PrefManager.getClaimId());
@@ -2717,13 +2588,11 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         hmParam.put("LWH", LWH);
         hmParam.put("damageAmount", damageAmount);
         Log.i(TAG, "addRoomMacro Parm = " + hmParam.toString());
-
         ApiClient.getClient().create(APIInterface.class).addRoomMacro(hmParam).enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 Log.i(TAG, "addRoomMacro res = " + response.body());
             }
-
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 Log.i(TAG, "addRoomMacro error = " + t.toString());
@@ -2732,88 +2601,57 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     }
 
     private void calljpg() {
-
         jpegCallback = new PictureCallback() {
             public void onPictureTaken(byte[] data, Camera camera) {
 //
 //                btno.setVisibility(View.VISIBLE);
 //                btnnc.setVisibility(View.VISIBLE );
-
-
                 lastimageeditor = lastpathpf.edit();
-
-
                 if(btnrisk.getVisibility() == View.VISIBLE)
                 {
                     btnrisk.setVisibility(View.INVISIBLE);
                 }
-
                 if(btnimgmacrosub.getVisibility() == View.VISIBLE)
                 {
                     btnimgmacrosub.setVisibility(View.INVISIBLE);
                 }
-
-
-
                 String feo = "";
-
                 String TimeStamp = dateFormat.format(new Date());
                 String FolderTimeStamp = folderdateFormat.format(new Date());
-
                 String currentTimeStamp = "" + photoindex;//dateFormat.format(new Date());
-
-                Log.e("currentTimeStamp", "" + currentTimeStamp);
-
+                Log.e("currentTimeStamp","" + currentTimeStamp);
                 getalphaname();
-
                 if (btnrisk.getText().toString().trim().equals("Pitch")) {
                     screenshotHideview();
                     bmoverlay = loadBitmapFromView(rlmain);
                     screenshotShowview();
                 }
-
-
                 if (btnrisk.getText().toString().trim().equals("New Aditional photo")) {
                     screenshotHideviewAditional();
-
                     bmoverlay = loadBitmapFromView(rlmain);
                     screenshotShowviewAditional();
                 }
-
-
                 mydir = new File(appdir, appfoldername);
-
                 if(!mydir.exists())
                 {
                     mydir.mkdir();
                 }
-
-
-
                 String mydirpath = mydir.getAbsolutePath();
-
                 Log.e("GetPath", "==>" + mydirpath);
                 Log.e("GetPathdate", "==>" + FolderTimeStamp);
-
                 File fileTimeStamp = new File(mydir,FolderTimeStamp);
-
                 if(!fileTimeStamp.exists())
                 {
                     fileTimeStamp.mkdir();
                 }
-
-
                 /*if (!mydirpath.contains(FolderTimeStamp.toString()))
                 {
-
                     String[] arr = mydirpath.split("/");
                     String fname = arr[arr.length - 1];
                     String Save_file_name = fname + " " + FolderTimeStamp;
                     mydirpath = mydirpath.replace(fname, Save_file_name);
                     mydir = new File(mydirpath);
                 }*/
-
-
            /*     if (!mydir.exists())
                     mydir.mkdirs();
                 else
@@ -2822,30 +2660,23 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 if (isBottomShow)
                 {
                     subdir = new File(fileTimeStamp, "Screenshots");
-
                     if (!subdir.exists())
                         subdir.mkdirs();
                     else
                         Log.d("error", "dir. already exists");
-
                     savefile1 = subdir;
                 } else if (btnabc.getText().toString().equals("None")) {
                     savefile1 = fileTimeStamp;
                 } else {
                     subdir = new File(fileTimeStamp, btncat.getText().toString() + " " + btnabc.getText().toString());
-
                     if (!subdir.exists())
                         subdir.mkdirs();
                     else
                         Log.d("error", "dir. already exists");
-
                     savefile1 = subdir;
                 }
-
                 reidir = savefile1;
-
                 String strisNone = "";
-
                 if (btnabc.getText().toString().equals("None")) {
                     savefile = reidir;
                     strisNone = "";
@@ -2853,75 +2684,49 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     strisNone = btnabc.getText().toString();
                     savefile = reidir;
                 }
-
                 strname = "";
                 FileOutputStream outStream = null;
                 try {
                     String imgname = "";
                     String space = "                                ";
-
                     if (btnimgmacro.getText().toString().equals("Hail")) {
-
                         frontslopeimgindex = lastpathpf.getInt("frontslopeimgindex", 1);
                         rightslopeimgindex = lastpathpf.getInt("rightslopeimgindex", 1);
                         rearslopeimgindex = lastpathpf.getInt("rearslopeimgindex", 1);
                         leftslopeimgindex = lastpathpf.getInt("leftslopeimgindex", 1);
-
                         String strgethailimagename = gethailimgname();
-
-
                         if (btnrei.getText().toString().trim().equals("R")) {
                             if (strgethailimagename.contains(" Overview")) {
-
                                 strgethailimagename = strgethailimagename.replace("Overview", " " + strboctype);
-
                                 if(strgethailimagename.contains(" Close up"))
                                 {
                                     strgethailimagename = strgethailimagename.replace(" Close up", "" + strboctype);
-
                                 }
                             } else if (strgethailimagename.contains("Overview")) {
-
                                 strgethailimagename = strgethailimagename.replace("Overview", " " + strboctype);
                                 if(strgethailimagename.contains("Close up"))
                                 {
                                     strgethailimagename = strgethailimagename.replace(" Close up", "" + strboctype);
-
                                 }
                             }
-
-
-
                             if (strgethailimagename.contains(" test sq")) {
-
                                 strgethailimagename = strgethailimagename.replace("test sq", "test sq");
                             } else if (strgethailimagename.contains("test sq")) {
-
                                 strgethailimagename = strgethailimagename.replace("test sq", "test sq");
                             }
                             if (strgethailimagename.contains(" test sq  Overview")) {
-
                                 strgethailimagename = strgethailimagename.replace("test sq  Overview", "test sq  " + strboctype);
                             } else if (strgethailimagename.contains("test sq Overview")) {
-
                                 strgethailimagename = strgethailimagename.replace("test sq Overview", "test sq  " + strboctype);
                             }
                         }
-
                         String afternum = "";
                         if (btnimgmacrosub.getText().toString().trim().equals("test sq Overview")) {
                             afternum = "hits ";
-
                         } else if (btnimgmacrosub.getText().toString().trim().equals("test sq")) {
                             afternum = "hits per sq";
-
                         }
-
                         if (btnimgmacrosub.getText().toString().trim().equals("hail damage close up on shingles")) {
-
-
-
-
                             String strhaildamage1 = "";
 
                             if (!strhaildamage.trim().equals("Blank")) {
@@ -2935,33 +2740,20 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             strgethailimagename = btnhailtype.getText().toString() + " " + strhaildamage1 + " " + strboctype + " on " + strhailmaterialdamage + "";
 
                             if (strgethailimagename.contains(" Overview")) {
-
-
-
                                 strgethailimagename = strgethailimagename.replace("Overview", " " + strboctype);
                                 //  strgethailimagename="Front Slop "+ strboctype;
                             } else if (strgethailimagename.contains("Overview")) {
-
-
-
                                 strgethailimagename = strgethailimagename.replace("Overview", "  " + strboctype);
                                 //strgethailimagename="Front Slop "+ strboctype;
                             }
 
                             if (strgethailimagename.contains(" Close up")) {
-
                                 strgethailimagename = strgethailimagename.replace(strboctype, "" + strboctype);
                                 //strgethailimagename=strboctype;
                             } else if (strgethailimagename.contains("Close up")) {
-
-
-
                                 strgethailimagename = strgethailimagename.replace(strboctype, "" + strboctype);
                                 //strgethailimagename=strboctype;
                             }else if (strgethailimagename.contains("  Close up")) {
-
-
-
                                 strgethailimagename = strgethailimagename.replace("  "+strboctype, " " + strboctype);
                                 //strgethailimagename=strboctype;
                             }
@@ -6186,7 +5978,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
         // stop preview before making changes
         try {
-            camera.stopPreview();
+            if (isCameraOn) {
+                camera.stopPreview();
+                isCameraOn = false;
+            }
         } catch (Exception e) {
             // ignore: tried to stop a non-existent preview
         }
@@ -6196,7 +5991,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         // start preview with new settings
         try {
             camera.setPreviewDisplay(surfaceHolder);
-            camera.startPreview();
+            if (!isCameraOn) {
+                camera.startPreview();
+                isCameraOn = true;
+            }
         } catch (Exception e) {
 
         }
@@ -6212,7 +6010,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     public void surfaceCreated(SurfaceHolder holder) {
 
         try {
-            camera = Camera.open(0);
+            if (!isCameraOn) {
+                camera = Camera.open(0);
+                isCameraOn = true;
+            }
         } catch (RuntimeException e) {
             System.err.println(e);
             return;
@@ -6222,7 +6023,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
         try {
             camera.setPreviewDisplay(surfaceHolder);
-            camera.startPreview();
+            if (!isCameraOn) {
+                camera.startPreview();
+                isCameraOn = true;
+            }
         } catch (Exception e) {
             System.err.println(e);
             return;
@@ -6262,6 +6066,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             camera.stopPreview();
             camera.release();
             camera = null;
+            isCameraOn = false;
         }
 
     }
@@ -10919,7 +10724,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             parameters = camera.getParameters();
             parameters.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
             camera.setParameters(parameters);
-            camera.startPreview();
+            if (!isCameraOn) {
+                camera.startPreview();
+                isCameraOn = true;
+            }
             isFlashOn = true;
         }
     }
@@ -10929,7 +10737,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             parameters = camera.getParameters();
             parameters.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
             camera.setParameters(parameters);
-            camera.startPreview();
+            if (!isCameraOn) {
+                camera.startPreview();
+                isCameraOn = true;
+            }
             isFlashOn = false;
         }
     }
@@ -11096,7 +10907,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     private void addDocument() {
         rlsetting.setVisibility(View.GONE);
         final CharSequence[] options = {"Take Photo", "Choose From Gallery", "Cancel"};
-        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this);
+        androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this);
         builder.setTitle("Select Option");
         builder.setItems(options, new DialogInterface.OnClickListener() {
             @Override
@@ -13748,8 +13559,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
                     System.out.println("floor damage first:-" + damage);
 
-                    claimDbHelper.adddataFloor(userId, claimId, Room, material, insulation, areaType, qty, damage);
-                    opendatabase();
+//                    claimDbHelper.adddataFloor(userId, claimId, Room, material, insulation, areaType, qty, damage);
+//                    opendatabase();
 
 //                    SELECT_SQL = "SELECT * FROM TBLFloor";
 //                    Cur = DB.rawQuery(SELECT_SQL, null);
@@ -15560,9 +15371,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     dialog.cancel();
 
                     addsubcat(value);
-                }
-
-            }
+                }}
         });
 
         alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -15594,22 +15403,15 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             multipart.addFormField("userid", "Cool Pictures");
             multipart.addFormField("filepath", imgpath);
             multipart.addFilePart("file", uploadFile1);
-
             List<String> response = multipart.finish();
-
             Log.v("rht", "SERVER REPLIED:");
-
             for (String line : response)
             {
                 Log.v("rht", "Line : "+line);
-
             }*/
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
@@ -15983,26 +15785,20 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 //    }
 
     public final boolean isInternetOn() {
-
         // get Connectivity Manager object to check connection
         ConnectivityManager connec =
                 (ConnectivityManager) getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
-
         // Check for network connections
         if (connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTED ||
                 connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTING ||
                 connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTING ||
                 connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTED) {
-
             // if connected with internet
-
             Toast.makeText(this, " Connected ", Toast.LENGTH_LONG).show();
             return true;
-
         } else if (
                 connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.DISCONNECTED ||
                         connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.DISCONNECTED) {
-
             Toast.makeText(this, " Not Connected ", Toast.LENGTH_LONG).show();
             return false;
         }

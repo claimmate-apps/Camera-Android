@@ -2,7 +2,7 @@ package com.commonsware.cwac.camera.demo.activities;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;

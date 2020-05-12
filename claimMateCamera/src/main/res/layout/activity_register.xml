@@ -14,7 +14,7 @@
 
 
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="28dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"

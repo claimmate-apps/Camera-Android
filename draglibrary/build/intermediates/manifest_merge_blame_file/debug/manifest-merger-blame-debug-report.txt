@@ -1,0 +1,16 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.mobeta.android.dslv"
+4    android:versionCode="2"
+5    android:versionName="1.0.2" > <!-- android:minSdkVersion="7" -->
+6    <!--
+7<uses-sdk
+8        android:targetSdkVersion="7" />
+9    -->
+10    <uses-sdk
+11        android:minSdkVersion="24"
+11-->/Volumes/Workshop/Android/Ongoing_Projects/Claimmate/Camera/draglibrary/src/main/AndroidManifest.xml
+12        android:targetSdkVersion="29" />
+12-->/Volumes/Workshop/Android/Ongoing_Projects/Claimmate/Camera/draglibrary/src/main/AndroidManifest.xml
+13
+14</manifest>

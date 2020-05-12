@@ -4,17 +4,13 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
-import android.net.http.SslError;
 import android.os.Bundle;
-import android.support.v7.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatImageView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.webkit.SslErrorHandler;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -22,13 +18,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.error.AuthFailureError;
-import com.android.volley.error.VolleyError;
-import com.android.volley.request.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.commonsware.cwac.camera.demo.other.Utility;
 import com.commonsware.cwac.camera.demo.retrofit.APIInterface;
 import com.commonsware.cwac.camera.demo.retrofit.ApiClient;
@@ -36,9 +25,6 @@ import com.example.claimmate.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;

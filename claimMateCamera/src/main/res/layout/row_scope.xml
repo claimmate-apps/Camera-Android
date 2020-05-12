@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
 
-   <android.support.v7.widget.AppCompatTextView
+   <androidx.appcompat.widget.AppCompatTextView
        android:layout_width="match_parent"
        android:layout_height="45dp"
        android:textColor="@color/white"
@@ -24,7 +24,7 @@
        android:orientation="horizontal"
         android:layout_height="40dp">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:id="@+id/tv_damage_item"
             android:textSize="16dp"
@@ -36,7 +36,7 @@
             android:textColor="@color/black"
             android:layout_height="match_parent" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:id="@+id/tv_damage_type"
             android:textSize="16dp"
@@ -47,7 +47,7 @@
             android:textColor="@color/black"
             android:layout_height="match_parent" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:id="@+id/tv_quantity"
             android:textSize="16dp"
@@ -60,7 +60,7 @@
             android:textColor="@color/black"
             android:layout_height="match_parent" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:text="@string/save"
             android:gravity="center"

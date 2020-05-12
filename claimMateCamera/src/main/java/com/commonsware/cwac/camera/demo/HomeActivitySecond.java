@@ -35,9 +35,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.speech.RecognizerIntent;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import android.text.Html;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -8919,7 +8919,7 @@ public class HomeActivitySecond extends Activity implements SimpleGestureFilter.
     private void addDocument() {
         rlsetting.setVisibility(View.GONE);
         final CharSequence[] options = {"Take Photo", "Choose From Gallery", "Cancel"};
-        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this);
+        androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this);
         builder.setTitle("Select Option");
         builder.setItems(options, new DialogInterface.OnClickListener() {
             @Override

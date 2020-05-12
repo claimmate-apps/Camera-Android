@@ -2489,7 +2489,7 @@
             android:gravity="center"
             android:visibility="gone">
 
-            <android.support.v4.widget.NestedScrollView
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -2508,7 +2508,7 @@
                         android:orientation="vertical"
                         android:layout_height="wrap_content">
 
-                        <android.support.v7.widget.AppCompatTextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
                             android:text="Camera Settings"
                             android:textSize="16dp"
@@ -2528,7 +2528,7 @@
                                 android:background="@color/black"
                                 android:visibility="visible">
 
-                                <android.support.v7.widget.AppCompatTextView
+                                <androidx.appcompat.widget.AppCompatTextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_marginStart="10dp"
@@ -2538,7 +2538,7 @@
                                     android:textSize="14dp"
                                     android:textStyle="bold" />
 
-                                <android.support.v7.widget.AppCompatImageView
+                                <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="16dp"
                                     android:src="@drawable/ic_menu_arrow"
                                     android:backgroundTint="@color/white"
@@ -2623,7 +2623,7 @@
                                 android:id="@+id/rl_defaultmenu"
                                 android:layout_height="45dp">
 
-                                <android.support.v7.widget.AppCompatTextView
+                                <androidx.appcompat.widget.AppCompatTextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:gravity="center_vertical"
@@ -2635,7 +2635,7 @@
                                     />
 
 
-                                <android.support.v7.widget.AppCompatImageView
+                                <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="16dp"
                                     android:src="@drawable/ic_menu_arrow"
                                     android:backgroundTint="@color/white"
@@ -2699,7 +2699,7 @@
                                         android:textColor="@color/black" />
                                 </RadioGroup>
 
-                                <android.support.v7.widget.AppCompatImageView
+                                <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
                                     android:background="@color/black"
                                     android:layout_marginTop="6dp"
@@ -2741,7 +2741,7 @@
                                         android:text="Leave whichever"
                                         android:textColor="@color/black" />
                                 </RadioGroup>
-                                <android.support.v7.widget.AppCompatImageView
+                                <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
                                     android:background="@color/black"
                                     android:layout_marginTop="6dp"
@@ -2784,7 +2784,7 @@
                                         android:text="Leave whichever"
                                         android:textColor="@color/black" />
                                 </RadioGroup>
-                                <android.support.v7.widget.AppCompatImageView
+                                <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
                                     android:background="@color/black"
                                     android:layout_marginTop="6dp"
@@ -2825,7 +2825,7 @@
                                         android:textColor="@color/black" />
                                 </RadioGroup>
 
-                                <android.support.v7.widget.AppCompatImageView
+                                <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
                                     android:background="@color/black"
                                     android:layout_marginTop="6dp"
@@ -2868,7 +2868,7 @@
                                         android:text="Leave whichever"
                                         android:textColor="@color/black" />
                                 </RadioGroup>
-                                <android.support.v7.widget.AppCompatImageView
+                                <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
                                     android:background="@color/black"
                                     android:layout_marginTop="6dp"
@@ -2938,7 +2938,7 @@
                                 android:layout_marginTop="5dp"
                                 android:layout_height="45dp">
 
-                                <android.support.v7.widget.AppCompatTextView
+                                <androidx.appcompat.widget.AppCompatTextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:gravity="center_vertical"
@@ -2950,7 +2950,7 @@
                                     />
 
 
-                                <android.support.v7.widget.AppCompatImageView
+                                <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="16dp"
                                     android:src="@drawable/ic_menu_arrow"
                                     android:backgroundTint="@color/white"
@@ -2989,7 +2989,7 @@
                                     android:textSize="14dp" />
 
 
-                                <android.support.v7.widget.AppCompatImageView
+                                <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
                                     android:background="@color/black"
 
@@ -3011,7 +3011,7 @@
                                     android:textSize="14dp" />
 
 
-                                <android.support.v7.widget.AppCompatImageView
+                                <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
                                     android:background="@color/black"
 
@@ -3031,7 +3031,7 @@
                                     android:textColor="@color/black"
                                     android:textSize="14dp" />
 
-                                <android.support.v7.widget.AppCompatImageView
+                                <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
                                     android:background="@color/black"
 
@@ -3053,7 +3053,7 @@
                                     android:visibility="visible" />
 
 
-                                <android.support.v7.widget.AppCompatImageView
+                                <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
                                     android:background="@color/black"
 
@@ -3075,7 +3075,7 @@
 
 
 
-                                <android.support.v7.widget.AppCompatImageView
+                                <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
                                     android:background="@color/black"
                                     android:layout_height="0.8dp"/>
@@ -3671,7 +3671,7 @@
                         android:textSize="15dp"
                         android:visibility="gone" />
 
-                    <android.support.v7.widget.AppCompatEditText
+                    <androidx.appcompat.widget.AppCompatEditText
                         android:id="@+id/edtrepair"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -3686,7 +3686,7 @@
                         android:textSize="15dp"
                         android:visibility="gone" />
 
-                    <android.support.v7.widget.AppCompatEditText
+                    <androidx.appcompat.widget.AppCompatEditText
                         android:id="@+id/edtreplace"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -3719,7 +3719,7 @@
                         android:visibility="visible" />-->
 
                 </RelativeLayout>
-            </android.support.v4.widget.NestedScrollView>
+            </androidx.core.widget.NestedScrollView>
         </RelativeLayout>
 
         <RelativeLayout

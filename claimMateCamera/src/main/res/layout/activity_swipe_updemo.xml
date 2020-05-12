@@ -47,7 +47,7 @@
         </RelativeLayout>
     </RelativeLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white">
@@ -150,19 +150,19 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white">
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerInterior"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:nestedScrollingEnabled="false" />
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerRoof"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:nestedScrollingEnabled="false" />
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerElevation"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -205,7 +205,7 @@
                 android:textAllCaps="true"
                 android:textColor="@color/black" />
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>
 
     <!--<ScrollView

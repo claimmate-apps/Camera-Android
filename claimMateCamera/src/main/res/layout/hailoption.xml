@@ -28,7 +28,7 @@
 
 
 
-                    <android.support.v7.widget.AppCompatButton
+                    <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="60dp"
                         android:background="#645B5B"
                         android:id="@+id/btn_replace_front"
@@ -39,7 +39,7 @@
                         android:gravity="center"
                         android:layout_height="match_parent"/>
 
-                    <android.support.v7.widget.AppCompatButton
+                    <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="60dp"
                         android:background="#FF0000"
                         android:textColor="@color/white"
@@ -96,7 +96,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_height="36dp">
 
-                    <android.support.v7.widget.AppCompatButton
+                    <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="60dp"
                         android:background="#645B5B"
                         android:textColor="@color/white"
@@ -108,7 +108,7 @@
                         android:gravity="center"
                         android:layout_height="match_parent"/>
 
-                    <android.support.v7.widget.AppCompatButton
+                    <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="60dp"
                         android:background="#FF0000"
                         android:textColor="@color/white"
@@ -175,7 +175,7 @@
 
 
 
-                    <android.support.v7.widget.AppCompatButton
+                    <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="60dp"
                         android:background="#645B5B"
                         android:textColor="@color/white"
@@ -187,7 +187,7 @@
                         android:gravity="center"
                         android:layout_height="match_parent"/>
 
-                    <android.support.v7.widget.AppCompatButton
+                    <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="60dp"
                         android:id="@+id/btn_repair_rear"
 
@@ -247,7 +247,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_height="36dp">
 
-                    <android.support.v7.widget.AppCompatButton
+                    <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="60dp"
                         android:background="#645B5B"
                         android:textColor="@color/white"
@@ -258,7 +258,7 @@
                         android:id="@+id/btn_replace_left"
                         android:layout_height="match_parent"/>
 
-                    <android.support.v7.widget.AppCompatButton
+                    <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="60dp"
                         android:background="#FF0000"
                         android:textColor="@color/white"
@@ -308,7 +308,7 @@
 
             android:layout_height="match_parent">
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_slopno"
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"

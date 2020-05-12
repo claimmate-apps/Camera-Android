@@ -9,15 +9,14 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import android.view.View;
 import android.view.Window;
 import android.widget.ProgressBar;
 
 import com.commonsware.cwac.camera.demo.HomeActivity;
-import com.commonsware.cwac.camera.demo.HomeActivitySecond;
 import com.commonsware.cwac.camera.demo.other.Helper;
 import com.commonsware.cwac.camera.demo.other.PrefManager;
 import com.example.claimmate.R;
@@ -67,7 +66,7 @@ public class SplashScreenActivity extends Activity {
 
     public void showPermissionDialog() {
 
-        new android.support.v7.app.AlertDialog.Builder(SplashScreenActivity.this)
+        new androidx.appcompat.app.AlertDialog.Builder(SplashScreenActivity.this)
                 .setMessage(
                         getString(R.string.error_permission))
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
