@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: ./claimMateCamera/libs/libbambuser-0.9.12.aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb0e9728cca70570673ca07f6182f7f9/jetified-libbambuser-0.9.12/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb0e9728cca70570673ca07f6182f7f9/jetified-libbambuser-0.9.12/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cb0e9728cca70570673ca07f6182f7f9/jetified-libbambuser-0.9.12/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

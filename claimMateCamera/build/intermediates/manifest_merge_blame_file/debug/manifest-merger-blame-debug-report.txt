@@ -1,0 +1,469 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.claimmate.claimmatecamera22"
+4    android:versionCode="9"
+5    android:versionName="1.0.9" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+8-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+11-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:6:5-80
+11-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:6:22-77
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:7:5-79
+12-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:7:22-76
+13    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+13-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:8:5-71
+13-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:8:22-68
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:9:5-67
+14-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:9:22-64
+15    <uses-permission android:name="android.permission.WAKE_LOCK" />
+15-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:10:5-68
+15-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:10:22-65
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:11:5-79
+16-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:11:22-76
+17    <uses-permission android:name="android.permission.CAMERA" />
+17-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:12:5-65
+17-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:12:22-62
+18    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+18-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:13:5-81
+18-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:13:22-78
+19    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+19-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:14:5-80
+19-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:14:22-77
+20    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+20-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:8:5-71
+20-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:8:22-68
+21    <uses-permission android:name="android.permission.FLASHLIGHT" />
+21-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:16:5-69
+21-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:16:22-66
+22    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+22-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:17:5-75
+22-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:17:22-72
+23    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+23-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:18:5-20:47
+23-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:19:9-70
+24
+25    <uses-feature
+25-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:22:5-24:35
+26        android:name="android.hardware.camera.any"
+26-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:23:9-51
+27        android:required="true" />
+27-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:24:9-32
+28    <uses-feature
+28-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:25:5-27:36
+29        android:name="android.hardware.camera"
+29-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:26:9-47
+30        android:required="true" />
+30-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:27:9-33
+31    <uses-feature
+31-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:28:5-30:36
+32        android:name="android.hardware.camera.autofocus"
+32-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:29:9-57
+33        android:required="true" />
+33-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:30:9-33
+34    <uses-feature
+34-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:31:5-33:36
+35        android:name="android.hardware.camera.flash"
+35-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:32:9-53
+36        android:required="false" />
+36-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:33:9-33
+37    <uses-feature
+37-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:34:5-36:36
+38        android:name="android.hardware.camera.front"
+38-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:35:9-53
+39        android:required="false" />
+39-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:36:9-33
+40
+41    <protected-broadcast android:name="android.intent.action.MEDIA_MOUNTED" />
+41-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:38:5-79
+41-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:38:26-76
+42
+43    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+43-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:17:5-75
+43-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:17:22-72
+44    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+44-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:14:5-80
+44-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:14:22-77
+45    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+45-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:7:5-79
+45-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:7:22-76
+46
+47    <!-- Required by older versions of Google Play services to create IID tokens -->
+48    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+48-->[com.google.firebase:firebase-iid:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\242ecb2f51722b3bd99b3b4658d4268f\jetified-firebase-iid-20.1.6\AndroidManifest.xml:26:5-82
+48-->[com.google.firebase:firebase-iid:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\242ecb2f51722b3bd99b3b4658d4268f\jetified-firebase-iid-20.1.6\AndroidManifest.xml:26:22-79
+49    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+49-->[com.google.android.gms:play-services-measurement:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\5adc3dc24873e5b0e2bc62df36c55c4f\jetified-play-services-measurement-17.4.0\AndroidManifest.xml:26:5-110
+49-->[com.google.android.gms:play-services-measurement:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\5adc3dc24873e5b0e2bc62df36c55c4f\jetified-play-services-measurement-17.4.0\AndroidManifest.xml:26:22-107
+50
+51    <application
+51-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:44:5-132:19
+52        android:name="com.commonsware.cwac.camera.demo.other.MyApplication"
+52-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:45:9-76
+53        android:allowBackup="true"
+53-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:46:9-35
+54        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+54-->[androidx.core:core:1.1.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\428cf0ad50eebca58bda79eb3d2dd2d1\core-1.1.0\AndroidManifest.xml:24:18-86
+55        android:debuggable="true"
+56        android:extractNativeLibs="false"
+57        android:icon="@drawable/ic_launcher"
+57-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:47:9-45
+58        android:label="@string/app_name"
+58-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:48:9-41
+59        android:largeHeap="true"
+59-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:49:9-33
+60        android:requestLegacyExternalStorage="true"
+60-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:53:9-52
+61        android:supportsRtl="true"
+61-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:50:9-35
+62        android:testOnly="true"
+63        android:theme="@style/MyTheme"
+63-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:51:9-39
+64        android:usesCleartextTraffic="true" >
+64-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:52:9-44
+65        <activity
+65-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:55:9-56:61
+66            android:name="com.commonsware.cwac.camera.demo.activities.addclaimname"
+66-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:55:19-90
+67            android:screenOrientation="portrait" />
+67-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:56:13-49
+68        <activity
+68-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:57:9-59:52
+69            android:name="com.commonsware.cwac.camera.demo.ScopeName"
+69-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:58:13-70
+70            android:screenOrientation="portrait" />
+70-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:59:13-49
+71        <activity
+71-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:60:9-69:20
+72            android:name="com.commonsware.cwac.camera.demo.activities.SplashScreenActivity"
+72-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:61:13-92
+73            android:label="@string/app_name"
+73-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:62:13-45
+74            android:screenOrientation="portrait" >
+74-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:63:13-49
+75            <intent-filter>
+75-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:64:13-68:29
+76                <action android:name="android.intent.action.MAIN" />
+76-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:65:17-69
+76-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:65:25-66
+77
+78                <category android:name="android.intent.category.LAUNCHER" />
+78-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:67:17-77
+78-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:67:27-74
+79            </intent-filter>
+80        </activity>
+81        <activity android:name="com.commonsware.cwac.camera.demo.activities.DisplayActivity" />
+81-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:70:9-96
+81-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:70:19-93
+82        <activity
+82-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:71:9-76:46
+83            android:name="com.commonsware.cwac.camera.demo.HomeActivity"
+83-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:72:13-73
+84            android:configChanges="orientation|screenSize"
+84-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:73:13-59
+85            android:label="@string/title_activity_homeactivity"
+85-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:74:13-64
+86            android:screenOrientation="landscape"
+86-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:75:13-50
+87            android:theme="@style/MyTheme" />
+87-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:76:13-43
+88        <activity
+88-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:77:9-82:46
+89            android:name="com.commonsware.cwac.camera.demo.HomeActivitySecond"
+89-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:78:13-79
+90            android:configChanges="orientation|screenSize"
+90-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:79:13-59
+91            android:label="@string/title_activity_homeactivity"
+91-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:80:13-64
+92            android:screenOrientation="landscape"
+92-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:81:13-50
+93            android:theme="@style/MyTheme" />
+93-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:82:13-43
+94        <activity
+94-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:83:9-86:46
+95            android:name="com.commonsware.cwac.camera.demo.activities.TorchActivity"
+95-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:84:13-85
+96            android:label="@string/title_activity_torchactivity"
+96-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:85:13-65
+97            android:theme="@style/MyTheme" />
+97-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:86:13-43
+98
+99        <meta-data
+99-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:88:9-90:69
+100            android:name="com.google.android.gms.version"
+100-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:89:13-58
+101            android:value="@integer/google_play_services_version" />
+101-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:90:13-66
+102        <meta-data
+102-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:91:9-93:54
+103            android:name="com.google.android.gms.analytics.globalConfigResource"
+103-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:92:13-81
+104            android:resource="@xml/global_tracker" />
+104-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:93:13-51
+105
+106        <activity android:name="com.commonsware.cwac.camera.demo.activities.AddValueActivity" />
+106-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:95:9-97
+106-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:95:19-94
+107        <activity
+107-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:96:9-98:52
+108            android:name="com.commonsware.cwac.camera.demo.activities.AddClaimNameActivity"
+108-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:97:13-92
+109            android:screenOrientation="portrait" />
+109-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:98:13-49
+110        <activity
+110-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:99:9-101:52
+111            android:name="com.commonsware.cwac.camera.demo.activities.AddSubCatValueActivity"
+111-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:100:13-94
+112            android:screenOrientation="portrait" />
+112-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:101:13-49
+113        <activity
+113-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:102:9-106:46
+114            android:name="com.commonsware.cwac.camera.demo.activities.CamViewActivity"
+114-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:103:13-87
+115            android:label="@string/title_activity_camview"
+115-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:104:13-59
+116            android:screenOrientation="landscape"
+116-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:105:13-50
+117            android:theme="@style/MyTheme" />
+117-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:106:13-43
+118        <activity
+118-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:107:9-109:52
+119            android:name="com.commonsware.cwac.camera.demo.activities.LoginActivity"
+119-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:108:13-85
+120            android:screenOrientation="portrait" />
+120-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:109:13-49
+121        <activity
+121-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:110:9-112:52
+122            android:name="com.commonsware.cwac.camera.demo.activities.RegisterActivity"
+122-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:111:13-88
+123            android:screenOrientation="portrait" />
+123-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:112:13-49
+124        <activity
+124-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:113:9-115:53
+125            android:name="com.commonsware.cwac.camera.demo.activities.LiveStreamingActivity"
+125-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:114:13-93
+126            android:screenOrientation="landscape" /> <!-- android:process=":test" -->
+126-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:115:13-50
+127        <activity android:name="com.commonsware.cwac.camera.demo.activities.SwipeUpActivity" />
+127-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:116:9-96
+127-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:116:19-93
+128
+129        <service android:name="com.commonsware.cwac.camera.demo.notification.MyFirebaseInstanceIDService" >
+129-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:118:9-122:19
+129-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:118:18-106
+130            <intent-filter>
+130-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:119:13-121:29
+131                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+131-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:120:17-80
+131-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:120:25-77
+132            </intent-filter>
+133        </service>
+134        <service android:name="com.commonsware.cwac.camera.demo.notification.MyFirebaseMessagingService" >
+134-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:123:9-127:19
+134-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:123:18-105
+135            <intent-filter>
+135-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:124:13-126:29
+136                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+136-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:125:17-78
+136-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:125:25-75
+137            </intent-filter>
+138        </service>
+139
+140        <activity android:name="com.commonsware.cwac.camera.demo.activities.OneTimeActivity" />
+140-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:129:9-96
+140-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:129:19-93
+141        <activity android:name="com.commonsware.cwac.camera.demo.activities.ReportActivity" />
+141-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:130:9-95
+141-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:130:19-92
+142        <activity android:name="com.commonsware.cwac.camera.demo.activities.SettingActivity" />
+142-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:131:9-96
+142-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:131:19-93
+143        <!--
+144             FirebaseMessagingService performs security checks at runtime,
+145             but set to not exported to explicitly avoid allowing another app to call it.
+146        -->
+147        <service
+147-->[com.google.firebase:firebase-messaging:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\6144aaf27b353f068c53090471efb753\jetified-firebase-messaging-20.1.6\AndroidManifest.xml:28:9-34:19
+148            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+148-->[com.google.firebase:firebase-messaging:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\6144aaf27b353f068c53090471efb753\jetified-firebase-messaging-20.1.6\AndroidManifest.xml:29:13-82
+149            android:exported="false" >
+149-->[com.google.firebase:firebase-messaging:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\6144aaf27b353f068c53090471efb753\jetified-firebase-messaging-20.1.6\AndroidManifest.xml:30:13-37
+150            <intent-filter android:priority="-500" >
+150-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:124:13-126:29
+151                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+151-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:125:17-78
+151-->D:\ClientsProject\Camera-Android\claimMateCamera\src\main\AndroidManifest.xml:125:25-75
+152            </intent-filter>
+153        </service>
+154        <service
+154-->[com.google.firebase:firebase-messaging:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\6144aaf27b353f068c53090471efb753\jetified-firebase-messaging-20.1.6\AndroidManifest.xml:35:9-41:19
+155            android:name="com.google.firebase.components.ComponentDiscoveryService"
+155-->[com.google.firebase:firebase-messaging:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\6144aaf27b353f068c53090471efb753\jetified-firebase-messaging-20.1.6\AndroidManifest.xml:36:13-84
+156            android:directBootAware="true"
+156-->[com.google.firebase:firebase-common:19.3.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\8e9d7420722348251c52478b175a6fe0\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+157            android:exported="false" >
+157-->[com.google.firebase:firebase-messaging:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\6144aaf27b353f068c53090471efb753\jetified-firebase-messaging-20.1.6\AndroidManifest.xml:37:13-37
+158            <meta-data
+158-->[com.google.firebase:firebase-messaging:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\6144aaf27b353f068c53090471efb753\jetified-firebase-messaging-20.1.6\AndroidManifest.xml:38:13-40:85
+159                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+159-->[com.google.firebase:firebase-messaging:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\6144aaf27b353f068c53090471efb753\jetified-firebase-messaging-20.1.6\AndroidManifest.xml:39:17-119
+160                android:value="com.google.firebase.components.ComponentRegistrar" />
+160-->[com.google.firebase:firebase-messaging:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\6144aaf27b353f068c53090471efb753\jetified-firebase-messaging-20.1.6\AndroidManifest.xml:40:17-82
+161            <meta-data
+161-->[com.google.android.gms:play-services-measurement-api:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\22f9a6b50a9f75bfe5b1e012a72c107e\jetified-play-services-measurement-api-17.4.0\AndroidManifest.xml:30:13-32:85
+162                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+162-->[com.google.android.gms:play-services-measurement-api:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\22f9a6b50a9f75bfe5b1e012a72c107e\jetified-play-services-measurement-api-17.4.0\AndroidManifest.xml:31:17-139
+163                android:value="com.google.firebase.components.ComponentRegistrar" />
+163-->[com.google.android.gms:play-services-measurement-api:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\22f9a6b50a9f75bfe5b1e012a72c107e\jetified-play-services-measurement-api-17.4.0\AndroidManifest.xml:32:17-82
+164            <meta-data
+164-->[com.google.firebase:firebase-iid:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\242ecb2f51722b3bd99b3b4658d4268f\jetified-firebase-iid-20.1.6\AndroidManifest.xml:32:13-34:85
+165                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+165-->[com.google.firebase:firebase-iid:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\242ecb2f51722b3bd99b3b4658d4268f\jetified-firebase-iid-20.1.6\AndroidManifest.xml:33:17-96
+166                android:value="com.google.firebase.components.ComponentRegistrar" />
+166-->[com.google.firebase:firebase-iid:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\242ecb2f51722b3bd99b3b4658d4268f\jetified-firebase-iid-20.1.6\AndroidManifest.xml:34:17-82
+167            <meta-data
+167-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\1b0d1450c124a213350f23f7b111a384\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:28:13-30:85
+168                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+168-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\1b0d1450c124a213350f23f7b111a384\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:29:17-115
+169                android:value="com.google.firebase.components.ComponentRegistrar" />
+169-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\1b0d1450c124a213350f23f7b111a384\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:30:17-82
+170            <meta-data
+170-->[com.google.firebase:firebase-installations:16.2.2] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\a5ca563bc87a771a4aa5fc7d9086c346\jetified-firebase-installations-16.2.2\AndroidManifest.xml:17:13-19:85
+171                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+171-->[com.google.firebase:firebase-installations:16.2.2] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\a5ca563bc87a771a4aa5fc7d9086c346\jetified-firebase-installations-16.2.2\AndroidManifest.xml:18:17-127
+172                android:value="com.google.firebase.components.ComponentRegistrar" />
+172-->[com.google.firebase:firebase-installations:16.2.2] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\a5ca563bc87a771a4aa5fc7d9086c346\jetified-firebase-installations-16.2.2\AndroidManifest.xml:19:17-82
+173        </service>
+174
+175        <receiver
+175-->[com.google.android.gms:play-services-analytics:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\4de0648b3fe5e5ed453f42cf92b936e0\jetified-play-services-analytics-17.0.0\AndroidManifest.xml:30:9-34:20
+176            android:name="com.google.android.gms.analytics.AnalyticsReceiver"
+176-->[com.google.android.gms:play-services-analytics:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\4de0648b3fe5e5ed453f42cf92b936e0\jetified-play-services-analytics-17.0.0\AndroidManifest.xml:31:13-78
+177            android:enabled="true"
+177-->[com.google.android.gms:play-services-analytics:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\4de0648b3fe5e5ed453f42cf92b936e0\jetified-play-services-analytics-17.0.0\AndroidManifest.xml:32:13-35
+178            android:exported="false" >
+178-->[com.google.android.gms:play-services-analytics:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\4de0648b3fe5e5ed453f42cf92b936e0\jetified-play-services-analytics-17.0.0\AndroidManifest.xml:33:13-37
+179        </receiver>
+180
+181        <service
+181-->[com.google.android.gms:play-services-analytics:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\4de0648b3fe5e5ed453f42cf92b936e0\jetified-play-services-analytics-17.0.0\AndroidManifest.xml:36:9-39:40
+182            android:name="com.google.android.gms.analytics.AnalyticsService"
+182-->[com.google.android.gms:play-services-analytics:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\4de0648b3fe5e5ed453f42cf92b936e0\jetified-play-services-analytics-17.0.0\AndroidManifest.xml:37:13-77
+183            android:enabled="true"
+183-->[com.google.android.gms:play-services-analytics:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\4de0648b3fe5e5ed453f42cf92b936e0\jetified-play-services-analytics-17.0.0\AndroidManifest.xml:38:13-35
+184            android:exported="false" />
+184-->[com.google.android.gms:play-services-analytics:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\4de0648b3fe5e5ed453f42cf92b936e0\jetified-play-services-analytics-17.0.0\AndroidManifest.xml:39:13-37
+185        <service
+185-->[com.google.android.gms:play-services-analytics:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\4de0648b3fe5e5ed453f42cf92b936e0\jetified-play-services-analytics-17.0.0\AndroidManifest.xml:40:9-44:72
+186            android:name="com.google.android.gms.analytics.AnalyticsJobService"
+186-->[com.google.android.gms:play-services-analytics:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\4de0648b3fe5e5ed453f42cf92b936e0\jetified-play-services-analytics-17.0.0\AndroidManifest.xml:41:13-80
+187            android:enabled="true"
+187-->[com.google.android.gms:play-services-analytics:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\4de0648b3fe5e5ed453f42cf92b936e0\jetified-play-services-analytics-17.0.0\AndroidManifest.xml:42:13-35
+188            android:exported="false"
+188-->[com.google.android.gms:play-services-analytics:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\4de0648b3fe5e5ed453f42cf92b936e0\jetified-play-services-analytics-17.0.0\AndroidManifest.xml:43:13-37
+189            android:permission="android.permission.BIND_JOB_SERVICE" />
+189-->[com.google.android.gms:play-services-analytics:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\4de0648b3fe5e5ed453f42cf92b936e0\jetified-play-services-analytics-17.0.0\AndroidManifest.xml:44:13-69
+190
+191        <receiver
+191-->[com.google.firebase:firebase-iid:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\242ecb2f51722b3bd99b3b4658d4268f\jetified-firebase-iid-20.1.6\AndroidManifest.xml:37:9-44:20
+192            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+192-->[com.google.firebase:firebase-iid:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\242ecb2f51722b3bd99b3b4658d4268f\jetified-firebase-iid-20.1.6\AndroidManifest.xml:38:13-78
+193            android:exported="true"
+193-->[com.google.firebase:firebase-iid:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\242ecb2f51722b3bd99b3b4658d4268f\jetified-firebase-iid-20.1.6\AndroidManifest.xml:39:13-36
+194            android:permission="com.google.android.c2dm.permission.SEND" >
+194-->[com.google.firebase:firebase-iid:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\242ecb2f51722b3bd99b3b4658d4268f\jetified-firebase-iid-20.1.6\AndroidManifest.xml:40:13-73
+195            <intent-filter>
+195-->[com.google.firebase:firebase-iid:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\242ecb2f51722b3bd99b3b4658d4268f\jetified-firebase-iid-20.1.6\AndroidManifest.xml:41:13-43:29
+196                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+196-->[com.google.firebase:firebase-iid:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\242ecb2f51722b3bd99b3b4658d4268f\jetified-firebase-iid-20.1.6\AndroidManifest.xml:42:17-81
+196-->[com.google.firebase:firebase-iid:20.1.6] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\242ecb2f51722b3bd99b3b4658d4268f\jetified-firebase-iid-20.1.6\AndroidManifest.xml:42:25-78
+197            </intent-filter>
+198        </receiver>
+199        <receiver
+199-->[com.google.android.gms:play-services-measurement:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\5adc3dc24873e5b0e2bc62df36c55c4f\jetified-play-services-measurement-17.4.0\AndroidManifest.xml:29:9-33:20
+200            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+200-->[com.google.android.gms:play-services-measurement:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\5adc3dc24873e5b0e2bc62df36c55c4f\jetified-play-services-measurement-17.4.0\AndroidManifest.xml:30:13-85
+201            android:enabled="true"
+201-->[com.google.android.gms:play-services-measurement:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\5adc3dc24873e5b0e2bc62df36c55c4f\jetified-play-services-measurement-17.4.0\AndroidManifest.xml:31:13-35
+202            android:exported="false" >
+202-->[com.google.android.gms:play-services-measurement:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\5adc3dc24873e5b0e2bc62df36c55c4f\jetified-play-services-measurement-17.4.0\AndroidManifest.xml:32:13-37
+203        </receiver>
+204
+205        <service
+205-->[com.google.android.gms:play-services-measurement:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\5adc3dc24873e5b0e2bc62df36c55c4f\jetified-play-services-measurement-17.4.0\AndroidManifest.xml:35:9-38:40
+206            android:name="com.google.android.gms.measurement.AppMeasurementService"
+206-->[com.google.android.gms:play-services-measurement:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\5adc3dc24873e5b0e2bc62df36c55c4f\jetified-play-services-measurement-17.4.0\AndroidManifest.xml:36:13-84
+207            android:enabled="true"
+207-->[com.google.android.gms:play-services-measurement:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\5adc3dc24873e5b0e2bc62df36c55c4f\jetified-play-services-measurement-17.4.0\AndroidManifest.xml:37:13-35
+208            android:exported="false" />
+208-->[com.google.android.gms:play-services-measurement:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\5adc3dc24873e5b0e2bc62df36c55c4f\jetified-play-services-measurement-17.4.0\AndroidManifest.xml:38:13-37
+209        <service
+209-->[com.google.android.gms:play-services-measurement:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\5adc3dc24873e5b0e2bc62df36c55c4f\jetified-play-services-measurement-17.4.0\AndroidManifest.xml:39:9-43:72
+210            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+210-->[com.google.android.gms:play-services-measurement:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\5adc3dc24873e5b0e2bc62df36c55c4f\jetified-play-services-measurement-17.4.0\AndroidManifest.xml:40:13-87
+211            android:enabled="true"
+211-->[com.google.android.gms:play-services-measurement:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\5adc3dc24873e5b0e2bc62df36c55c4f\jetified-play-services-measurement-17.4.0\AndroidManifest.xml:41:13-35
+212            android:exported="false"
+212-->[com.google.android.gms:play-services-measurement:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\5adc3dc24873e5b0e2bc62df36c55c4f\jetified-play-services-measurement-17.4.0\AndroidManifest.xml:42:13-37
+213            android:permission="android.permission.BIND_JOB_SERVICE" />
+213-->[com.google.android.gms:play-services-measurement:17.4.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\5adc3dc24873e5b0e2bc62df36c55c4f\jetified-play-services-measurement-17.4.0\AndroidManifest.xml:43:13-69
+214
+215        <provider
+215-->[com.google.firebase:firebase-common:19.3.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\8e9d7420722348251c52478b175a6fe0\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+216            android:name="com.google.firebase.provider.FirebaseInitProvider"
+216-->[com.google.firebase:firebase-common:19.3.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\8e9d7420722348251c52478b175a6fe0\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+217            android:authorities="com.claimmate.claimmatecamera22.firebaseinitprovider"
+217-->[com.google.firebase:firebase-common:19.3.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\8e9d7420722348251c52478b175a6fe0\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+218            android:exported="false"
+218-->[com.google.firebase:firebase-common:19.3.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\8e9d7420722348251c52478b175a6fe0\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+219            android:initOrder="100" />
+219-->[com.google.firebase:firebase-common:19.3.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\8e9d7420722348251c52478b175a6fe0\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+220
+221        <activity
+221-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\ac0e6aa68b5f6f080f61bdd16397cea0\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+222            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+222-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\ac0e6aa68b5f6f080f61bdd16397cea0\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+223            android:exported="false"
+223-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\ac0e6aa68b5f6f080f61bdd16397cea0\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+224            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+224-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\ac0e6aa68b5f6f080f61bdd16397cea0\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+225
+226        <service
+226-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\58e15879a938b5b8d58fc2b06b878c10\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:29:9-35:19
+227            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+227-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\58e15879a938b5b8d58fc2b06b878c10\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:30:13-103
+228            android:exported="false" >
+228-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\58e15879a938b5b8d58fc2b06b878c10\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:31:13-37
+229            <meta-data
+229-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\58e15879a938b5b8d58fc2b06b878c10\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:32:13-34:39
+230                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+230-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\58e15879a938b5b8d58fc2b06b878c10\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:33:17-94
+231                android:value="cct" />
+231-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\58e15879a938b5b8d58fc2b06b878c10\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:34:17-36
+232        </service>
+233        <service
+233-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\69f96ee92c82e41b9404ac097e36ab3c\jetified-transport-runtime-2.2.0\AndroidManifest.xml:26:9-30:19
+234            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+234-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\69f96ee92c82e41b9404ac097e36ab3c\jetified-transport-runtime-2.2.0\AndroidManifest.xml:27:13-117
+235            android:exported="false"
+235-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\69f96ee92c82e41b9404ac097e36ab3c\jetified-transport-runtime-2.2.0\AndroidManifest.xml:28:13-37
+236            android:permission="android.permission.BIND_JOB_SERVICE" >
+236-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\69f96ee92c82e41b9404ac097e36ab3c\jetified-transport-runtime-2.2.0\AndroidManifest.xml:29:13-69
+237        </service>
+238
+239        <receiver
+239-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\69f96ee92c82e41b9404ac097e36ab3c\jetified-transport-runtime-2.2.0\AndroidManifest.xml:32:9-34:40
+240            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+240-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\69f96ee92c82e41b9404ac097e36ab3c\jetified-transport-runtime-2.2.0\AndroidManifest.xml:33:13-132
+241            android:exported="false" />
+241-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\dhruv\.gradle\caches\transforms-2\files-2.1\69f96ee92c82e41b9404ac097e36ab3c\jetified-transport-runtime-2.2.0\AndroidManifest.xml:34:13-37
+242    </application>
+243
+244</manifest>

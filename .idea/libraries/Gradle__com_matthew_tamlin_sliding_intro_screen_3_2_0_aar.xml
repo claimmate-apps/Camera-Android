@@ -1,8 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.matthew-tamlin:sliding-intro-screen:3.2.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d3889cffb153458485d10f0fc0a6b3e0/jetified-sliding-intro-screen-3.2.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d3889cffb153458485d10f0fc0a6b3e0/jetified-sliding-intro-screen-3.2.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4af0a91c1379b29866d6520d46d470cb/jetified-sliding-intro-screen-3.2.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4af0a91c1379b29866d6520d46d470cb/jetified-sliding-intro-screen-3.2.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4af0a91c1379b29866d6520d46d470cb/jetified-sliding-intro-screen-3.2.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.matthew-tamlin/sliding-intro-screen/3.2.0/17b5f880d03522caa30bc2e0475049e815fa0b05/sliding-intro-screen-3.2.0-javadoc.jar!/" />

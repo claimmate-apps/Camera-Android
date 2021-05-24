@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId 'com.claimmate.claimmatecamera21'
+        applicationId 'com.claimmate.claimmatecamera22'
         versionCode 9
         versionName "1.0.9"
         minSdkVersion 26

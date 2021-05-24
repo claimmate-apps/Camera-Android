@@ -50,6 +50,7 @@
         android:supportsRtl="true"
         android:theme="@style/MyTheme"
         android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
         tools:targetApi="m">
         <activity android:name="com.commonsware.cwac.camera.demo.activities.addclaimname"
             android:screenOrientation="portrait"></activity>

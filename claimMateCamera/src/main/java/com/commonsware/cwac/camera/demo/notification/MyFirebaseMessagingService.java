@@ -22,7 +22,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         Log.i(TAG, "token = " + token);
         new Helper(this);
-        Helper.setToken(FirebaseInstanceId.getInstance().getToken());
+        Helper.setToken(token);
     }
 
     @Override

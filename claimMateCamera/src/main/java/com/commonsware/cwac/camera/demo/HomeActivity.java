@@ -36,6 +36,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.speech.RecognizerIntent;
+
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -43,6 +44,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.text.Html;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -165,7 +167,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     final Context context = this;
     Bitmap b1;
     int i = 0;
-    File appdir,savefile1, savefile, mydir, subdir, reidir,maindir;
+    File appdir, savefile1, savefile, mydir, subdir, reidir, maindir;
 
     String strrei = "R";
     Button btnlastphoto;
@@ -323,7 +325,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
     int value = 0;
 
-    Button btntype2, btnnodamages, btno, btnnc,btnhailnodamages,btnhailmaterialdamages;
+    Button btntype2, btnnodamages, btno, btnnc, btnhailnodamages, btnhailmaterialdamages;
 
     Button btnroofadd, btnaddelevations, btnaddinterior, btnadddamage, btnesubcatgry, btnaddclaimname, btnmacroadd, btnAddDocument, btnLogout, btnSynchronize;
     LinearLayout llline;
@@ -389,7 +391,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
     Button btnarea, btnInsulation, btnQty;
 
-    Button btndamagetype1,btnmaterial1;
+    Button btndamagetype1, btnmaterial1;
 
     RelativeLayout rlmainview;
 
@@ -437,7 +439,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     ArrayList<QueModel> arrayListQue;
     ArrayList<ClaimModel> arrayListClaim;
 
-    Button btnr,btne;
+    Button btnr, btne;
 
     SlopListAdapter slopListAdapter;
     RecyclerView rv_slopno;
@@ -446,14 +448,18 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
     List<SlopCount> data;
 
-    AppCompatButton btn_replace_front,btn_replace_right,btn_replace_rear,btn_replace_left;
-    AppCompatButton btn_repair_front,btn_repair_right,btn_repair_rear,btn_repair_left;
-    AppCompatEditText edtrepair,edtreplace;
+    AppCompatButton btn_replace_front, btn_replace_right, btn_replace_rear, btn_replace_left;
+    AppCompatButton btn_repair_front, btn_repair_right, btn_repair_rear, btn_repair_left;
+    AppCompatEditText edtrepair, edtreplace;
     String repairno = "1";
     String replaceno = "1";
 
     LinearLayout ll_default_button_submenu;
     RelativeLayout rl_defaultmenu;
+    LinearLayout ll_photo_information_submenu;
+    RelativeLayout rl_photoinfomenu;
+    LinearLayout ll_menu_options_submenu;
+    RelativeLayout rl_menuoption;
 
     int repairvalue = 5;
 
@@ -552,8 +558,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         setToken();
 
 
-        if(!Constants.addclaimname.trim().equalsIgnoreCase(""))
-        {
+        if (!Constants.addclaimname.trim().equalsIgnoreCase("")) {
             AddClaimName(Constants.addclaimname.trim());
         }
     }
@@ -618,8 +623,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         };
     }
 
-    public void onClickRiskMacroDes(final View v)
-    {
+    public void onClickRiskMacroDes(final View v) {
         PopupMenu popupMenu = new PopupMenu(mContext, v);
         if (v.getId() == btnTypeOfConstruction.getId()) {
             clickonView("btnTypeOfConstruction");
@@ -696,9 +700,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         popupMenu.show();
     }
 
-    private void clickonView(String clickviewname)
-    {
-        Log.e("clickviewname",""+clickviewname);
+    private void clickonView(String clickviewname) {
+        Log.e("clickviewname", "" + clickviewname);
     }
 
     private void addRiskCustomTextPopup(final Button btn) {
@@ -949,7 +952,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         super.onPause();
     }
 
-    private void opendatabase()  throws SQLException {
+    private void opendatabase() throws SQLException {
 
     /*    claimDbHelper = new ClaimSqlLiteDbHelper(HomeActivity.this, claimDbHelper.claimdb_NAME);
         claimDbHelper.openDataBase();
@@ -957,8 +960,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         myPath = claimDbHelper.claimdb_PATH + claimDbHelper.claimdb_NAME;
         DB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
     }
-
-
 
 
     private void closedatabase() {
@@ -970,7 +971,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
     private static GoogleAnalytics sAnalytics;
     private static Tracker sTracker;
-    Button  btnscope;
+    Button btnscope;
+
     synchronized public Tracker getDefaultTracker() {
         // To enable debug logging use: adb shell setprop log.tag.GAv4 DEBUG
         if (sTracker == null) {
@@ -1045,13 +1047,11 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 claimDbHelper.CopyDataBaseFromAsset();
                 lastimageeditor.putString("iscopy", "yes");
                 lastimageeditor.commit();
-                Log.e("iscopy", "no");
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else {
-            Log.e("iscopy", "yes");
 
         }
         photoindex = lastpathpf.getInt("photoindex", 1);
@@ -1065,15 +1065,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
 
         appdir = new File(Environment.getExternalStorageDirectory(), getResources().getString(R.string.app_name));
-        if(!appdir.exists())
-        {
+        if (!appdir.exists()) {
             appdir.mkdir();
         }
 
         mydir = new File(appdir, appfoldername);
 
-        if(!mydir.exists())
-        {
+        if (!mydir.exists()) {
             mydir.mkdir();
         }
 
@@ -1093,10 +1091,11 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
 
         ll_default_button_submenu = findViewById(R.id.ll_default_button_submenu);
+        ll_photo_information_submenu = findViewById(R.id.ll_photo_information_submenu);
+        ll_menu_options_submenu = findViewById(R.id.ll_menu_options_submenu);
         rl_defaultmenu = findViewById(R.id.rl_defaultmenu);
-
-
-
+        rl_photoinfomenu = findViewById(R.id.rl_photoinfomenu);
+        rl_menuoption = findViewById(R.id.rl_menuoption);
 
 
         btnroofadd = findViewById(R.id.btnroofadd);
@@ -1211,7 +1210,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
         btniteriortype = findViewById(R.id.btniteriortype);
 
-        txt_slopeno  = findViewById(R.id.txt_slopeno);
+        txt_slopeno = findViewById(R.id.txt_slopeno);
 
         rlcontrolview = findViewById(R.id.rlcontrolview);
         rliteriortype = findViewById(R.id.rliteriortype);
@@ -1278,18 +1277,18 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         btne = findViewById(R.id.btne);
         btne.setTag("1");
 
-       btn_replace_front= findViewById(R.id.btn_replace_front);
-       btn_replace_right= findViewById(R.id.btn_replace_right);
-       btn_replace_rear= findViewById(R.id.btn_replace_rear);
-       btn_replace_left= findViewById(R.id.btn_replace_left);
+        btn_replace_front = findViewById(R.id.btn_replace_front);
+        btn_replace_right = findViewById(R.id.btn_replace_right);
+        btn_replace_rear = findViewById(R.id.btn_replace_rear);
+        btn_replace_left = findViewById(R.id.btn_replace_left);
 
 
-       btn_repair_front= findViewById(R.id.btn_repair_front);
-       btn_repair_right= findViewById(R.id.btn_repair_right);
-       btn_repair_rear= findViewById(R.id.btn_repair_rear);
-       btn_repair_left= findViewById(R.id.btn_repair_left);
+        btn_repair_front = findViewById(R.id.btn_repair_front);
+        btn_repair_right = findViewById(R.id.btn_repair_right);
+        btn_repair_rear = findViewById(R.id.btn_repair_rear);
+        btn_repair_left = findViewById(R.id.btn_repair_left);
 
-        edtrepair= findViewById(R.id.edtrepair);
+        edtrepair = findViewById(R.id.edtrepair);
         edtreplace = findViewById(R.id.edtreplace);
 
         repairno = lastpathpf.getString("repairno", "1");
@@ -1297,7 +1296,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
 
         rv_slopno = findViewById(R.id.rv_slopno);
-        gridLayoutManager = new GridLayoutManager(this,3);
+        gridLayoutManager = new GridLayoutManager(this, 3);
         gridLayoutManager.setOrientation(RecyclerView.VERTICAL);
         rv_slopno.setLayoutManager(gridLayoutManager);
 
@@ -1742,6 +1741,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         btne.setOnClickListener(this);
 
         rl_defaultmenu.setOnClickListener(this);
+        rl_photoinfomenu.setOnClickListener(this);
+        rl_menuoption.setOnClickListener(this);
 
         setDamageSelect();
 
@@ -1766,8 +1767,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         btnrei.setTag("3");
         onclick_R_E_I();
 
-        if(btnrei.getText().toString().equals("E") || btnrei.getText().toString().equals("R"))
-        {
+        if (btnrei.getText().toString().equals("E") || btnrei.getText().toString().equals("R")) {
             serdefaultvalue();
         }
 
@@ -1782,33 +1782,24 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         btn_repair_left.setOnClickListener(this);
     }
 
-    private void Select_Replace_Repair(AppCompatButton btn_Select_Replace_Repair, String slopno)
-    {
-        if(slopno.equalsIgnoreCase("1"))
-        {
+    private void Select_Replace_Repair(AppCompatButton btn_Select_Replace_Repair, String slopno) {
+        if (slopno.equalsIgnoreCase("1")) {
             btn_replace_front.setBackgroundColor(Color.parseColor("#645B5B"));
             btn_repair_front.setBackgroundColor(Color.parseColor("#645B5B"));
-        }
-        else if(slopno.equalsIgnoreCase("2"))
-        {
+        } else if (slopno.equalsIgnoreCase("2")) {
             btn_replace_right.setBackgroundColor(Color.parseColor("#645B5B"));
             btn_repair_right.setBackgroundColor(Color.parseColor("#645B5B"));
-        }
-        else if(slopno.equalsIgnoreCase("3"))
-        {
+        } else if (slopno.equalsIgnoreCase("3")) {
             btn_replace_rear.setBackgroundColor(Color.parseColor("#645B5B"));
             btn_repair_rear.setBackgroundColor(Color.parseColor("#645B5B"));
-        }
-        else if(slopno.equalsIgnoreCase("4"))
-        {
+        } else if (slopno.equalsIgnoreCase("4")) {
             btn_replace_left.setBackgroundColor(Color.parseColor("#645B5B"));
             btn_repair_left.setBackgroundColor(Color.parseColor("#645B5B"));
         }
         btn_Select_Replace_Repair.setBackgroundColor(Color.parseColor("#FF0000"));
     }
 
-    private void SetSlopNumberDate(String selectno)
-    {
+    private void SetSlopNumberDate(String selectno) {
         data = new ArrayList<>();
 
         SlopCount slopCountdata = new SlopCount();
@@ -1867,61 +1858,46 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         data.add(slopCountdata);
 
         int select = Integer.parseInt(selectno);
-        for (int i=0;i<data.size();i++)
-        {
-                if(i==select)
-                {
-                    data.get(i).setIscheck(true);
-                }
+        for (int i = 0; i < data.size(); i++) {
+            if (i == select) {
+                data.get(i).setIscheck(true);
+            }
         }
 
         slopListAdapter = new SlopListAdapter(HomeActivity.this, data, new customitemclicklistener() {
             @Override
-            public void onItemClick(View v, int position)
-            {
+            public void onItemClick(View v, int position) {
                 if (selectslop_cur.equals("1")) {
-                    no_frontslope = ""+data.get(position).getNo();
+                    no_frontslope = "" + data.get(position).getNo();
                     txt_frontslope.setText(no_frontslope);
-                    if(data.get(position).getNo()<repairvalue)
-                    {
+                    if (data.get(position).getNo() < repairvalue) {
                         btn_repair_front.performClick();
-                    }
-                    else
-                    {
+                    } else {
                         btn_replace_front.performClick();
                     }
                 } else if (selectslop_cur.equals("2")) {
-                    no_rightslope = ""+data.get(position).getNo();
+                    no_rightslope = "" + data.get(position).getNo();
                     txt_rightslope.setText(no_rightslope);
-                    if(data.get(position).getNo()<repairvalue)
-                    {
+                    if (data.get(position).getNo() < repairvalue) {
                         btn_repair_right.performClick();
-                    }
-                    else
-                    {
+                    } else {
                         btn_replace_right.performClick();
                     }
                 } else if (selectslop_cur.equals("3")) {
-                    no_rearslope = ""+data.get(position).getNo();
+                    no_rearslope = "" + data.get(position).getNo();
                     txt_rearslope.setText(no_rearslope);
 
-                    if(data.get(position).getNo()<repairvalue)
-                    {
+                    if (data.get(position).getNo() < repairvalue) {
                         btn_repair_rear.performClick();
-                    }
-                    else
-                    {
+                    } else {
                         btn_replace_rear.performClick();
                     }
                 } else if (selectslop_cur.equals("4")) {
-                    no_leftslope = ""+data.get(position).getNo();
+                    no_leftslope = "" + data.get(position).getNo();
                     txt_leftslope.setText(no_leftslope);
-                    if(data.get(position).getNo()<repairvalue)
-                    {
+                    if (data.get(position).getNo() < repairvalue) {
                         btn_repair_left.performClick();
-                    }
-                    else
-                    {
+                    } else {
                         btn_replace_left.performClick();
                     }
                 }
@@ -1930,10 +1906,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         rv_slopno.setAdapter(slopListAdapter);
     }
 
-    private void serdefaultvalue()
-    {
+    private void serdefaultvalue() {
         appfoldername = lastpathpf.getString("appfoldername", "ClaimMate");
-        Log.e("calldefault","==>serdefaultvalue");
 //        imgtop.performClick();
         showdamagetypeoption(false);
         showmaterialoption(false);
@@ -2080,10 +2054,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         public void onAutoFocus(boolean success, Camera camera) {
             if (success) {
                 // do something...
-                Log.e("app_res", "success!");
+
             } else {
                 // do something...
-                Log.e("app_res", "fail!");
+
             }
         }
     };
@@ -2134,8 +2108,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     }
 
     private void setDamageSelect() {
-        if (btndamagetype.getText().toString().equals("Damage")) {
-            btndamagetype.setText("Damage");
+        if (btndamagetype.getText().toString().equals("No Damage")) {      // check here
+            btndamagetype.setText("No Damage");
             btntype.setVisibility(View.INVISIBLE);
         } else {
             btntype.setVisibility(View.VISIBLE);
@@ -2178,6 +2152,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         e.printStackTrace();
                     }
                 }
+
                 @Override
                 public void onFailure(Call<String> call, Throwable t) {
                     Log.i(TAG, "checkStatusError = " + t.toString());
@@ -2338,6 +2313,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             public void onResponse(Call<String> call, Response<String> response) {
                 Log.i(TAG, "addRoof" + btnrisk.getText().toString() + "Res = " + response.body());
             }
+
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 Log.i(TAG, "addRoof" + btnrisk.getText().toString() + "Error = " + t.toString());
@@ -2394,13 +2370,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         String dwl_first = "";
         String dwl_first_custom = "";
         String dwl_second = "";
-        String dwl_second_custom= "";
-        String dwl_third="";
-        String dwl_third_custom="";
-        String dwl_fourth="";
-        String  dwl_fourth_custom = "";
-        String dwl_fifth="";
-        String dwl_fifth_custom="";
+        String dwl_second_custom = "";
+        String dwl_third = "";
+        String dwl_third_custom = "";
+        String dwl_fourth = "";
+        String dwl_fourth_custom = "";
+        String dwl_fifth = "";
+        String dwl_fifth_custom = "";
 
         if (btnTypeOfConstruction.getTag().toString().equalsIgnoreCase("Insert custom data")) {
             dwl_first = btnTypeOfConstruction.getTag().toString();
@@ -2456,6 +2432,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             public void onResponse(Call<String> call, Response<String> response) {
                 Log.i(TAG, "addRiskMacroDesRes = " + response.body());
             }
+
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 Log.i(TAG, "addRiskMacroDesError = " + t.toString());
@@ -2492,6 +2469,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 public void onResponse(Call<String> call, Response<String> response) {
                     Log.i(TAG, "addRoofRes = " + response.body());
                 }
+
                 @Override
                 public void onFailure(Call<String> call, Throwable t) {
                     Log.i(TAG, "addRoofError = " + t.toString());
@@ -2510,6 +2488,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 public void onResponse(Call<String> call, Response<String> response) {
                     Log.i(TAG, "addElevationRes = " + response.body());
                 }
+
                 @Override
                 public void onFailure(Call<String> call, Throwable t) {
                     Log.i(TAG, "addElevationError = " + t.toString());
@@ -2532,6 +2511,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     Log.i(TAG, "addInteriorAreaRes = " + response.body());
                     System.out.println("addInteriorArea response:-" + response.body());
                 }
+
                 @Override
                 public void onFailure(Call<String> call, Throwable t) {
                     Log.i(TAG, "addInteriorAreaError = " + t.toString());
@@ -2548,6 +2528,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             public void onResponse(Call<String> call, Response<String> response) {
                 Log.i(TAG, "addInteriorAreaRes = " + response.body());
             }
+
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 Log.i(TAG, "addInteriorAreaError = " + t.toString());
@@ -2593,6 +2574,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             public void onResponse(Call<String> call, Response<String> response) {
                 Log.i(TAG, "addRoomMacro res = " + response.body());
             }
+
             @Override
             public void onFailure(Call<String> call, Throwable t) {
                 Log.i(TAG, "addRoomMacro error = " + t.toString());
@@ -2607,19 +2589,16 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 //                btno.setVisibility(View.VISIBLE);
 //                btnnc.setVisibility(View.VISIBLE );
                 lastimageeditor = lastpathpf.edit();
-                if(btnrisk.getVisibility() == View.VISIBLE)
-                {
+                if (btnrisk.getVisibility() == View.VISIBLE) {
                     btnrisk.setVisibility(View.INVISIBLE);
                 }
-                if(btnimgmacrosub.getVisibility() == View.VISIBLE)
-                {
+                if (btnimgmacrosub.getVisibility() == View.VISIBLE) {
                     btnimgmacrosub.setVisibility(View.INVISIBLE);
                 }
                 String feo = "";
                 String TimeStamp = dateFormat.format(new Date());
                 String FolderTimeStamp = folderdateFormat.format(new Date());
                 String currentTimeStamp = "" + photoindex;//dateFormat.format(new Date());
-                Log.e("currentTimeStamp","" + currentTimeStamp);
                 getalphaname();
                 if (btnrisk.getText().toString().trim().equals("Pitch")) {
                     screenshotHideview();
@@ -2632,16 +2611,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     screenshotShowviewAditional();
                 }
                 mydir = new File(appdir, appfoldername);
-                if(!mydir.exists())
-                {
+                if (!mydir.exists()) {
                     mydir.mkdir();
                 }
                 String mydirpath = mydir.getAbsolutePath();
-                Log.e("GetPath", "==>" + mydirpath);
-                Log.e("GetPathdate", "==>" + FolderTimeStamp);
-                File fileTimeStamp = new File(mydir,FolderTimeStamp);
-                if(!fileTimeStamp.exists())
-                {
+
+                File fileTimeStamp = new File(mydir, FolderTimeStamp);
+                if (!fileTimeStamp.exists()) {
                     fileTimeStamp.mkdir();
                 }
                 /*if (!mydirpath.contains(FolderTimeStamp.toString()))
@@ -2657,8 +2633,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 else
                     Log.d("error", "dir. already exists");
 */
-                if (isBottomShow)
-                {
+                if (isBottomShow) {
                     subdir = new File(fileTimeStamp, "Screenshots");
                     if (!subdir.exists())
                         subdir.mkdirs();
@@ -2698,14 +2673,12 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         if (btnrei.getText().toString().trim().equals("R")) {
                             if (strgethailimagename.contains(" Overview")) {
                                 strgethailimagename = strgethailimagename.replace("Overview", " " + strboctype);
-                                if(strgethailimagename.contains(" Close up"))
-                                {
+                                if (strgethailimagename.contains(" Close up")) {
                                     strgethailimagename = strgethailimagename.replace(" Close up", "" + strboctype);
                                 }
                             } else if (strgethailimagename.contains("Overview")) {
                                 strgethailimagename = strgethailimagename.replace("Overview", " " + strboctype);
-                                if(strgethailimagename.contains("Close up"))
-                                {
+                                if (strgethailimagename.contains("Close up")) {
                                     strgethailimagename = strgethailimagename.replace(" Close up", "" + strboctype);
                                 }
                             }
@@ -2753,17 +2726,14 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             } else if (strgethailimagename.contains("Close up")) {
                                 strgethailimagename = strgethailimagename.replace(strboctype, "" + strboctype);
                                 //strgethailimagename=strboctype;
-                            }else if (strgethailimagename.contains("  Close up")) {
-                                strgethailimagename = strgethailimagename.replace("  "+strboctype, " " + strboctype);
+                            } else if (strgethailimagename.contains("  Close up")) {
+                                strgethailimagename = strgethailimagename.replace("  " + strboctype, " " + strboctype);
                                 //strgethailimagename=strboctype;
                             }
 
                         } else {
                             strgethailimagename = strgethailimagename + " " + btnhailmenu1.getText().toString().trim() + " " + afternum;
                         }
-
-                        Log.e("strgethailimagename2", "" + strgethailimagename);
-
 
                         String indeximage = "";
                         if (btnhailtype.getText().equals("Front Slope")) {
@@ -2792,10 +2762,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             lastimageeditor.commit();
 
                         }
-                        Log.e("strgethailimagename3", "" + imgname);
 
-
-                        imgname = "  " + imgname;
+                        imgname = " " + imgname;     // check space here
 
 //                        if(imgname.contains("Slope  Overview on Shingles"))
 //                        {
@@ -2805,20 +2773,24 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 //                        Toast.makeText(mContext, strgethailimagename, Toast.LENGTH_LONG).show();
 
                         adddbimg(strgethailimagename);
-                    } else if (btnInteriorMacro.getVisibility() == View.VISIBLE) {
+                    }
+                    else if (btnInteriorMacro.getVisibility() == View.VISIBLE) {
                         imgname = txtalphaname.getText().toString() + space + currentTimeStamp + ".jpg";
-                    } else if (btnInteriorNewMacro.getVisibility() == View.VISIBLE) {
+                    }
+                    else if (btnInteriorNewMacro.getVisibility() == View.VISIBLE) {
                         imgname = txtalphaname.getText().toString() + space + currentTimeStamp + ".jpg";
                         imgname = imgname.replace(intRoomName, intRoomFullName);
                         addInteriorRoomMacroApi();
-                    } else if (btnRoomMacro.getVisibility() == View.VISIBLE) {
+                    }
+                    else if (btnRoomMacro.getVisibility() == View.VISIBLE) {
                         imgname = txtalphaname.getText().toString() + space + currentTimeStamp + ".jpg";
                         imgname = imgname.replace(intRoomName, intRoomFullName);
                         addRoomMacroApi();
-                    } else if (rlNewMacro.getVisibility() == View.VISIBLE) {
+                    }
+                    else if (rlNewMacro.getVisibility() == View.VISIBLE) {
                         imgname = txtalphaname.getText().toString() + space + currentTimeStamp + ".jpg";
-                    } else if (btnrisk.getText().toString().trim().equals("Aditional Photo")) {
-
+                    }
+                    else if (btnrisk.getText().toString().trim().equals("Aditional Photo")) {
                         strreitype = "";
 
                         if (btnrei.getText().toString().trim().equals("I")) {
@@ -2849,11 +2821,11 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                                         strdamagetype = " " + damagecostmtext;
                                     } else {
 
-                                        if (btndamagetype.getText().toString().equals("Damage")) {
-                                            strdamagetype = "";
-                                        } else {
-                                            strdamagetype = " " + btndamagetype.getText().toString().trim();
-                                        }
+//                                        if (btndamagetype.getText().toString().equals("Damage")) {   check here
+//                                            strdamagetype = "";
+//                                        } else {
+                                        strdamagetype = " " + btndamagetype.getText().toString().trim();
+//                                        }
 
                                     }
                                 }
@@ -2893,71 +2865,49 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         }*/
 
 
-                        if(!btntype2.getTag().equals("1")|| btnrei.getText().toString().equalsIgnoreCase("i"))
-                        {if(btnrei.getText().toString().equalsIgnoreCase("i"))
-                        {
-                            if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text") )
-                            {
-                                strmaterial = matrialcostmtext + "   ";
-                            }
-                            else
-                            {
-                                if(btnmaterial.getText().toString().equals("Material"))
-                                {
-                                    strmaterial = "";
-                                }else {
-
-
-                                    if(btnSubAreaTogal.getVisibility() == View.VISIBLE && btnSubAreaTogal.getTag().toString().equalsIgnoreCase("2"))
-                                    {
-                                        strmaterial = ""+btnmaterial.getText().toString().trim() + "   ";
-                                    }
-                                    else
-                                    {
+                        if (!btntype2.getTag().equals("1") || btnrei.getText().toString().equalsIgnoreCase("i")) {
+                            if (btnrei.getText().toString().equalsIgnoreCase("i")) {
+                                if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text")) {
+                                    strmaterial = matrialcostmtext + "   ";
+                                } else {
+                                    if (btnmaterial.getText().toString().equals("Material")) {
                                         strmaterial = "";
+                                    } else {
+
+
+                                        if (btnSubAreaTogal.getVisibility() == View.VISIBLE && btnSubAreaTogal.getTag().toString().equalsIgnoreCase("2")) {
+                                            strmaterial = "" + btnmaterial.getText().toString().trim() + "   ";
+                                        } else {
+                                            strmaterial = "";
+                                        }
                                     }
+
                                 }
 
-                            }
+                            } else {
+                                if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text")) {
+                                    strmaterial = matrialcostmtext + "   ";
+                                } else {
+                                    if (btnmaterial.getText().toString().equals("Material")) {
+                                        strmaterial = "";
+                                    } else {
 
-                        }
-                        else
-                        {
-                            if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text") )
-                            {
-                                strmaterial = matrialcostmtext + "   ";
-                            }
-                            else
-                            {
-                                if(btnmaterial.getText().toString().equals("Material"))
-                                {
-                                    strmaterial = "";
-                                }else {
+                                        strmaterial = "" + btnmaterial.getText().toString().trim() + "   ";
+                                    }
 
-                                    strmaterial = ""+btnmaterial.getText().toString().trim() + "   ";
                                 }
-
                             }
+                            Log.e("strmaterial_if", "" + strmaterial);
+                        } else {
+                            Log.e("strmaterial_else", "" + strmaterial);
                         }
-
-                            Log.e("strmaterial_if",""+strmaterial);
-
-                        }
-                        else
-                        {
-                            Log.e("strmaterial_else",""+strmaterial);
-
-                        }
-
-                        strmaterial = strmaterial+" ";
-                        Log.e("strmaterial->","==>"+strmaterial);
+                        strmaterial = strmaterial + " ";
                         if (btnrei.getText().toString().endsWith("I")) {
                             strname = strreitype + ((areaname.equalsIgnoreCase(" Ceiling") || areaname.equalsIgnoreCase(" wall")) ? " " : "") + areaname + strdamagetype + strnodamage + strmaterial +/*(btnocb.getTag().toString().equals("1")?"  ":" ") +*/" " + strboctype.trim() + " ";
                         } else {
+                            Log.e("here4", "onPictureTaken: "+strdamagetype);
                             strname = strreitype + (btnrei.getText().toString().trim().equals("R") ? "Roof" : "Elevation") + strmaterial + strdamagetype + strnodamage + " " + (btnocb.getTag().equals("1") ? "Overview" : (btnocb.getTag().equals("2") ? "Close up" : "")) + " ";
                         }
-
-                        Log.e("getstrname", "==>" + strname);
 
                         if (strname.contains("Blank  ")) {
                             strname = strname.replace("Blank  ", "");
@@ -2966,7 +2916,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         if (strname.contains("  Blank")) {
                             strname = strname.replace("  Blank", "");
                         }
-
                         if (strname.contains(" Blank")) {
                             strname = strname.replace(" Blank", "");
                         }
@@ -2984,26 +2933,25 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                                 strname = strname + " " + btnmatrialsubmenu.getText().toString().trim() + " ";
                             }
                         }
-
                         if (btnrei.getText().toString().equals("I")) {
                             imgname = strname + "" + strisNone + space + currentTimeStamp + ".jpg";
                         } else {
                             if (strname.equalsIgnoreCase("Slope Overview "))
                                 strname = "Roof Overview ";
+                            Log.e("here3", "onPictureTaken: "+strname);
                             imgname = strname + "" + strisNone + space + currentTimeStamp + ".jpg";
                         }
-
                         if (btnrei.getText().toString().equalsIgnoreCase("r"))
                             imgname = "  " + imgname.trim();
                         else if (btnrei.getText().toString().equalsIgnoreCase("e"))
                             imgname = " " + imgname.trim();
                         else
                             imgname = imgname.trim();
-
                         // call api
                         addRoofElevationInteriorDataApi();
 
-                    } else if (btnrisk.getText().toString().trim().equals("Risk")) {
+                    }
+                    else if (btnrisk.getText().toString().trim().equals("Risk")) {
 
                         imgname = "Risk Photo" + " " + strisNone + space + currentTimeStamp + ".jpg";//dateFormat.format(new Date());
                         imgname = "      " + imgname.trim();
@@ -3017,7 +2965,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
                         // api call
                         addRiskMacroDataApi();
-                    } else if (btnrisk.getText().toString().trim().equals("Risk2")) {
+                    }
+                    else if (btnrisk.getText().toString().trim().equals("Risk2")) {
 
                         imgname = "Risk Photo" + " " + strisNone + space + currentTimeStamp + ".jpg";
                         imgname = "      " + imgname.trim();
@@ -3028,17 +2977,21 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         photoindex++;
                         lastimageeditor.putInt("photoindex", photoindex);
                         lastimageeditor.commit();
-                    } else if (btnrisk.getText().toString().trim().equals("Front Elevation Overview")) {
+                    }
+                    else if (btnrisk.getText().toString().trim().equals("Front Elevation Overview")) {
                         feo = " ";
                         imgname = "Front Elevation Overview" + space + currentTimeStamp + ".jpg";//dateFormat.format(new Date());
                         photoindex++;
                         lastimageeditor.putInt("photoindex", photoindex);
                         lastimageeditor.commit();
-                    } else if (btnrisk.getText().toString().trim().equals("Roof Overview")) {
+                    }
+                    else if (btnrisk.getText().toString().trim().equals("Roof Overview")) {
                         imgname = "    Roof Overview" + space + TimeStamp + ".jpg";//dateFormat.format(new Date());
-                    } else if (btnrisk.getText().toString().trim().equals("Blank")) {
+                    }
+                    else if (btnrisk.getText().toString().trim().equals("Blank")) {
                         imgname = space + TimeStamp + ".jpg";
-                    } else if (btnrisk.getText().toString().trim().equals("Layers")) {
+                    }
+                    else if (btnrisk.getText().toString().trim().equals("Layers")) {
 
                         if (layerphoto == 0)
                             imgname = btnLayersmenu1.getText().toString() + " Layer with " + btnLayersmenu.getText().toString() + " " + strisNone + space + TimeStamp + ".jpg";//dateFormat.format(new Date());
@@ -3048,7 +3001,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         imgname = "     " + imgname.trim();
 
                         addRoofDataApi();
-                    } else if (btnrisk.getText().toString().trim().equals("Pitch")) {
+                    }
+                    else if (btnrisk.getText().toString().trim().equals("Pitch")) {
                         btnpitchmenu.setVisibility(View.VISIBLE);
                         String pitchvalue = lblpitchvalue.getText().toString().trim();
                         pitchvaluestorevalue = pitchvalue;
@@ -3065,7 +3019,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         Log.i(TAG, "imgname = " + imgname);
 
                         addRoofDataApi();
-                    } else if (btnrisk.getText().toString().trim().equals("New Aditional photo")) {
+                    }
+                    else if (btnrisk.getText().toString().trim().equals("New Aditional photo")) {
                         btnpitchmenu.setVisibility(View.VISIBLE);
                         txtalphaname.setText(addcostmphotoname);
                         String pitchvalue = txtalphaname.getText().toString().trim();
@@ -3081,7 +3036,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         Log.i(TAG, "imgname = " + imgname);
 
 
-                    } else if (btnrisk.getText().toString().trim().equals("Shingle")) {
+                    }
+                    else if (btnrisk.getText().toString().trim().equals("Shingle")) {
                         btnpitchmenu.setVisibility(View.VISIBLE);
 
                         /*if (btnrei.getText().toString().trim().equals("R")) {
@@ -3093,7 +3049,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         imgname = "     " + imgname.trim();
 
                         addRoofDataApi();
-                    } else if (btnrisk.getText().toString().trim().equals("Gutter")) {
+                    }
+                    else if (btnrisk.getText().toString().trim().equals("Gutter")) {
 
                         /*if (btnrei.getText().toString().trim().equals("R")) {
                             imgname = "  " + btnguttermenu1.getText().toString() + " on this dwelling" + " " + strisNone + "                                        " + TimeStamp + ".jpg";//dateFormat.format(new Date());
@@ -3102,7 +3059,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         }*/
                         imgname = btnguttermenu1.getText().toString() + " " + strisNone + space + TimeStamp + ".jpg";//dateFormat.format(new Date());
                         imgname = "     " + imgname.trim();
-                    } else if (btnrisk.getText().toString().trim().equals("Overhang")) {
+                    }
+                    else if (btnrisk.getText().toString().trim().equals("Overhang")) {
 
                         if (btnrei.getText().toString().trim().equals("R")) {
                             imgname = "  " + btnoverhangmenu1.getText().toString() + " inch overhang" + " " + strisNone + space + TimeStamp + ".jpg";//dateFormat.format(new Date());
@@ -3111,62 +3069,31 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             imgname = btnoverhangmenu1.getText().toString() + " inch overhang" + " " + strisNone + space + TimeStamp + ".jpg";//dateFormat.format(new Date());
                         }
                         imgname = "     " + imgname.trim();
-                    } else if (btnrisk.getText().toString().trim().equals("Type of siding")) {
+                    }
+                    else if (btnrisk.getText().toString().trim().equals("Type of siding")) {
                         imgname = txtalphaname.getText().toString() + space + TimeStamp + ".jpg";
                         imgname = " " + imgname.trim();
-                    } else {
+                    }
+                    else {
                         imgname = getcoustomname(btnsubmenu, macrosubmenu) + space + TimeStamp + ".jpg";//dateFormat.format(new Date());
                     }
-
-                    Log.e("claimpath", "==>" + savefile.getAbsolutePath());
-                    Log.e("claimpathfilename", "==>" + imgname);
 
                     if (imgname.contains("Overview")) {
                         if (btnrei.getText().toString().endsWith("I"))
                             imgname = imgname.replace("Overview", " Overview");
                         else
                             imgname = imgname.replace("Overview", "Overview");
-                        Log.e("imgName", "over = " + imgname);
                     }
-
-
-//                    if(imgname.contains("Front Slope Hail Damage Slope Overview on Shingles"))
-//                    {
-//
-//                        imgname = imgname.replace("Front Slope Hail Damage Slope Overview on Shingles", "Front Slope Hail Damage Overview on Shingles");
-//
-//                    }
-
-
-
-                    Log.e("imgName", "over after = " + imgname);
-
-                    /*if (imgname.contains("Risk")) {
-                        imgname = "      " + imgname.trim();
-                    }*/
 
                     if (imgname.contains("test sq")) {
                         imgname = imgname.replace("test sq", " test sq");
                     }
-
-                    /*if (btnInteriorMacro.getVisibility() == View.VISIBLE) {
-                        imgname = imgname.trim();
-                    } else if (btnimgmacro.getText().toString().trim().equals("Macro")) {
-                        if (btnrei.getText().toString().equals("E")) {
-                            imgname = "__" + imgname;
-                        } else if (btnrei.getText().toString().equals("I")) {
-                            imgname = imgname.toString().trim();
-                            imgname = "_" + imgname;
-                        }
-                    }*/
-
                     if (imgname.contains("_")) {
                         String first = "";
                         String second = "";
 
                         String[] stroverviewname = imgname.split("_");
                         first = stroverviewname[0];
-                        Log.e("firstname", "==>" + first);
 
                         if (first.trim().equals("")) {
                             first = stroverviewname[0];
@@ -3183,15 +3110,12 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             if (first.trim().equals("Overview")) {
                                 if (btnrei.getText().toString().equals("R")) {
                                     imgname = "Roof " + first.toString().trim() + " " + second;
-                                    Log.e("imgname", "" + imgname);
 
                                 } else if (btnrei.getText().toString().equals("E")) {
                                     imgname = "Elevations " + first.toString().trim() + " " + second;
-                                    Log.e("imgname", "" + imgname);
 
                                 } else if (btnrei.getText().toString().equals("I")) {
                                     imgname = "Interior " + first.toString().trim() + " " + second;
-                                    Log.e("imgname", "" + imgname);
                                 }
                             }
                         } else if (first.contains("_")) {
@@ -3216,20 +3140,16 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
                                 if (btnrei.getText().toString().equals("R")) {
                                     imgname = "Roof " + first.trim() + " " + second;
-                                    Log.e("imgname", "" + imgname);
 
                                 } else if (btnrei.getText().toString().equals("E")) {
                                     imgname = "Elevations " + first.trim() + " " + second;
-                                    Log.e("imgname", "" + imgname);
 
                                 } else if (btnrei.getText().toString().equals("I")) {
                                     imgname = "Interior " + first.trim() + " " + second;
-                                    Log.e("imgname", "" + imgname);
                                 }
                             }
                         }
                     }
-
                     if (btnabc.getText().toString().equals("Fence")) {
                         String strf_fdamage = "";
 
@@ -3240,37 +3160,24 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         imgname = "Fence " + strfencegame + " " + strf_fdamage + space + currentTimeStamp + ".jpg";
                     }
                     imgname = feo + imgname;
-
-
-                    if(!imgname.contains("  Overview"))
-                    {
-                        if(imgname.contains(" Overview"))
-                        {
-                            imgname = imgname.replace(" Overview","  Overview");
+                    if (!imgname.contains("  Overview")) {
+                        if (imgname.contains(" Overview")) {
+                            imgname = imgname.replace(" Overview", "  Overview");
                         }
                     }
-                    else
-                    {
-                        if(imgname.contains(" Overview"))
-                        {
-                            imgname = imgname.replace(" Overview","  Overview");
+                    else {
+                        if (imgname.contains(" Overview")) {
+                            imgname = imgname.replace(" Overview", "  Overview");
                         }
                     }
-
-
-
-
                     if (isBottomShow)
                         imgname = "zz_" + imgname;
-
                     if (!imgMicName.equals("")) {
                         imgname = imgMicName + space + currentTimeStamp + ".jpg";
                         savefile = new File(savefile.getAbsolutePath() + "/VoicePhotos");
                         if (!savefile.exists())
                             savefile.mkdir();
                     }
-                    //imgname=
-
                     if (btnrisk.getText().toString().trim().equals("New Aditional photo")) {
                         imgname = txtalphaname.getText().toString().trim() + ".jpg";
 
@@ -3279,25 +3186,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             savefile.mkdir();
                     }
 
-//                    ClaimModel m = new ClaimModel();
-//                    if (btncat.getText().toString() != m.getName()) {
-//                        imgname = txtalphaname.getText().toString().trim() + ".jpg";
-//
-//                        savefile = new File(savefile.getAbsolutePath() + "/claimmate ");
-//                        if (!savefile.exists())
-//                            savefile.mkdir();
-//                    }
-
-
-
-
-
-                    /*if (imgname.contains(currentTimeStamp)) {
-                        imgname = imgname.split(currentTimeStamp)[0]+"                              "+currentTimeStamp+".jpg";
-                    }*/
                     String savefilepath = savefile.getAbsolutePath() + "/" + imgname;// String.format(mydir.getAbsolutePath()+"/"+imgname+"_"+currentTimeStamp+".jpg", System.currentTimeMillis());
-                    Log.e("savefilepath", "==>" +savefilepath);
-
+                    Log.e("here2", "onPictureTaken: "+savefilepath);    //  remove this
                     lastimageeditor.putString("lastimgpath", savefilepath);
                     lastimageeditor.putString("lastimgname", imgname);
                     lastimageeditor.commit();
@@ -3313,9 +3203,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     String mCurrentPhotoPath = "file:" + savefile.getAbsolutePath(); // image is the created file image
 
                     opengallery = false;
-
-
-
 
 
                     if (chkdate.isChecked()) {
@@ -3475,9 +3362,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 Toast.makeText(getApplicationContext(), "save your picture in " + savefile.getAbsolutePath(), Toast.LENGTH_LONG).show();
                 refreshCamera();
 
-
-                Log.e("so", "-->" + btnrisk.getText());
-
                 if (btnimgmacro.getText().toString().trim().equals("Aditional Photo")) {
                     nextPhoto("Layers");
                 } else if (btnrisk.getText().toString().trim().equals("Risk")) {
@@ -3573,8 +3457,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     hailimgcount++;
                     btno.setVisibility(View.VISIBLE);//dmakchange
                     btnocb.setVisibility(View.INVISIBLE);
-
-                    Log.e("no_slopeimg", "" + no_slopeimg);
 
                     if (hailimgcount == no_slopeimg) {
                         btnhailskip.setText("Next Slope");
@@ -3695,14 +3577,11 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 //                btnnodamagetype.setVisibility(View.VISIBLE);
 
 
-
-                if(btnrisk.getVisibility() == View.INVISIBLE)
-                {
+                if (btnrisk.getVisibility() == View.INVISIBLE) {
                     btnrisk.setVisibility(View.VISIBLE);
                 }
 
-                if(btnimgmacrosub.getVisibility() == View.INVISIBLE)
-                {
+                if (btnimgmacrosub.getVisibility() == View.INVISIBLE) {
                     btnimgmacrosub.setVisibility(View.VISIBLE);
                 }
 
@@ -3713,38 +3592,29 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     }
 
     private void Save_CameraData() {
-        if(strrei.equalsIgnoreCase("I"))
-        {
+        if (strrei.equalsIgnoreCase("I")) {
             String buildingType = "";
 
-            if(btnabc.getText().toString().equalsIgnoreCase("None"))
-            {
+            if (btnabc.getText().toString().equalsIgnoreCase("None")) {
                 buildingType = "Main Building";
-            }
-            else
-            {
+            } else {
                 buildingType = btnabc.getText().toString().trim();
             }
 
-            if(btnCeiling.getTag().equals("2"))
-            {
+            if (btnCeiling.getTag().equals("2")) {
                 String areaname = "";
                 String subareaname = "";
                 String damagename = "";
-                String roomtype= "";
+                String roomtype = "";
                 String no = "";
 
                 areaname = "Ceiling";//btnCeiling.getText().toString();
-                no =  btnmatrialsubmenu.getText().toString();
+                no = btnmatrialsubmenu.getText().toString();
 
-                if(!btniteriortype.getText().toString().equalsIgnoreCase("Room"))
-                {
+                if (!btniteriortype.getText().toString().equalsIgnoreCase("Room")) {
                     roomtype = btniteriortype.getText().toString();
                 }
-
-                Log.e("btntype2","==>"+btntype2.getText().toString());
-                if(!btndamagetype.getText().toString().equalsIgnoreCase("Damage"))
-                {
+                if (!btndamagetype.getText().toString().equalsIgnoreCase("Damage")) {
                     damagename = btndamagetype.getText().toString();
 
                   /*  if(btndamagetype.getTag().toString().equalsIgnoreCase("2"))
@@ -3753,40 +3623,31 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 }
 
 
-                if(btnSubAreaTogal.getTag().toString().equalsIgnoreCase("2"))
-                {
+                if (btnSubAreaTogal.getTag().toString().equalsIgnoreCase("2")) {
                     subareaname = btnSubAreaTogal.getText().toString();
 
-                }
-                else
-                {
+                } else {
                     subareaname = "";
                 }
-
-                Log.e("SaveCameraDataname",""+areaname+","+subareaname+","+damagename+","+roomtype+","+no);
-                addInteriorData(areaname,subareaname,damagename,roomtype,no,buildingType);
+                addInteriorData(areaname, subareaname, damagename, roomtype, no, buildingType);
             }
 
 
-            if(btnWall.getTag().equals("2"))
-            {
+            if (btnWall.getTag().equals("2")) {
                 String areaname = "";
                 String subareaname = "";
                 String damagename = "";
-                String roomtype= "";
+                String roomtype = "";
                 String no = "";
 
                 areaname = "Wall";//btnWall.getText().toString();
-                no =  btnmatrialsubmenu.getText().toString();
+                no = btnmatrialsubmenu.getText().toString();
 
-                if(!btniteriortype.getText().toString().equalsIgnoreCase("Room"))
-                {
+                if (!btniteriortype.getText().toString().equalsIgnoreCase("Room")) {
                     roomtype = btniteriortype.getText().toString();
                 }
 
-                Log.e("btntype2","==>"+btntype2.getText().toString());
-                if(!btndamagetype.getText().toString().equalsIgnoreCase("Damage"))
-                {
+                if (!btndamagetype.getText().toString().equalsIgnoreCase("Damage")) {
                     damagename = btndamagetype.getText().toString();
 
                   /*  if(btndamagetype.getTag().toString().equalsIgnoreCase("2"))
@@ -3795,40 +3656,32 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 }
 
 
-                if(btnSubAreaTogal.getTag().toString().equalsIgnoreCase("2"))
-                {
+                if (btnSubAreaTogal.getTag().toString().equalsIgnoreCase("2")) {
                     subareaname = btnSubAreaTogal.getText().toString();
 
-                }
-                else
-                {
+                } else {
                     subareaname = "";
                 }
 
-                Log.e("SaveCameraDataname",""+areaname+","+subareaname+","+damagename+","+roomtype+","+no);
-                addInteriorData(areaname,subareaname,damagename,roomtype,no,buildingType);
+                addInteriorData(areaname, subareaname, damagename, roomtype, no, buildingType);
             }
 
 
-            if(btnFloor.getTag().equals("2"))
-            {
+            if (btnFloor.getTag().equals("2")) {
                 String areaname = "";
                 String subareaname = "";
                 String damagename = "";
-                String roomtype= "";
+                String roomtype = "";
                 String no = "";
 
                 areaname = "Floor";//btnWall.getText().toString();
-                no =  btnmatrialsubmenu.getText().toString();
+                no = btnmatrialsubmenu.getText().toString();
 
-                if(!btniteriortype.getText().toString().equalsIgnoreCase("Room"))
-                {
+                if (!btniteriortype.getText().toString().equalsIgnoreCase("Room")) {
                     roomtype = btniteriortype.getText().toString();
                 }
 
-                Log.e("btntype2","==>"+btntype2.getText().toString());
-                if(!btndamagetype.getText().toString().equalsIgnoreCase("Damage"))
-                {
+                if (!btndamagetype.getText().toString().equalsIgnoreCase("Damage")) {
                     damagename = btndamagetype.getText().toString();
 
                   /*  if(btndamagetype.getTag().toString().equalsIgnoreCase("2"))
@@ -3837,63 +3690,47 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 }
 
 
-                if(btnSubAreaTogal.getTag().toString().equalsIgnoreCase("2"))
-                {
+                if (btnSubAreaTogal.getTag().toString().equalsIgnoreCase("2")) {
                     subareaname = btnSubAreaTogal.getText().toString();
 
-                }
-                else
-                {
+                } else {
                     subareaname = "";
                 }
 
-                Log.e("SaveCameraDataname",""+areaname+","+subareaname+","+damagename+","+roomtype+","+no);
-                addInteriorData(areaname,subareaname,damagename,roomtype,no,buildingType);
+                addInteriorData(areaname, subareaname, damagename, roomtype, no, buildingType);
             }
 
-        }
-        else if(strrei.equalsIgnoreCase("R"))
-        {
+        } else if (strrei.equalsIgnoreCase("R")) {
 
 
             String buildingType = "";
-            String quantity="";
-            String damageType="";
+            String quantity = "";
+            String damageType = "";
             String material = "";
             String slopeType = "";
 
 
-            if(btnabc.getText().toString().equalsIgnoreCase("None"))
-            {
+            if (btnabc.getText().toString().equalsIgnoreCase("None")) {
                 buildingType = "Main Building";
-            }
-            else
-            {
+            } else {
                 buildingType = btnabc.getText().toString().trim();
             }
 
             quantity = btnQty.getText().toString().trim();
 
-            if(quantity.toString().trim().equalsIgnoreCase("Quantity"))
-            {
+            if (quantity.toString().trim().equalsIgnoreCase("Quantity")) {
                 quantity = "0";
             }
 
 
-            if(btntype.getVisibility() == View.VISIBLE)
-            {
-                if(btntype.getTag().equals("2"))
-                {
+            if (btntype.getVisibility() == View.VISIBLE) {
+                if (btntype.getTag().equals("2")) {
                     damageType = btntype.getText().toString().trim();
-                }
-                else
-                {
+                } else {
                     damageType = "No Damage";
                 }
 
-            }
-            else
-            {
+            } else {
                 damageType = "No Damage";
             }
 
@@ -3912,64 +3749,45 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 */
 
 
-            if(selectslope.toString().trim().equalsIgnoreCase(""))
-            {
+            if (selectslope.toString().trim().equalsIgnoreCase("")) {
                 slopeType = "Slope";
+            } else {
+                slopeType = selectslope.toString().trim();
             }
-            else
-            {
-                slopeType  = selectslope.toString().trim();
-            }
+            addRoofData(slopeType, material, damageType, quantity, buildingType);
 
 
-            Log.e("SaveRoofCameraData",""+slopeType+","+damageType+","+material+","+quantity+","+buildingType);
-            addRoofData(slopeType,material,damageType,quantity,buildingType);
-
-
-
-        }
-        else if(strrei.equalsIgnoreCase("E"))
-        {
+        } else if (strrei.equalsIgnoreCase("E")) {
 
 
             String buildingType = "";
-            String quantity="";
-            String damageType="";
+            String quantity = "";
+            String damageType = "";
             String material = "";
             String slopeType = "";
 
 
-            if(btnabc.getText().toString().equalsIgnoreCase("None"))
-            {
+            if (btnabc.getText().toString().equalsIgnoreCase("None")) {
                 buildingType = "Main Building";
-            }
-            else
-            {
+            } else {
                 buildingType = btnabc.getText().toString().trim();
             }
 
             quantity = btnQty.getText().toString().trim();
 
-            if(quantity.toString().trim().equalsIgnoreCase("Quantity"))
-            {
+            if (quantity.toString().trim().equalsIgnoreCase("Quantity")) {
                 quantity = "0";
             }
 
 
-            if(btntype.getVisibility() == View.VISIBLE)
-            {
-                if(btntype.getTag().equals("2"))
-                {
+            if (btntype.getVisibility() == View.VISIBLE) {
+                if (btntype.getTag().equals("2")) {
                     damageType = btntype.getText().toString().trim();
-                }
-                else
-                {
+                } else {
                     damageType = "No Damage";
                 }
 
-            }
-            else
-            {
+            } else {
                 damageType = "No Damage";
             }
 
@@ -3988,18 +3806,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
 */
 
-            if(selectslope.toString().trim().equalsIgnoreCase(""))
-            {
+            if (selectslope.toString().trim().equalsIgnoreCase("")) {
                 slopeType = "Slope";
-            }
-            else
-            {
-                slopeType  = selectslope.toString().trim();
+            } else {
+                slopeType = selectslope.toString().trim();
             }
 
-
-            Log.e("SavElevationCameraData",""+slopeType+","+damageType+","+material+","+quantity+","+buildingType);
-            addElevationData(slopeType,material,damageType,quantity,buildingType);
+            addElevationData(slopeType, material, damageType, quantity, buildingType);
 
 
         }
@@ -4009,7 +3822,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
         String claimId = PrefManager.getClaimId();
         opendatabase();
-        DB.execSQL("insert into tbl_elevation_savedata ('slopetype','material','damagetype','quantity','buildingtype','claim_id')" + "values('" + slopeType + "','" + material + "','" + damageType + "','" + quantity + "','" + buildingType + "','"+claimId+"') ;");
+        DB.execSQL("insert into tbl_elevation_savedata ('slopetype','material','damagetype','quantity','buildingtype','claim_id')" + "values('" + slopeType + "','" + material + "','" + damageType + "','" + quantity + "','" + buildingType + "','" + claimId + "') ;");
         DB.close();
 
     }
@@ -4019,7 +3832,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
         String claimId = PrefManager.getClaimId();
         opendatabase();
-        DB.execSQL("insert into tbl_roof_savedata ('slopetype','material','damagetype','quantity','buildingtype','claim_id')" + "values('" + slopeType + "','" + material + "','" + damageType + "','" + quantity + "','" + buildingType + "','"+claimId+"') ;");
+        DB.execSQL("insert into tbl_roof_savedata ('slopetype','material','damagetype','quantity','buildingtype','claim_id')" + "values('" + slopeType + "','" + material + "','" + damageType + "','" + quantity + "','" + buildingType + "','" + claimId + "') ;");
         DB.close();
 //        getInteriorSaveData();
     }
@@ -4069,8 +3882,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     }
 
     private void screenshotHideviewAditional() {
-
-        // txtalphaname.setText(addcostmphotoname);
         btnareatogal.setVisibility(View.INVISIBLE);
         txtalphaname.setVisibility(View.INVISIBLE);
         btnSubAreaTogal.setVisibility(View.INVISIBLE);
@@ -4172,21 +3983,15 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             String selectslopname = "";
 
 
-            if(!selectslope.equalsIgnoreCase(""))
-            {
-                selectslopname = selectslopname+ "Slope ";
-            }
-            else
-            {
+            if (!selectslope.equalsIgnoreCase("")) {
+                selectslopname = selectslopname + "Slope ";
+            } else {
                 selectslopname = "Roof ";
             }
 
-            if(btnimgmacro.getText().toString().equals("Hail"))
-            {
+            if (btnimgmacro.getText().toString().equals("Hail")) {
                 strboctype = "" + (btnocb.getTag().toString().equalsIgnoreCase("3") ? "" : (btnocb.getTag().toString().equals("1") ? "Overview" : "Close up"));
-            }
-            else
-            {
+            } else {
                 strboctype = selectslopname + (btnocb.getTag().toString().equalsIgnoreCase("3") ? "" : (btnocb.getTag().toString().equals("1") ? "Overview" : "Close up"));
             }
 
@@ -4194,9 +3999,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             strboctype = "Elevation " + (btnocb.getTag().toString().equalsIgnoreCase("3") ? "" : (btnocb.getTag().toString().equals("1") ? "Overview" : "Close up"));
         }
 
-
         if (btnimgmacro.getText().toString().equals("Hail")) {
-
             frontslopeimgindex = lastpathpf.getInt("frontslopeimgindex", 1);
             rightslopeimgindex = lastpathpf.getInt("rightslopeimgindex", 1);
             rearslopeimgindex = lastpathpf.getInt("rearslopeimgindex", 1);
@@ -4204,44 +4007,33 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
             String strgethailimagename = gethailimgname();
 
-            Log.e("strgethailimagename1", "" + strgethailimagename);
-
-
-
             if (btnrei.getText().toString().trim().equals("R")) {
 
 
                 if (strgethailimagename.equals("Front Slope test sq")) {
                     btnocb.setVisibility(View.INVISIBLE);
-                }else if(strgethailimagename.equals("Right Slope test sq")) {
+                } else if (strgethailimagename.equals("Right Slope test sq")) {
                     btnocb.setVisibility(View.INVISIBLE);//dmak
-                }
-                else if(strgethailimagename.equals("Left Slope test sq")) {
+                } else if (strgethailimagename.equals("Left Slope test sq")) {
                     btnocb.setVisibility(View.INVISIBLE);//dmak
-                }
-                else if(strgethailimagename.equals("Rear Slope test sq")) {
+                } else if (strgethailimagename.equals("Rear Slope test sq")) {
                     btnocb.setVisibility(View.INVISIBLE);//dmak
                 }
                 if (strgethailimagename.equals("Front Slope Overview")) {
                     btnhailmenu1.setText("");
 
-                  //  strhailmaterialdamage = "";
+                    //  strhailmaterialdamage = "";
 
 
-
-
-
-                }else if(strgethailimagename.equals("Right Slope Overview")) {
+                } else if (strgethailimagename.equals("Right Slope Overview")) {
                     btnhailmenu1.setText("");
                     //strhailmaterialdamage = "";
-                }
-                else if(strgethailimagename.equals("Left Slope Overview")) {
+                } else if (strgethailimagename.equals("Left Slope Overview")) {
                     btnhailmenu1.setText("");
-                   // strhailmaterialdamage = "";
-                }
-                else if(strgethailimagename.equals("Rear Slope Overview")) {
+                    // strhailmaterialdamage = "";
+                } else if (strgethailimagename.equals("Rear Slope Overview")) {
                     btnhailmenu1.setText("");
-                   // strhailmaterialdamage = "";
+                    // strhailmaterialdamage = "";
                 }
 
                 if (strgethailimagename.contains(" Overview")) {
@@ -4302,7 +4094,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             if (btnimgmacrosub.getText().toString().trim().equals("hail damage close up on shingles")) {
 
 
-
                 String strhaildamage1 = "";
 
                 if (!strhaildamage.trim().equals("Blank")) {
@@ -4318,14 +4109,12 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     btnocb.setTag("1");
                     strboc = "1";
                     strboctype = "Overview";
-                }
-
-                else if (btnocb.getTag().equals("2")) {
+                } else if (btnocb.getTag().equals("2")) {
                     ocb1 = " Close up";
                     btnocb.setTag("2");
                     strboc = "2";
                     strboctype = "Close up";
-                }else if (btnocb.getTag().equals("3")) {
+                } else if (btnocb.getTag().equals("3")) {
                     ocb1 = "";
                     btnocb.setTag("3");
                     strboc = "";
@@ -4346,20 +4135,15 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             } else {
 
 
-                if(txt_slopeno.getVisibility() == View.VISIBLE)
-                {
+                if (txt_slopeno.getVisibility() == View.VISIBLE) {
                     strgethailimagename = strgethailimagename + " " + txt_slopeno.getText().toString().trim() + " " + afternum;
 
-                }
-                else
-                {
+                } else {
                     strgethailimagename = strgethailimagename + " " + afternum;
 
                 }
 
             }
-
-
 
 
             String indeximage = "";
@@ -4401,16 +4185,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             }
 
 
-
-
-
         } else if (btnInteriorMacro.getVisibility() == View.VISIBLE) {
             if (btnocb.getTag().equals("1")) {
-                imgname = "Overview ";
+
+                imgname = "Overview " + btnInteriorMacro.getText().toString();   // check here interior picture task
             } else if (btnocb.getTag().equals("2")) {
                 imgname = "Close up ";
             }
-
             if (!btnInteriorMenu.getText().toString().equalsIgnoreCase("blank")) {
                 if (btnInteriorMacro.getTag().toString().equals("1"))
                     imgname = itrarr.get(interiorMacroRoomSelect) + " " + imgname.trim();
@@ -4418,16 +4199,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 else
                     imgname += btnInteriorMenu.getText().toString();
             }
-//            if (!btnInteriorMenu.getText().toString().equalsIgnoreCase("New Aditional photo")) {
-//                if (btnInteriorMacro.getTag().toString().equals("1"))
-//                    imgname = itrarr.get(interiorMacroRoomSelect) + " " + imgname.trim();
-//
-//                else
-//                    imgname += btnInteriorMenu.getText().toString();
-//            }
-//
-//
-//            txtalphaname.setText(Html.fromHtml(imgname.trim()));
+
         } else if (btnInteriorNewMacro.getVisibility() == View.VISIBLE) {
             String ocb = "", dmg = "", material = "";
             if (!strboctype.equals("Blank")) {
@@ -4462,19 +4234,15 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 imgname += " " + btnNewMacroDamage.getText().toString();
             txtalphaname.setText(Html.fromHtml(imgname.trim()));
         } else if (btnrisk.getText().toString().trim().equals("Aditional Photo")) {
-
             strreitype = "";
 
-            if (btnrei.getText().toString().trim().equals("I"))
-            {
+            if (btnrei.getText().toString().trim().equals("I")) {
                 if (!btniteriortype.getTag().toString().equals("0")) {
                     strreitype = itrarr.get(iteriortypeindex) + " ";
                     if (!btnmatrialsubmenu.getText().toString().equals("0"))
                         strreitype += btnmatrialsubmenu.getText().toString() + " ";
                 }
-            }
-            else if (!selectslope.equals(""))
-            {
+            } else if (!selectslope.equals("")) {
                 if (btnrei.getText().toString().trim().equals("R")) {
                     strreitype = selectslope; //+ "Slope-";
 
@@ -4495,22 +4263,21 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             if (btnnodamages.getTag().equals("2")) {
                 strnodamage = "No Damage ";
             } else {
-                if (!btndamagetype.getTag().toString().trim().equals("0")) {
-                    if (!btntype.getTag().equals("1")) {
-                        if (btndamagetype.getText().toString().trim().equals("Custom text")) {
-                            strdamagetype = damagecostmtext + "   ";
+//                if (!btndamagetype.getTag().toString().trim().equals("0")) {   // removed this if for Damage working
+                if (!btntype.getTag().equals("1")) {
+                    if (btndamagetype.getText().toString().trim().equals("Custom text")) {
+                        strdamagetype = damagecostmtext + "   ";
+                    } else {
+//                            if (btndamagetype.getText().toString().equals("Damage")) {    //check here nodamage
+//                                strdamagetype = "";
+//                            } else {
+                        Log.e("here5", "onPictureTaken: "+btndamagetype.getText());
+                        strdamagetype = btndamagetype.getText().toString().trim() + "   ";
+//                            }
 
-                        } else {
-
-                            if (btndamagetype.getText().toString().equals("Damage")) {
-                                strdamagetype = "";
-                            } else {
-                                strdamagetype = btndamagetype.getText().toString().trim() + "   ";
-                            }
-
-                        }
                     }
                 }
+//                }
             }
 
 
@@ -4546,74 +4313,51 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 }
             }*/
 
-            if(!btntype2.getTag().equals("1")|| btnrei.getText().toString().equalsIgnoreCase("i"))
-            {if(btnrei.getText().toString().equalsIgnoreCase("i"))
-            {
-                if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text") )
-                {
-                    strmaterial = matrialcostmtext + "   ";
-                }
-                else
-                {
-                    if(btnmaterial.getText().toString().equals("Material"))
-                    {
-                        strmaterial = "";
-                    }else {
-
-
-                        if(btnSubAreaTogal.getVisibility() == View.VISIBLE && btnSubAreaTogal.getTag().toString().equalsIgnoreCase("2"))
-                        {
-                            strmaterial = ""+btnmaterial.getText().toString().trim() + "   ";
-                        }
-                        else
-                        {
+            if (!btntype2.getTag().equals("1") || btnrei.getText().toString().equalsIgnoreCase("i")) {
+                if (btnrei.getText().toString().equalsIgnoreCase("i")) {
+                    if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text")) {
+                        strmaterial = matrialcostmtext + "   ";
+                    } else {
+                        if (btnmaterial.getText().toString().equals("Material")) {
                             strmaterial = "";
+                        } else {
+
+
+                            if (btnSubAreaTogal.getVisibility() == View.VISIBLE && btnSubAreaTogal.getTag().toString().equalsIgnoreCase("2")) {
+                                strmaterial = "" + btnmaterial.getText().toString().trim() + "   ";
+                            } else {
+                                strmaterial = "";
+                            }
                         }
+
                     }
 
-                }
+                } else {
+                    if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text")) {
+                        strmaterial = matrialcostmtext + "   ";
+                    } else {
+                        if (btnmaterial.getText().toString().equals("Material")) {
+                            strmaterial = "";
+                        } else {
 
-            }
-            else
-            {
-                if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text") )
-                {
-                    strmaterial = matrialcostmtext + "   ";
-                }
-                else
-                {
-                    if(btnmaterial.getText().toString().equals("Material"))
-                    {
-                        strmaterial = "";
-                    }else {
+                            strmaterial = "" + btnmaterial.getText().toString().trim() + "   ";
+                        }
 
-                        strmaterial = ""+btnmaterial.getText().toString().trim() + "   ";
                     }
-
                 }
-            }
 
-                Log.e("strmaterial_if",""+strmaterial);
-
-            }
-            else
-            {
-                Log.e("strmaterial_else",""+strmaterial);
-
-            }
-
-
-            if (strboctype.equals("Blank"))
-            {
-                strname = strreitype + " " + strdamagetype + strnodamage + areaname + strmaterial + " ";
+                Log.e("strmaterial_if", "" + strmaterial);
 
             } else {
-
-                strname = strreitype + "" +strboctype + " " + strdamagetype + strnodamage + areaname + strmaterial + " ";
+                Log.e("strmaterial_else", "" + strmaterial);
 
             }
-
-
+/////////////////// check strdamagetype for damage above ////////////////
+            if (strboctype.equals("Blank")) {
+                strname = strreitype + " " + strdamagetype + strnodamage + areaname + strmaterial + " ";
+            } else {
+                strname = strreitype + "" + strboctype + " " + strdamagetype + strnodamage + areaname + strmaterial + " ";
+            }
             if (strname.contains("Blank  ")) {
                 strname = strname.replace("Blank  ", "");
             }
@@ -4642,43 +4386,39 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 }
             }
 
+            ////////////// check strname in above  //////////////////
             if (btnrei.getText().toString().equals("I")) {
                 imgname = strname + " " + strisNone;
             } else {
-
                 imgname = strname + " " + strisNone;
                 if (imgname.contains("Left Slope Overview")) {
                     //strname = "Roof Overview";
-                    strname = imgname.replace("Left Slope Overview","Left Slope  Overview");
+                    strname = imgname.replace("Left Slope Overview", "Left Slope  Overview");
 
                     imgname = strname;
-                }else if (imgname.contains("Front Slope Overview")) {
+                } else if (imgname.contains("Front Slope Overview")) {
                     //strname = "Roof Overview";
-                    strname = imgname.replace("Front Slope Overview","Front Slope  Overview");
+                    strname = imgname.replace("Front Slope Overview", "Front Slope  Overview");
 
                     imgname = strname;
-                }
-                else if (imgname.contains("Right Slope Overview")) {
+                } else if (imgname.contains("Right Slope Overview")) {
                     //strname = "Roof Overview";
-                    strname = imgname.replace("Right Slope Overview","Right Slope  Overview");
+                    strname = imgname.replace("Right Slope Overview", "Right Slope  Overview");
 
                     imgname = strname;
-                }
-                else if (imgname.contains("Rear Slope Overview")) {
+                } else if (imgname.contains("Rear Slope Overview")) {
                     //strname = "Roof Overview";
-                    strname = imgname.replace("Rear Slope Overview","Rear Slope  Overview");
+                    strname = imgname.replace("Rear Slope Overview", "Rear Slope  Overview");
 
                     imgname = strname;
-                }
-               else if (imgname.contains("Slope Overview")) {
+                } else if (imgname.contains("Slope Overview")) {
                     //strname = "Roof Overview";
-                    strname = imgname.replace("Slope Overview","Roof  Overview");
+                    strname = imgname.replace("Slope Overview", "Roof  Overview");
 
                     imgname = strname;
-                }
-                else if (imgname.trim().equalsIgnoreCase("Slope Close up")) {
+                } else if (imgname.trim().equalsIgnoreCase("Slope Close up")) {
                     //strname = "Roof Overview";
-                    strname = imgname.replace("Slope Close up","Roof  Close up");
+                    strname = imgname.replace("Slope Close up", "Roof  Close up");
 
                     imgname = strname;
                 }
@@ -4687,14 +4427,12 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         } else if (btnrisk.getText().toString().trim().equals("Risk")) {
             imgname = "0 " + riskindex + " Risk Photo" + " " + strisNone;//dateFormat.format(new Date());
         } else if (btnrisk.getText().toString().trim().equals("Layers")) {
-
             if (layerphoto == 0) {
                 imgname = btnLayersmenu1.getText().toString() + " Layers of Roofing with " + btnLayersmenu.getText().toString() + " " + strisNone;//dateFormat.format(new Date());
             } else {
                 imgname = btnLayersmenu1.getText().toString() + " Layers of Roofing with " + btnLayersmenu.getText().toString() + " on rakes " + strisNone;//dateFormat.format(new Date());
             }
         } else if (btnrisk.getText().toString().trim().equals("Pitch")) {
-
             String pitchvalue = lblpitchvalue.getText().toString().trim();
             pitchvalue = pitchvalue.replace("/12", "");
 
@@ -4709,8 +4447,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         } else if (btnrisk.getText().toString().trim().equals("New Aditional photo")) {
             // btnpitchmenu.setVisibility(View.VISIBLE);
             txtalphaname.setVisibility(View.VISIBLE);
-            // txtalphaname.setText(addcostmphotoname);
-            //txtalphaname.setText(addcostmphotoname);
             String pitchvalue = txtalphaname.getText().toString().trim();
             System.out.println("txtalphaname:-" + pitchvalue);
             if (btnrisk.getText().toString().trim().equals("New Aditional photo")) {
@@ -4721,13 +4457,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             }
 
             imgname = imgname.trim();
-            Log.i(TAG, "imgname = " + imgname);
-
         } else if (btnrisk.getText().toString().trim().equals("Shingle")) {
             imgname = btnshinglemenu1.getText().toString() + " " + btnshinglemenu2.getText().toString() + " Shingle" + " " + strisNone;//dateFormat.format(new Date());
 
         } else if (btnrisk.getText().toString().trim().equals("Gutter")) {
-
             imgname = "Standard " + btnguttermenu1.getText().toString() + " on this dwelling" + " " + strisNone;//dateFormat.format(new Date());
 
         } else if (btnrisk.getText().toString().trim().equals("Overhang")) {
@@ -4754,19 +4487,12 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             imgname = btnsubmenu.getText().toString().trim();//dateFormat.format(new Date());
         }
 
-
-        strname = imgname.replace("Left Slope Overview","Left Slope  Overview");
+        strname = imgname.replace("Left Slope Overview", "Left Slope  Overview");
 
 
         if (btnrisk.getText().toString().trim().equals("New Aditional photo")) {
-
-
             txtalphaname.setText(Html.fromHtml(imgpitchname.trim()));
         } else {
-
-
-
-
             txtalphaname.setText(Html.fromHtml(imgname.trim()));
         }
 
@@ -4791,25 +4517,17 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
         String newimagename = txtalphaname.getText().toString();
 
-        if(!newimagename.contains("  Overview"))
-        {
-            if(newimagename.contains(" Overview"))
-            {
-                newimagename = newimagename.replace(" Overview","  Overview");
+        if (!newimagename.contains("  Overview")) {
+            if (newimagename.contains(" Overview")) {
+                newimagename = newimagename.replace(" Overview", "  Overview");
+            }
+        } else {
+            if (newimagename.contains(" Overview")) {
+                newimagename = newimagename.replace(" Overview", "  Overview");
             }
         }
-        else
-        {
-            if(newimagename.contains(" Overview"))
-            {
-                newimagename = newimagename.replace(" Overview","  Overview");
-            }
-        }
-
 
         txtalphaname.setText(Html.fromHtml(newimagename));
-
-
     }
 
 
@@ -4830,17 +4548,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
 
             String selectslopname = "";
-            if(!selectslope.equalsIgnoreCase(""))
-            {
-                selectslopname =  "Slope ";
+            if (!selectslope.equalsIgnoreCase("")) {
+                selectslopname = "Slope ";
             }
 
-            if(btnimgmacro.getText().toString().equals("Hail"))
-            {
+            if (btnimgmacro.getText().toString().equals("Hail")) {
                 strboctype = "" + (btnocb.getTag().toString().equalsIgnoreCase("3") ? "" : (btnocb.getTag().toString().equals("1") ? "Overview" : "Close up"));
-            }
-            else
-            {
+            } else {
                 strboctype = selectslopname + (btnocb.getTag().toString().equalsIgnoreCase("3") ? "" : (btnocb.getTag().toString().equals("1") ? "Overview" : "Close up"));
             }
 
@@ -4858,22 +4572,16 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
             String strgethailimagename = gethailimgname();
 
-            Log.e("strgethailimagename1", "" + strgethailimagename);
-
-
-
             if (btnrei.getText().toString().trim().equals("R")) {
 
 
                 if (strgethailimagename.equals("Front Slope test sq")) {
                     btnocb.setVisibility(View.INVISIBLE);
-                }else if(strgethailimagename.equals("Right Slope test sq")) {
+                } else if (strgethailimagename.equals("Right Slope test sq")) {
                     btnocb.setVisibility(View.INVISIBLE);//dmak
-                }
-                else if(strgethailimagename.equals("Left Slope test sq")) {
+                } else if (strgethailimagename.equals("Left Slope test sq")) {
                     btnocb.setVisibility(View.INVISIBLE);//dmak
-                }
-                else if(strgethailimagename.equals("Rear Slope test sq")) {
+                } else if (strgethailimagename.equals("Rear Slope test sq")) {
                     btnocb.setVisibility(View.INVISIBLE);//dmak
                 }
                 if (strgethailimagename.equals("Front Slope Overview")) {
@@ -4882,18 +4590,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     //  strhailmaterialdamage = "";
 
 
-
-
-
-                }else if(strgethailimagename.equals("Right Slope Overview")) {
+                } else if (strgethailimagename.equals("Right Slope Overview")) {
                     btnhailmenu1.setText("");
                     //strhailmaterialdamage = "";
-                }
-                else if(strgethailimagename.equals("Left Slope Overview")) {
+                } else if (strgethailimagename.equals("Left Slope Overview")) {
                     btnhailmenu1.setText("");
                     // strhailmaterialdamage = "";
-                }
-                else if(strgethailimagename.equals("Rear Slope Overview")) {
+                } else if (strgethailimagename.equals("Rear Slope Overview")) {
                     btnhailmenu1.setText("");
                     // strhailmaterialdamage = "";
                 }
@@ -4956,7 +4659,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             if (btnimgmacrosub.getText().toString().trim().equals("hail damage close up on shingles")) {
 
 
-
                 String strhaildamage1 = "";
 
                 if (!strhaildamage.trim().equals("Blank")) {
@@ -4972,14 +4674,12 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     btnocb.setTag("1");
                     strboc = "1";
                     strboctype = "Overview";
-                }
-
-                else if (btnocb.getTag().equals("2")) {
+                } else if (btnocb.getTag().equals("2")) {
                     ocb1 = " Close up";
                     btnocb.setTag("2");
                     strboc = "2";
                     strboctype = "Close up";
-                }else if (btnocb.getTag().equals("3")) {
+                } else if (btnocb.getTag().equals("3")) {
                     ocb1 = "";
                     btnocb.setTag("3");
                     strboc = "";
@@ -5000,20 +4700,15 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             } else {
 
 
-                if(txt_slopeno.getVisibility() == View.VISIBLE)
-                {
+                if (txt_slopeno.getVisibility() == View.VISIBLE) {
                     strgethailimagename = strgethailimagename + " " + txt_slopeno.getText().toString().trim() + " " + afternum;
 
-                }
-                else
-                {
+                } else {
                     strgethailimagename = strgethailimagename + " " + afternum;
 
                 }
 
             }
-
-
 
 
             String indeximage = "";
@@ -5053,9 +4748,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 System.out.println("front leftslopeimgindex:-" + leftslopeimgindex);
                 lastimageeditor.commit();
             }
-
-
-
 
 
         } else if (btnInteriorMacro.getVisibility() == View.VISIBLE) {
@@ -5119,16 +4811,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
             strreitype = "";
 
-            if (btnrei.getText().toString().trim().equals("I"))
-            {
+            if (btnrei.getText().toString().trim().equals("I")) {
                 if (!btniteriortype.getTag().toString().equals("0")) {
                     strreitype = itrarr.get(iteriortypeindex) + " ";
                     if (!btnmatrialsubmenu.getText().toString().equals("0"))
                         strreitype += btnmatrialsubmenu.getText().toString() + " ";
                 }
-            }
-            else if (!selectslope.equals(""))
-            {
+            } else if (!selectslope.equals("")) {
                 if (btnrei.getText().toString().trim().equals("R")) {
                     strreitype = selectslope; //+ "Slope-";
 
@@ -5156,11 +4845,11 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
                         } else {
 
-                            if (btndamagetype.getText().toString().equals("Damage")) {
-                                strdamagetype = "";
-                            } else {
-                                strdamagetype = btndamagetype.getText().toString().trim() + "   ";
-                            }
+//                            if (btndamagetype.getText().toString().equals("Damage")) {  //check here nodamage
+//                                strdamagetype = "";
+//                            } else {
+                            strdamagetype = btndamagetype.getText().toString().trim() + "   ";
+//                            }
 
                         }
                     }
@@ -5200,59 +4889,43 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 }
             }*/
 
-            if(!btntype2.getTag().equals("1")|| btnrei.getText().toString().equalsIgnoreCase("i"))
-            {if(btnrei.getText().toString().equalsIgnoreCase("i"))
-            {
-                if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text") )
-                {
-                    strmaterial = matrialcostmtext + "   ";
-                }
-                else
-                {
-                    if(btnmaterial.getText().toString().equals("Material"))
-                    {
-                        strmaterial = "";
-                    }else {
-
-
-                        if(btnSubAreaTogal.getVisibility() == View.VISIBLE && btnSubAreaTogal.getTag().toString().equalsIgnoreCase("2"))
-                        {
-                            strmaterial = ""+btnmaterial.getText().toString().trim() + "   ";
-                        }
-                        else
-                        {
+            if (!btntype2.getTag().equals("1") || btnrei.getText().toString().equalsIgnoreCase("i")) {
+                if (btnrei.getText().toString().equalsIgnoreCase("i")) {
+                    if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text")) {
+                        strmaterial = matrialcostmtext + "   ";
+                    } else {
+                        if (btnmaterial.getText().toString().equals("Material")) {
                             strmaterial = "";
+                        } else {
+
+
+                            if (btnSubAreaTogal.getVisibility() == View.VISIBLE && btnSubAreaTogal.getTag().toString().equalsIgnoreCase("2")) {
+                                strmaterial = "" + btnmaterial.getText().toString().trim() + "   ";
+                            } else {
+                                strmaterial = "";
+                            }
                         }
+
                     }
 
-                }
+                } else {
+                    if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text")) {
+                        strmaterial = matrialcostmtext + "   ";
+                    } else {
+                        if (btnmaterial.getText().toString().equals("Material")) {
+                            strmaterial = "";
+                        } else {
 
-            }
-            else
-            {
-                if (btnmaterial.getText().toString().trim().equalsIgnoreCase("Custom text") )
-                {
-                    strmaterial = matrialcostmtext + "   ";
-                }
-                else
-                {
-                    if(btnmaterial.getText().toString().equals("Material"))
-                    {
-                        strmaterial = "";
-                    }else {
+                            strmaterial = "" + btnmaterial.getText().toString().trim() + "   ";
+                        }
 
-                        strmaterial = ""+btnmaterial.getText().toString().trim() + "   ";
                     }
-
                 }
-            }
 
-                Log.e("strmaterial_if",""+strmaterial);
+                Log.e("strmaterial_if", "" + strmaterial);
 
-            }
-            else
-            {
-                Log.e("strmaterial_else",""+strmaterial);
+            } else {
+                Log.e("strmaterial_else", "" + strmaterial);
 
             }
 
@@ -5263,7 +4936,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
             } else {
 
-                strname = strreitype + "" +strboctype + " " + strdamagetype + strnodamage + areaname + strmaterial + " ";
+                strname = strreitype + "" + strboctype + " " + strdamagetype + strnodamage + areaname + strmaterial + " ";
 
             }
 
@@ -5303,36 +4976,32 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 imgname = strname + " " + strisNone;
                 if (imgname.contains("Left Slope Overview")) {
                     //strname = "Roof Overview";
-                    strname = imgname.replace("Left Slope Overview","Left Slope  Overview");
+                    strname = imgname.replace("Left Slope Overview", "Left Slope  Overview");
 
                     imgname = strname;
-                }else if (imgname.contains("Front Slope Overview")) {
+                } else if (imgname.contains("Front Slope Overview")) {
                     //strname = "Roof Overview";
-                    strname = imgname.replace("Front Slope Overview","Front Slope  Overview");
+                    strname = imgname.replace("Front Slope Overview", "Front Slope  Overview");
 
                     imgname = strname;
-                }
-                else if (imgname.contains("Right Slope Overview")) {
+                } else if (imgname.contains("Right Slope Overview")) {
                     //strname = "Roof Overview";
-                    strname = imgname.replace("Right Slope Overview","Right Slope  Overview");
+                    strname = imgname.replace("Right Slope Overview", "Right Slope  Overview");
 
                     imgname = strname;
-                }
-                else if (imgname.contains("Rear Slope Overview")) {
+                } else if (imgname.contains("Rear Slope Overview")) {
                     //strname = "Roof Overview";
-                    strname = imgname.replace("Rear Slope Overview","Rear Slope  Overview");
+                    strname = imgname.replace("Rear Slope Overview", "Rear Slope  Overview");
 
                     imgname = strname;
-                }
-                else if (imgname.contains("Slope Overview")) {
+                } else if (imgname.contains("Slope Overview")) {
                     //strname = "Roof Overview";
-                    strname = imgname.replace("Slope Overview","Roof  Overview");
+                    strname = imgname.replace("Slope Overview", "Roof  Overview");
 
                     imgname = strname;
-                }
-                else if (imgname.trim().equalsIgnoreCase("Slope Close up")) {
+                } else if (imgname.trim().equalsIgnoreCase("Slope Close up")) {
                     //strname = "Roof Overview";
-                    strname = imgname.replace("Slope Close up","Roof  Close up");
+                    strname = imgname.replace("Slope Close up", "Roof  Close up");
 
                     imgname = strname;
                 }
@@ -5362,8 +5031,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         } else if (btnrisk.getText().toString().trim().equals("New Aditional photo")) {
             // btnpitchmenu.setVisibility(View.VISIBLE);
             txtalphaname.setVisibility(View.VISIBLE);
-            // txtalphaname.setText(addcostmphotoname);
-            //txtalphaname.setText(addcostmphotoname);
             String pitchvalue = txtalphaname.getText().toString().trim();
             System.out.println("txtalphaname:-" + pitchvalue);
             if (btnrisk.getText().toString().trim().equals("New Aditional photo")) {
@@ -5408,18 +5075,12 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         }
 
 
-        strname = imgname.replace("Left Slope Overview","Left Slope  Overview");
+        strname = imgname.replace("Left Slope Overview", "Left Slope  Overview");
 
 
         if (btnrisk.getText().toString().trim().equals("New Aditional photo")) {
-
-
             txtalphaname.setText(Html.fromHtml(imgpitchname.trim()));
         } else {
-
-
-
-
             txtalphaname.setText(Html.fromHtml(imgname.trim()));
         }
 
@@ -5444,24 +5105,18 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
         String newimagename = txtalphaname.getText().toString();
 
-        if(!newimagename.contains("  Overview"))
-        {
-            if(newimagename.contains(" Overview"))
-            {
-                newimagename = newimagename.replace(" Overview","  Overview");
+        if (!newimagename.contains("  Overview")) {
+            if (newimagename.contains(" Overview")) {
+                newimagename = newimagename.replace(" Overview", "  Overview");
             }
-        }
-        else
-        {
-            if(newimagename.contains(" Overview"))
-            {
-                newimagename = newimagename.replace(" Overview","  Overview");
+        } else {
+            if (newimagename.contains(" Overview")) {
+                newimagename = newimagename.replace(" Overview", "  Overview");
             }
         }
 
 
         txtalphaname.setText(Html.fromHtml(newimagename));
-
 
     }
 
@@ -5504,8 +5159,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             btntype.setVisibility(View.VISIBLE);
         }
 
-        if (btndamagetype.getText().toString().equals("Damage")) {
-            btndamagetype.setText("Damage");
+        if (btndamagetype.getText().toString().equals("No Damage")) {   // check here
+            btndamagetype.setText("No Damage");
             btntype.setVisibility(View.INVISIBLE);
         } else {
             btntype.setVisibility(View.VISIBLE);
@@ -5659,14 +5314,11 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 btnhailnodamages.setVisibility(View.VISIBLE);
                 btnhailmaterialdamages.setVisibility(View.VISIBLE);
 
-                strhaildamage=btndamagetype1.getText().toString();
+                strhaildamage = btndamagetype1.getText().toString();
 
                 btnhailnodamages.setTag("2");
                 btnhailnodamages.setBackgroundResource(R.drawable.red_button_background);
                 btnhailnodamages.setText(btndamagetype1.getText().toString());
-
-
-
 
 
                 //change
@@ -5674,7 +5326,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 //btnhailmenu1.setText("");
                 btnhailmenu1.setText("Shingles");
 
-                strhailmaterialdamage=btnhailmenu1.getText().toString();
+                strhailmaterialdamage = btnhailmenu1.getText().toString();
 
                 btnhailmaterialdamages.setTag("2");
                 btnhailmaterialdamages.setBackgroundResource(R.drawable.red_button_background);
@@ -5723,7 +5375,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         txt_slopeno.setVisibility(View.GONE);
 
 
-
         if (btnimgmacrosub.getText().toString().trim().equals("Overview")) {
 
             txt_slopeno.setVisibility(View.VISIBLE);
@@ -5766,8 +5417,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
 
     private void getcostammenu(Boolean isShowing) {
-
-        Log.e("cid-->", "" + cid_marcos);
 
         PopupMenu popupMenu2 = new PopupMenu(this, findViewById(R.id.btnsubmenu));
 
@@ -5843,7 +5492,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             do {
 
                 String strvalue = Cur.getString(Cur.getColumnIndex("value"));
-                Log.e("Value==>", "" + strvalue);
+
                 String strshortname = Cur.getString(Cur.getColumnIndex("value"));
                 itrarr.add(strshortname);
 
@@ -5874,12 +5523,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 String strvalue = Cur.getString(Cur.getColumnIndex("value"));
                 if (strvalue.equalsIgnoreCase("Custom Text"))
                     continue;
-                Log.e("Value==>", "" + strvalue);
 
-                if(strvalue.equals("Blank"))
-                {
-                }
-                else {
+                if (strvalue.equals("Blank")) {
+                } else {
                     String strshortname = Cur.getString(Cur.getColumnIndex("shortname"));
                     itrarr.add(strshortname);
 
@@ -5908,8 +5554,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
                 btnmatrialsubmenu.setText("0");
 
-                if(btnnodamages.getTag().equals("2"))
-                {
+                if (btnnodamages.getTag().equals("2")) {
                     btnnodamages.performClick();
                 }
 
@@ -5943,8 +5588,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
                     getalphaname();
                 }
-
-
 
 
                 return false;
@@ -6098,6 +5741,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     System.out.println("data of user input is:-" + addcostmphotoname);
                     txtalphaname.setText(addcostmphotoname);
 
+
                 }
             } // End of onClick(DialogInterface dialog, int whichButton)
         }); //End of alert.setPositiveButton
@@ -6113,7 +5757,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     }
 
     private void addmenuvalue(String tname, String strtitle) {
-
         rlsetting.setVisibility(View.GONE);
         Intent addnewvalue = new Intent(getApplicationContext(), AddValueActivity.class);
         addnewvalue.putExtra("tablename", tname);
@@ -6164,10 +5807,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             btnIntNewMaterial.setTag("Blank");
 
                             btnocb.setTag("3");
-        selectocb();
+                            selectocb();
                             strboc = "1";
                             strboctype = "Overview";
-
                             btnIntNewDamage.setText("Damage");
                             btnIntNewDamage.setTag("0");
 
@@ -6237,7 +5879,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             String strvalue = Cur.getString(Cur.getColumnIndex("value"));
                             if (strvalue.equals("Custom text"))
                                 continue;
-                            Log.e("Value==>", "" + strvalue);
                             popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
 
                             value++;
@@ -6461,7 +6102,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         selectocb();
         strboc = "1";
         strboctype = "Overview";
-
         btnIntNewDamage.setText("Damage");
         btnIntNewDamage.setTag("0");
 
@@ -6543,7 +6183,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         String strvalue = Cur.getString(Cur.getColumnIndex("value"));
                         if (strvalue.equalsIgnoreCase("Custom Text"))
                             continue;
-                        Log.e("Value==>", "" + strvalue);
                         String strshortname = Cur.getString(Cur.getColumnIndex("shortname"));
                         itrarr.add(strshortname);
 
@@ -6980,8 +6619,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             public void onClick(final View view) {
                 if (view.getId() == btnRoomMacro.getId()) {
 
-                    clickonView("btnRoomMacro");
 
+                    clickonView("btnRoomMacro");
 
                     PopupMenu popupMenu = new PopupMenu(mContext, btnRoomMacro);
                     popupMenu.getMenu().add("Ceiling");
@@ -7014,10 +6653,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             btnRoomMacroMaterialFinish.setTag("Blank");
 
                             btnocb.setTag("3");
-        selectocb();
+                            selectocb();
                             strboc = "1";
                             strboctype = "Overview";
-
                             btnRoomMacroDamage.setText("Damage");
                             btnRoomMacroDamage.setTag("0");
 
@@ -7232,7 +6870,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                                 clickonView("btnRoomMacroMaterial");
 
 
-
                                 btnRoomMacroMaterial.setTag(item.getTitle() + "");
                                 btnRoomMacroMaterial.setText(item.getTitle());
 
@@ -7396,7 +7033,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         selectocb();
         strboc = "1";
         strboctype = "Overview";
-
         btnRoomMacroDamage.setText("Damage");
         btnRoomMacroDamage.setTag("0");
         btnRoomMacroDamageAmount.setVisibility(View.INVISIBLE);
@@ -7450,8 +7086,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         } else {
             btntype.setVisibility(View.VISIBLE);
         }
-        if (btndamagetype.getText().toString().equals("Damage")) {
-            btndamagetype.setText("Damage");
+        if (btndamagetype.getText().toString().equals("No Damage")) {   // check here
+            btndamagetype.setText("No Damage");
             btntype.setVisibility(View.INVISIBLE);
         } else {
             btntype.setVisibility(View.VISIBLE);
@@ -7508,8 +7144,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         } else {
             btntype.setVisibility(View.VISIBLE);
         }
-        if (btndamagetype.getText().toString().equals("Damage")) {
-            btndamagetype.setText("Damage");
+        if (btndamagetype.getText().toString().equals("No Damage")) {   // check here nodamage
+            btndamagetype.setText("No Damage");
             btntype.setVisibility(View.INVISIBLE);
         } else {
             btntype.setVisibility(View.VISIBLE);
@@ -7626,7 +7262,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         btnnodamagetype.setVisibility(View.GONE);
 
 
-
         if (btnimgmacrosub.getText().toString().trim().equals("hail damage close up on shingles")) {
 
             btnnodamagetype.setVisibility(View.VISIBLE);
@@ -7635,9 +7270,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             btnhailnodamages.setVisibility(View.VISIBLE);
             btnhailmaterialdamages.setVisibility(View.VISIBLE);
             btndamagetype1.setText("Hail Damage");
-            strhaildamage=btndamagetype1.getText().toString();
-
-
+            strhaildamage = btndamagetype1.getText().toString();
 
 
             btnhailnodamages.setTag("2");
@@ -7651,16 +7284,14 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             //btnhailmenu1.setText("");
             btnhailmenu1.setText("Shingles");
 
-            strhailmaterialdamage=btnhailmenu1.getText().toString();
+            strhailmaterialdamage = btnhailmenu1.getText().toString();
 
             btnhailmaterialdamages.setTag("2");
             btnhailmaterialdamages.setBackgroundResource(R.drawable.red_button_background);
             btnhailmaterialdamages.setText(btnhailmenu1.getText().toString());
 
 
-
             btnhailskip.setText("Next Slope");
-
 
 
         }
@@ -7920,8 +7551,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
     private void setarrowicon(ImageView imgarrow, int iconid) {
 
-        if(btnnodamages.getTag().equals("2"))
-        {
+        if (btnnodamages.getTag().equals("2")) {
             btnnodamages.performClick();
         }
         imgtop.setBackgroundResource(R.drawable.wticon);
@@ -7932,8 +7562,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         imgarrow.setBackgroundResource(iconid);
     }
 
-    private void showmaterialoption(Boolean showalert)
-    {
+    private void showmaterialoption(Boolean showalert) {
 
         if (btnrei.getText().toString().trim().equals("I")) {
 
@@ -7990,13 +7619,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             String strvalue = Cur.getString(Cur.getColumnIndex("value"));
                             if (strvalue.equalsIgnoreCase("Custom Text"))
                                 continue;
-                            Log.e("Value==>", "" + strvalue);
 
+                            if (strvalue.trim().equals("Blank")) {
 
-                            if(strvalue.trim().equals("Blank"))
-                            {
-
-                            }else {
+                            } else {
                                 popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
 
                                 value++;
@@ -8078,11 +7704,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             String strvalue = Cur.getString(Cur.getColumnIndex("value"));
                             if (strvalue.equalsIgnoreCase("Custom Text"))
                                 continue;
-                            Log.e("Value==>", "" + strvalue);
-                            if(strvalue.trim().equals("Blank"))
-                            {
+                            if (strvalue.trim().equals("Blank")) {
 
-                            }else {
+                            } else {
 
                                 popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
 
@@ -8143,11 +7767,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             String strvalue = Cur.getString(Cur.getColumnIndex("value"));
                             if (strvalue.equalsIgnoreCase("Custom Text"))
                                 continue;
-                            Log.e("Value==>", "" + strvalue);
-                            if(strvalue.trim().equals("Blank"))
-                            {
+                            if (strvalue.trim().equals("Blank")) {
 
-                            }else {
+                            } else {
 
                                 popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
 
@@ -8179,38 +7801,28 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
 
-                    selectmaterialmenu_I(item,false);
+                    selectmaterialmenu_I(item, false);
                     return false;
                 }
             });
 
-            if (btnrei.getText().toString().equalsIgnoreCase("i") && btnareatogal.getTag().toString().equals("2"))
-            {
-                if(showalert)
-                {
+            if (btnrei.getText().toString().equalsIgnoreCase("i") && btnareatogal.getTag().toString().equals("2")) {
+                if (showalert) {
                     popupMenu2.show();
 
-                }
-                else
-                {
+                } else {
 
-                    for (int i=0;i<popupMenu2.getMenu().size();i++)
-                    {
+                    for (int i = 0; i < popupMenu2.getMenu().size(); i++) {
 
-                        if(btnrei.getText().equals("E"))
-                        {
-                            if(popupMenu2.getMenu().getItem(i).getTitle().equals("Siding"))
-                            {
-                                selectmaterialmenu_I(popupMenu2.getMenu().getItem(i),false);
+                        if (btnrei.getText().equals("E")) {
+                            if (popupMenu2.getMenu().getItem(i).getTitle().equals("Siding")) {
+                                selectmaterialmenu_I(popupMenu2.getMenu().getItem(i), false);
 
                                 break;
                             }
-                        }
-                        else if(btnrei.getText().equals("R"))
-                        {
-                            if(popupMenu2.getMenu().getItem(i).getTitle().equals("Shingles"))
-                            {
-                                selectmaterialmenu_I(popupMenu2.getMenu().getItem(i),false);
+                        } else if (btnrei.getText().equals("R")) {
+                            if (popupMenu2.getMenu().getItem(i).getTitle().equals("Shingles")) {
+                                selectmaterialmenu_I(popupMenu2.getMenu().getItem(i), false);
 
                                 break;
                             }
@@ -8220,8 +7832,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
                 }
             }
-
-
 
 
         } else {
@@ -8242,11 +7852,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         String strvalue = Cur.getString(Cur.getColumnIndex("value"));
 //                        if (strvalue.equalsIgnoreCase("Custom Text"))
 //                            continue;
-                        Log.e("Valueelse==>", "" + strvalue);
-                        if(strvalue.equalsIgnoreCase("Blank") || strvalue.equalsIgnoreCase("Custom Text") )
-                        {
+                        if (strvalue.equalsIgnoreCase("Blank") || strvalue.equalsIgnoreCase("Custom Text")) {
 
-                        }else {
+                        } else {
 
                             popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
 
@@ -8256,8 +7864,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     while (Cur.moveToNext());
                     popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, "Flat Roof");
                     value++;
-                    popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, "Material");
-                    value++;
+//                    popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, "Material");   // check here "material issue"
+//                    value++;
                     popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, "Custom Text");
                 }
                 Cur.close();
@@ -8286,11 +7894,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         String strvalue = Cur.getString(Cur.getColumnIndex("value"));
                         if (strvalue.equalsIgnoreCase("Custom Text"))
                             continue;
-                        Log.e("Value==>", "" + strvalue);
-                        if(strvalue.equalsIgnoreCase("Blank"))
-                        {
+                        if (strvalue.equalsIgnoreCase("Blank")) {
 
-                        }else {
+                        } else {
 
                             popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
 
@@ -8298,8 +7904,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         }
                     }
                     while (Cur.moveToNext());
-                    popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, "Material");
-                    value++;
+//                    popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, "Material");  // check here Material issue
+//                    value++;
                     popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, "Custom Text");
                 }
                 Cur.close();
@@ -8332,11 +7938,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         String strvalue = Cur.getString(Cur.getColumnIndex("value"));
                         if (strvalue.equalsIgnoreCase("Custom Text"))
                             continue;
-                        Log.e("Value==>", "" + strvalue);
-                        if(strvalue.equalsIgnoreCase("Blank"))
-                        {
+                        if (strvalue.equalsIgnoreCase("Blank")) {
 
-                        }else {
+                        } else {
 
                             popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
 
@@ -8373,20 +7977,16 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 @Override
                 public boolean onMenuItemClick(MenuItem arg0) {
 
-                    selectmaterialmenu_Else(arg0,false);
+                    selectmaterialmenu_Else(arg0, false);
                     return false;
                 }
             });
 
-                if(showalert)
-                {
-                    popupMenu2.show();
+            if (showalert) {
+                popupMenu2.show();
 
-                }
-                else
-                {
-                    for (int i=0;i<popupMenu2.getMenu().size();i++)
-                    {
+            } else {
+                for (int i = 0; i < popupMenu2.getMenu().size(); i++) {
 //                        if(popupMenu2.getMenu().getItem(i).getTitle().equals("Shingles"))
 //                        {
 //                            selectmaterialmenu_Else(popupMenu2.getMenu().getItem(i),true);
@@ -8395,36 +7995,29 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 //                        }
 
 
-                        if(btnrei.getText().equals("E"))
-                        {
-                            if(popupMenu2.getMenu().getItem(i).getTitle().equals("Siding"))
-                            {
-                                selectmaterialmenu_Else(popupMenu2.getMenu().getItem(i),false);
+                    if (btnrei.getText().equals("E")) {
+                        if (popupMenu2.getMenu().getItem(i).getTitle().equals("Siding")) {
+                            selectmaterialmenu_Else(popupMenu2.getMenu().getItem(i), false);
 
-                                break;
-                            }
+                            break;
                         }
-                        else if(btnrei.getText().equals("R"))
-                        {
-                            if(popupMenu2.getMenu().getItem(i).getTitle().equals("Shingles"))
-                            {
-                                selectmaterialmenu_Else(popupMenu2.getMenu().getItem(i),false);
+                    } else if (btnrei.getText().equals("R")) {
+                        if (popupMenu2.getMenu().getItem(i).getTitle().equals("Shingles")) {
+                            selectmaterialmenu_Else(popupMenu2.getMenu().getItem(i), false);
 
-                                break;
-                            }
+                            break;
                         }
-
                     }
 
                 }
 
+            }
 
 
         }
     }
 
     private void selectmaterialmenu_Else(MenuItem arg0, boolean isdefault) {
-
 
 
         btnmaterial.setTag(arg0.getItemId() + "");
@@ -8471,15 +8064,14 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         btntype.setVisibility(View.VISIBLE);
                     }
 
-                    if (btndamagetype.getText().toString().equals("Damage")) {
-                        btndamagetype.setText("Damage");
+                    if (btndamagetype.getText().toString().equals("No Damage")) {    // check here nodamage
+                        btndamagetype.setText("No Damage");
                         btntype.setVisibility(View.INVISIBLE);
                     } else {
                         btntype.setVisibility(View.VISIBLE);
                     }
 
-                    if(btnmaterial.getText().toString().equals("Material"))
-                    {
+                    if (btnmaterial.getText().toString().equals("Material")) {
                         btnmaterial.setText("Blank");
                     }
                     if (btnmaterial.getText().toString().equals("Blank")) {
@@ -8513,15 +8105,14 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         btntype.setVisibility(View.VISIBLE);
                     }
 
-                    if (btndamagetype.getText().toString().equals("Damage")) {
-                        btndamagetype.setText("Damage");
+                    if (btndamagetype.getText().toString().equals("No Damage")) {    //check here nodamage
+                        btndamagetype.setText("No Damage");
                         btntype.setVisibility(View.INVISIBLE);
                     } else {
                         btntype.setVisibility(View.VISIBLE);
                     }
 
-                    if(btnmaterial.getText().toString().equals("Material"))
-                    {
+                    if (btnmaterial.getText().toString().equals("Material")) {
                         btnmaterial.setText("Blank");
                     }
 
@@ -8554,15 +8145,14 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         btntype.setVisibility(View.VISIBLE);
                     }
 
-                    if (btndamagetype.getText().toString().equals("Damage")) {
-                        btndamagetype.setText("Damage");
+                    if (btndamagetype.getText().toString().equals("No Damage")) {   //check here nodamage
+                        btndamagetype.setText("No Damage");
                         btntype.setVisibility(View.INVISIBLE);
                     } else {
                         btntype.setVisibility(View.VISIBLE);
                     }
 
-                    if(btnmaterial.getText().toString().equals("Material"))
-                    {
+                    if (btnmaterial.getText().toString().equals("Material")) {
                         btnmaterial.setText("Blank");
                     }
                     if (btnmaterial.getText().toString().equals("Blank")) {
@@ -8577,19 +8167,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         }
 
 
-        Log.e("selectgettitle", "==>" + arg0.getTitle());
-
-
 //        getalphaname();
 
-        if(isdefault)
-        {
+        if (isdefault) {
             btntype2.setTag("1");
             btntype2.setBackgroundResource(R.drawable.button_background);
 
-        }
-        else
-        {
+        } else {
             btntype2.setTag("2");
             btntype2.setBackgroundResource(R.drawable.red_button_background);
 
@@ -8598,8 +8182,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         getalphaname();
     }
 
-    private void selectmaterialmenu_I(MenuItem item, Boolean isdefault)
-    {
+    private void selectmaterialmenu_I(MenuItem item, Boolean isdefault) {
 
 
 //                    if (item.getTitle().toString().equalsIgnoreCase("Custom Text")) {
@@ -8621,8 +8204,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
         btnmaterial.setTag(item.getItemId() + "");
         btnmaterial.setText(item.getTitle());
-        if(item.getTitle().equals("Material"))
-        {
+        if (item.getTitle().equals("Material")) {
             btnmaterial.setText("Blank");
         }
 
@@ -8700,13 +8282,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             String strvalue = Cur.getString(Cur.getColumnIndex("value"));
                             if (strvalue.equalsIgnoreCase("Custom Text"))
                                 continue;
-                            Log.e("Value==>", "" + strvalue);
 
+                            if (strvalue.trim().equals("Blank")) {
 
-                            if(strvalue.trim().equals("Blank"))
-                            {
-
-                            }else {
+                            } else {
                                 popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
 
                                 value++;
@@ -8788,11 +8367,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             String strvalue = Cur.getString(Cur.getColumnIndex("value"));
                             if (strvalue.equalsIgnoreCase("Custom Text"))
                                 continue;
-                            Log.e("Value==>", "" + strvalue);
-                            if(strvalue.trim().equals("Blank"))
-                            {
+                            if (strvalue.trim().equals("Blank")) {
 
-                            }else {
+                            } else {
 
                                 popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
 
@@ -8853,11 +8430,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                             String strvalue = Cur.getString(Cur.getColumnIndex("value"));
                             if (strvalue.equalsIgnoreCase("Custom Text"))
                                 continue;
-                            Log.e("Value==>", "" + strvalue);
-                            if(strvalue.trim().equals("Blank"))
-                            {
+                            if (strvalue.trim().equals("Blank")) {
 
-                            }else {
+                            } else {
 
                                 popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
 
@@ -8950,11 +8525,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         String strvalue = Cur.getString(Cur.getColumnIndex("value"));
                         if (strvalue.equalsIgnoreCase("Custom Text"))
                             continue;
-                        Log.e("Value==>", "" + strvalue);
-                        if(strvalue.equalsIgnoreCase("Blank"))
-                        {
 
-                        }else {
+                        if (strvalue.equalsIgnoreCase("Blank")) {
+
+                        } else {
 
                             popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
 
@@ -8994,11 +8568,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         String strvalue = Cur.getString(Cur.getColumnIndex("value"));
                         if (strvalue.equalsIgnoreCase("Custom Text"))
                             continue;
-                        Log.e("Value==>", "" + strvalue);
-                        if(strvalue.equalsIgnoreCase("Blank"))
-                        {
 
-                        }else {
+                        if (strvalue.equalsIgnoreCase("Blank")) {
+
+                        } else {
 
                             popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
 
@@ -9040,11 +8613,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         String strvalue = Cur.getString(Cur.getColumnIndex("value"));
                         if (strvalue.equalsIgnoreCase("Custom Text"))
                             continue;
-                        Log.e("Value==>", "" + strvalue);
-                        if(strvalue.equalsIgnoreCase("Blank"))
-                        {
 
-                        }else {
+                        if (strvalue.equalsIgnoreCase("Blank")) {
+
+                        } else {
 
                             popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
 
@@ -9124,14 +8696,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                                     btntype.setVisibility(View.VISIBLE);
                                 }
 
-                                if (btndamagetype.getText().toString().equals("Damage")) {
-                                    btndamagetype.setText("Damage");
+                                if (btndamagetype.getText().toString().equals("No Damage")) {  //check here nodamage
+                                    btndamagetype.setText("No Damage");
                                     btntype.setVisibility(View.INVISIBLE);
                                 } else {
                                     btntype.setVisibility(View.VISIBLE);
                                 }
-                                if(btnmaterial1.getText().toString().equals("Material"))
-                                {
+                                if (btnmaterial1.getText().toString().equals("Material")) {
                                     btnmaterial1.setText("Blank");
                                 }
                                 if (btnmaterial1.getText().toString().equals("Blank")) {
@@ -9166,8 +8737,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                                 }
 
 
-                                if (btndamagetype.getText().toString().equals("Damage")) {
-                                    btndamagetype.setText("Damage");
+                                if (btndamagetype.getText().toString().equals("No Damage")) {   //check here nodamage
+                                    btndamagetype.setText("No Damage");
                                     btntype.setVisibility(View.INVISIBLE);
                                 } else {
                                     btntype.setVisibility(View.VISIBLE);
@@ -9203,8 +8774,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                                 }
 
 
-                                if (btndamagetype.getText().toString().equals("Damage")) {
-                                    btndamagetype.setText("Damage");
+                                if (btndamagetype.getText().toString().equals("No Damage")) {  //check here nodamage
+                                    btndamagetype.setText("No Damage");
                                     btntype.setVisibility(View.INVISIBLE);
                                 } else {
                                     btntype.setVisibility(View.VISIBLE);
@@ -9309,7 +8880,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         btniteriortype.setText(input.getText().toString());
 
                         btnocb.setTag("3");
-        selectocb();
+                        selectocb();
                         strboc = "1";
                         strboctype = "Overview";
                     }
@@ -9356,9 +8927,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
                 if (item.getTitle().toString().equals("Add New Claim")) {
                     addClaim();
-                }
-                else
-                {
+                } else {
 //                    claimSelectPos = item.getItemId();
 
                     setclaimname(item.getTitle());
@@ -9420,14 +8989,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         }*/
     }
 
-    private void setclaimname(CharSequence title)
-    {
-        if(arrayListClaim!=null)
-        {
-            for (int i=0;i<arrayListClaim.size();i++)
-            {
-                if(title.equals(arrayListClaim.get(i).getName()))
-                {
+    private void setclaimname(CharSequence title) {
+        if (arrayListClaim != null) {
+            for (int i = 0; i < arrayListClaim.size(); i++) {
+                if (title.equals(arrayListClaim.get(i).getName())) {
                     claimSelectPos = i;
                     getselectclaimname(i);
                     break;
@@ -9435,10 +9000,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
             }
         }
-
-
-
-
 
 
     }
@@ -9459,12 +9020,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         getalphaname();
     }
 
-    private void getClaimList()
-    {
-        Log.e("btncattage","--->"+Integer.parseInt(btncat.getTag().toString()));
+    private void getClaimList() {
 
-        if (Utility.haveInternet(mContext, true))
-        {
+        if (Utility.haveInternet(mContext, true)) {
 //            Utility.showProgress(mContext);
             ApiClient.getClient().create(APIInterface.class).getClaimList(PrefManager.getUserId()).enqueue(new Callback<String>() {
                 @Override
@@ -9589,39 +9147,38 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     private void AddClaimName(final String claimname) {
 
 
-        if (Utility.haveInternet(mContext, true))
-        {
+        if (Utility.haveInternet(mContext, true)) {
 //                final String claimname = edtClaimName.getText().toString();
-                Utility.showProgress(mContext);
-                ApiClient.getClient().create(APIInterface.class).addClaim(PrefManager.getUserId(), claimname).enqueue(new Callback<String>() {
-                    @Override
-                    public void onResponse(Call<String> call, Response<String> response) {
-                        Utility.dismissProgress();
-                        Log.i(TAG, "addClaimRes = " + response.body());
+            Utility.showProgress(mContext);
+            ApiClient.getClient().create(APIInterface.class).addClaim(PrefManager.getUserId(), claimname).enqueue(new Callback<String>() {
+                @Override
+                public void onResponse(Call<String> call, Response<String> response) {
+                    Utility.dismissProgress();
+                    Log.i(TAG, "addClaimRes = " + response.body());
 
-                        if (response.body() == null) {
-                            Utility.errorDialog(mContext, getString(R.string.error_data_not_found));
-                            return;
-                        }
-
-                        try {
-                            JSONObject jsonObject = new JSONObject(response.body());
-                            Toast.makeText(mContext, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
-                            if (jsonObject.getString("success").equals("success")) {
-                                appfoldername =  claimname;
-                                getClaimList();
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                    if (response.body() == null) {
+                        Utility.errorDialog(mContext, getString(R.string.error_data_not_found));
+                        return;
                     }
 
-                    @Override
-                    public void onFailure(Call<String> call, Throwable t) {
-                        Utility.dismissProgress();
-                        Log.i(TAG, "addClaimError = " + t.toString());
+                    try {
+                        JSONObject jsonObject = new JSONObject(response.body());
+                        Toast.makeText(mContext, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                        if (jsonObject.getString("success").equals("success")) {
+                            appfoldername = claimname;
+                            getClaimList();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-                });
+                }
+
+                @Override
+                public void onFailure(Call<String> call, Throwable t) {
+                    Utility.dismissProgress();
+                    Log.i(TAG, "addClaimError = " + t.toString());
+                }
+            });
 
         }
     }
@@ -9806,8 +9363,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         popupMenu2.show();
     }
 
-    private void showmyhail(final Button btnhailopttionview, final String slopselect)
-    {
+    private void showmyhail(final Button btnhailopttionview, final String slopselect) {
 
         selectslop_cur = slopselect;
 
@@ -9818,20 +9374,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         txt_leftslope.setBackgroundResource(R.drawable.roundgray_select);
 
 
-        if(txt_frontslope == btnhailopttionview)
-        {
+        if (txt_frontslope == btnhailopttionview) {
             txt_frontslope.setBackgroundResource(R.drawable.roundred_select);
-        }
-        else if(txt_rightslope == btnhailopttionview)
-        {
+        } else if (txt_rightslope == btnhailopttionview) {
             txt_rightslope.setBackgroundResource(R.drawable.roundred_select);
-        }
-        else if(txt_rearslope == btnhailopttionview)
-        {
+        } else if (txt_rearslope == btnhailopttionview) {
             txt_rearslope.setBackgroundResource(R.drawable.roundred_select);
-        }
-        else if(txt_leftslope == btnhailopttionview)
-        {
+        } else if (txt_leftslope == btnhailopttionview) {
             txt_leftslope.setBackgroundResource(R.drawable.roundred_select);
         }
 
@@ -9905,8 +9454,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         });
         popupMenu2.show();
     }
-
-
 
 
     private void showInsulationOption() {
@@ -10096,11 +9643,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             do {
 
                 String strvalue = Cur.getString(Cur.getColumnIndex("value"));
-                Log.e("Value==>", "" + strvalue);
-                if(strvalue.equals("Blank"))
-                {
 
-                }else {
+                if (strvalue.equals("Blank")) {
+
+                } else {
                     popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
 
                     value++;
@@ -10124,7 +9670,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 btnhailnodamages.setTag("2");
                 btnhailnodamages.setBackgroundResource(R.drawable.red_button_background);
                 btnhailnodamages.setText(arg0.getTitle());
-                strhaildamage=arg0.getTitle().toString();
+                strhaildamage = arg0.getTitle().toString();
                 //  btno.setTag("1");
                 //  btno.setBackgroundResource(R.drawable.button_background);
 
@@ -10169,10 +9715,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         popupMenu2.show();
     }
 
-    private void showdamagetypeoption(Boolean showalert)
-    {
+    private void showdamagetypeoption(Boolean showalert) {
 
-        Log.e("","call defaultfucation");
         value = 0;
 
         PopupMenu popupMenu2 = new PopupMenu(this, findViewById(R.id.btndamagetype));
@@ -10188,13 +9732,11 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 String strvalue = Cur.getString(Cur.getColumnIndex("value"));
                 if (strvalue.equals("Custom text"))
                     continue;
-                Log.e("Value==>", "" + strvalue);
-                if(strvalue.equals("Blank"))
-                {
 
-                }else {
+                if (strvalue.equals("Blank")) {
+
+                } else {
                     popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
-
                     value++;
                 }
             }
@@ -10208,27 +9750,23 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
             @Override
             public boolean onMenuItemClick(MenuItem arg0) {
-
                 btnmatrialsubmenu.setText("0");
-                damagetypeoptionselect(arg0,false);
+                damagetypeoptionselect(arg0, false);
 
 //                GetPhotoName();
                 return false;
             }
         });
 
-        if(showalert)
-        {
+        if (showalert) {
             popupMenu2.show();
-        }
-        else
-        {
+        } else {
 
-            damagetypeoptionselect(popupMenu2.getMenu().getItem(2),true);
+            damagetypeoptionselect(popupMenu2.getMenu().getItem(2), true);
         }
     }
 
-    private void damagetypeoptionselect(MenuItem arg0,Boolean isdefault) {
+    private void damagetypeoptionselect(MenuItem arg0, Boolean isdefault) {
 
         btndamagetype.setTag(arg0.getItemId() + "");
         btndamagetype.setText(arg0.getTitle());
@@ -10240,27 +9778,24 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 //        btno.setBackgroundResource(R.drawable.button_background);
 
 
-        if(arg0.getTitle().equals("Damage"))
+        if (arg0.getTitle().equals("No Damage"))  // chech here
         {
             btndamagetype.setText("Blank");
         }
 
         if (btndamagetype.getText().toString().equals("Blank")) {
-            btndamagetype.setText("Damage");
+            btndamagetype.setText("No Damage");   // check here
             btntype.setVisibility(View.INVISIBLE);
         } else {
             btntype.setVisibility(View.VISIBLE);
         }
 
 
-        if(isdefault)
-        {
+        if (isdefault) {
             btntype.setTag("1");
             btntype.setBackgroundResource(R.drawable.button_background);
 
-        }
-        else
-        {
+        } else {
             btntype.setTag("2");
             btntype.setBackgroundResource(R.drawable.red_button_background);
 
@@ -10620,8 +10155,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 strboc = "1";
                 strboctype = "Overview";
             }
-
-            btndamagetype.setText(queModel.getDamage().equals("Blank") ? "Damage" : queModel.getDamage());
+            btndamagetype.setText(queModel.getDamage().equals("Blank") ? "No Damage" : queModel.getDamage());   // check here
             btndamagetype.setTag(queModel.getDamage().equals("Blank") ? "0" : "1");
             btntype.setVisibility(View.INVISIBLE);
 
@@ -11033,57 +10567,57 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
             onclick_R_E_I();
 
-        }
-        else if (vid == btnr.getId())
-        {
+        } else if (vid == btnr.getId()) {
             clickonView("btnr");
 
-            if(btnr.getTag().equals("1"))
-            {
+            if (btnr.getTag().equals("1")) {
                 btnrei.setTag("3");
                 onclick_R_E_I();
-            }
-            else
-            {
+            } else {
                 btnrei.setTag("2");
                 onclick_R_E_I();
             }
 
-        }
-        else if (vid == rl_defaultmenu.getId())
-        {
+        } else if (vid == rl_defaultmenu.getId()) {
 //            ll_default_button_submenu
 
-                if(ll_default_button_submenu.getVisibility() == View.VISIBLE)
-                {
-                    ll_default_button_submenu.setVisibility(View.GONE);
-                }
-                else
-                {
-                    ll_default_button_submenu.setVisibility(View.VISIBLE);
-                }
-        }
-        else if (vid == btne.getId()) {
+            if (ll_default_button_submenu.getVisibility() == View.VISIBLE) {
+                ll_default_button_submenu.setVisibility(View.GONE);
+            } else {
+                ll_default_button_submenu.setVisibility(View.VISIBLE);
+            }
+        } else if (vid == rl_photoinfomenu.getId()) {
+//            ll_photo_information_submenu
+
+            if (ll_photo_information_submenu.getVisibility() == View.VISIBLE) {
+                ll_photo_information_submenu.setVisibility(View.GONE);
+            } else {
+                ll_photo_information_submenu.setVisibility(View.VISIBLE);
+            }
+        } else if (vid == rl_menuoption.getId()) {
+//            ll_photo_information_submenu
+
+            if (ll_menu_options_submenu.getVisibility() == View.VISIBLE) {
+                ll_menu_options_submenu.setVisibility(View.GONE);
+            } else {
+                ll_menu_options_submenu.setVisibility(View.VISIBLE);
+            }
+        } else if (vid == btne.getId()) {
 
             clickonView("btne");
 
-            if(btne.getTag().equals("1"))
-            {
+            if (btne.getTag().equals("1")) {
 
                 btnrei.setTag("1");
                 onclick_R_E_I();
 
-            }
-            else
-            {
+            } else {
                 btnrei.setTag("2");
                 onclick_R_E_I();
             }
 
 
-        }
-
-        else if (vid == btnQue.getId()) {
+        } else if (vid == btnQue.getId()) {
             clickonView("btnQue");
 
 
@@ -11105,22 +10639,19 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             showdamagetypeoption(true);
 
 
-        }
-        else if (vid == btnnodamagetype.getId()) {
+        } else if (vid == btnnodamagetype.getId()) {
             clickonView("btnnodamagetype");
 
             btnhailnodamages.performClick();
-        }
-        else if (vid == btndamagetype1.getId()) {
+        } else if (vid == btndamagetype1.getId()) {
             clickonView("btndamagetype1");
 
             showdamagetypeoption1();
-        }     else if (vid == btnmaterial1.getId()) {
+        } else if (vid == btnmaterial1.getId()) {
             clickonView("btnmaterial1");
 
             showmaterialoption1();
-        }
-        else if (vid == btnareatogal.getId()) {
+        } else if (vid == btnareatogal.getId()) {
 
 
             clickonView("btnareatogal");
@@ -11203,7 +10734,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             if (vid == btnCeiling.getId()) {
 
 
-
                 clickonView("btnCeiling");
 
                 btnarea.setText("Ceiling");
@@ -11222,8 +10752,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     btnmatrialsubmenu.setText("0");
 
 
-
-                } else if (btnCeiling.getTag().equals("2"))  {
+                } else if (btnCeiling.getTag().equals("2")) {
 
                     btnCeiling.setBackgroundResource(R.drawable.button_background);
                     btnCeiling.setTag("1");
@@ -11234,8 +10763,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
                 }
 
-            } else if (vid == btnWall.getId())
-            {
+            } else if (vid == btnWall.getId()) {
                 clickonView("btnWall");
 
                 btnarea.setText("Wall");
@@ -11253,9 +10781,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     btnmatrialsubmenu.setText("0");
 
 
-
-
-                }  else if (btnWall.getTag().equals("2"))  {
+                } else if (btnWall.getTag().equals("2")) {
 
                     btnWall.setBackgroundResource(R.drawable.button_background);
                     btnWall.setTag("1");
@@ -11286,8 +10812,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     btnmatrialsubmenu.setText("0");
 
 
-
-                }  else if (btnFloor.getTag().equals("2"))  {
+                } else if (btnFloor.getTag().equals("2")) {
 
                     btnFloor.setBackgroundResource(R.drawable.button_background);
                     btnFloor.setTag("1");
@@ -11427,12 +10952,11 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
             showpitchmenu(btnpitchmenu);
 
-        } else if (vid == btnocb.getId())
-        {
+        } else if (vid == btnocb.getId()) {
             clickonView("btnocb");
 
 
-          selectocb();
+            selectocb();
 
         } else if (vid == btnmaterial.getId()) {
             clickonView("btnmaterial");
@@ -11461,8 +10985,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             clickonView("rlInteriorBack");
 
 
-
-
             showoption();
             rlInteriorPhoto.setVisibility(View.GONE);
             btnInteriorMacro.setVisibility(View.GONE);
@@ -11483,16 +11005,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
             skipInterior();
 
-        }
-        else if(vid == btnscope.getId())
-        {
+        } else if (vid == btnscope.getId()) {
             clickonView("btnscope");
 
             rlsetting.setVisibility(View.GONE);
-            Intent act_ScopeName = new Intent(HomeActivity.this,ScopeName.class);
+            Intent act_ScopeName = new Intent(HomeActivity.this, ScopeName.class);
             startActivity(act_ScopeName);
-        }
-        else if (vid == rlNewMacroBack.getId()) {
+        } else if (vid == rlNewMacroBack.getId()) {
             clickonView("rlNewMacroBack");
 
             showoption();
@@ -11611,44 +11130,30 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             }
 
 
+        } else if (vid == btn_replace_front.getId()) {
 
+            Select_Replace_Repair(btn_replace_front, "1");
+        } else if (vid == btn_replace_right.getId()) {
+            Select_Replace_Repair(btn_replace_right, "2");
 
+        } else if (vid == btn_replace_rear.getId()) {
+            Select_Replace_Repair(btn_replace_rear, "3");
 
-        }
-        else if (vid == btn_replace_front.getId()) {
+        } else if (vid == btn_replace_left.getId()) {
+            Select_Replace_Repair(btn_replace_left, "4");
 
-            Select_Replace_Repair(btn_replace_front,"1");
-        }
-        else if (vid == btn_replace_right.getId()) {
-            Select_Replace_Repair(btn_replace_right,"2");
+        } else if (vid == btn_repair_front.getId()) {
+            Select_Replace_Repair(btn_repair_front, "1");
 
-        }
-        else if (vid == btn_replace_rear.getId()) {
-            Select_Replace_Repair(btn_replace_rear,"3");
+        } else if (vid == btn_repair_right.getId()) {
+            Select_Replace_Repair(btn_repair_right, "2");
 
-        }
-        else if (vid == btn_replace_left.getId()) {
-            Select_Replace_Repair(btn_replace_left,"4");
+        } else if (vid == btn_repair_rear.getId()) {
+            Select_Replace_Repair(btn_repair_rear, "3");
 
-        }
-        else if (vid == btn_repair_front.getId()) {
-            Select_Replace_Repair(btn_repair_front,"1");
-
-        }
-        else if (vid == btn_repair_right.getId()) {
-            Select_Replace_Repair(btn_repair_right,"2");
-
-        }
-        else if (vid == btn_repair_rear.getId()) {
-            Select_Replace_Repair(btn_repair_rear,"3");
-
-        }
-        else if (vid == btn_repair_left.getId()) {
-            Select_Replace_Repair(btn_repair_left,"4");
-        }
-
-
-        else if (vid == btnhailtype.getId()) {
+        } else if (vid == btn_repair_left.getId()) {
+            Select_Replace_Repair(btn_repair_left, "4");
+        } else if (vid == btnhailtype.getId()) {
 
             clickonView("btnhailtype");
 
@@ -11759,7 +11264,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 Cur.moveToFirst();
                 do {
                     String strvalue = Cur.getString(Cur.getColumnIndex("value"));
-                    Log.e("Value==>", "" + strvalue);
                     popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
                     value++;
                 } while (Cur.moveToNext());
@@ -11792,7 +11296,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 Cur.moveToFirst();
                 do {
                     String strvalue = Cur.getString(Cur.getColumnIndex("value"));
-                    Log.e("Value==>", "" + strvalue);
+
                     popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
                     value++;
                 } while (Cur.moveToNext());
@@ -11821,7 +11325,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 Cur.moveToFirst();
                 do {
                     String strvalue = Cur.getString(Cur.getColumnIndex("value"));
-//                Log.e("Value==>", BuildConfig.FLAVOR + strvalue);
+
                     popupMenu2.getMenu().add(Menu.NONE, value, Menu.NONE, strvalue);
                     value++;
                 } while (Cur.moveToNext());
@@ -11951,33 +11455,25 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     }
                 }
             }
-        } else if (vid == btnhailskip.getId())  {
+        } else if (vid == btnhailskip.getId()) {
             clickonView("btnhailskip");
-
-
-            Log.e("btnhailskip===>","click");
-
 
             if (btnimgmacro.getText().toString().equals("Hail")) {
                 hailimgcount++;
             }
 
 
-
-
-
             if (btnhailskip.getText().toString().trim().equals("Next Slope")) {
 
 
                 btnocb.setTag("3");
-        selectocb();
+                selectocb();
                 strboc = "1";
                 strboctype = "Overview";
 
                 btnhailskip.setText("Skip");
 
                 if (btnhailtype.getText().equals("Front Slope")) {
-
 
 
                     if (chkrightslopeimg) {
@@ -12152,42 +11648,29 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 }
             }
 
-
-
-            Log.e("btnRoomMacrotext",""+btnimgmacrosub.getText());
-
             btno.setVisibility(View.VISIBLE);
             btnnc.setVisibility(View.VISIBLE);
-            if(btnimgmacrosub.getText().toString().equalsIgnoreCase("test sq"))
-            {
+            if (btnimgmacrosub.getText().toString().equalsIgnoreCase("test sq")) {
 
 
                 btno.setVisibility(View.INVISIBLE);
                 btnnc.setVisibility(View.INVISIBLE);
 
-            }
-            else if(btnimgmacrosub.getText().toString().equalsIgnoreCase("hail damage close up on shingles"))
-            {
+            } else if (btnimgmacrosub.getText().toString().equalsIgnoreCase("hail damage close up on shingles")) {
                 btnocb.setTag("1");
                 selectocb();
-            }
-            else
-            {
+            } else {
                 btnocb.setTag("3");
                 selectocb();
             }
 
 
-
-            if (btnhailtype.getText().equals("Front Slope"))
-            {
+            if (btnhailtype.getText().equals("Front Slope")) {
                 txt_slopeno.setText(no_frontslope);
-            } else if (btnhailtype.getText().equals("Right Slope"))
-            {
+            } else if (btnhailtype.getText().equals("Right Slope")) {
                 txt_slopeno.setText(no_rightslope);
 
-            } else if (btnhailtype.getText().equals("Rear Slope"))
-            {
+            } else if (btnhailtype.getText().equals("Rear Slope")) {
                 txt_slopeno.setText(no_rearslope);
             } else if (btnhailtype.getText().equals("Left Slope")) {
                 txt_slopeno.setText(no_leftslope);
@@ -12290,8 +11773,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             btno.setVisibility(View.VISIBLE);//dmakchange
             btnocb.setVisibility(View.INVISIBLE);
 
-        } else if (vid == txt_frontslope.getId())
-        {
+        } else if (vid == txt_frontslope.getId()) {
             clickonView("txt_frontslope");
             showmyhail(txt_frontslope, "1");
 
@@ -12310,15 +11792,11 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
             showmyhail(txt_leftslope, "4");
 
-        }
-        else if(vid == txt_slopeno.getId())
-        {
+        } else if (vid == txt_slopeno.getId()) {
             clickonView("txt_slopeno");
 
             selectslopno(txt_slopeno);
-        }
-
-        else if (vid == rllayerBack.getId()) {
+        } else if (vid == rllayerBack.getId()) {
 
             clickonView("rllayerBack");
 
@@ -12493,7 +11971,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             clickonView("rlpitchBack");
 
 
-
             btnrisk.setTag("1");
             hideallview();
             btnrisk.setText("Aditional Photo");
@@ -12631,7 +12108,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             clickonView("rlblankback");
 
 
-
             rlblankback.setVisibility(View.GONE);
 
             zoomseek.setVisibility(View.VISIBLE);
@@ -12767,22 +12243,22 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         } else if (vid == rbtn_frontslope.getId()) {
             clickonView("rbtn_frontslope");
 
-            selecthailoption(rbtn_frontslope, txt_frontslope,"1");
+            selecthailoption(rbtn_frontslope, txt_frontslope, "1");
         } else if (vid == rbtn_rightslope.getId()) {
             clickonView("rbtn_rightslope");
 
-            no_rightslope="1";
-            selecthailoption(rbtn_rightslope, txt_rightslope,"2");
+            no_rightslope = "1";
+            selecthailoption(rbtn_rightslope, txt_rightslope, "2");
         } else if (vid == rbtn_rearslope.getId()) {
             clickonView("rbtn_rearslope");
 
-            no_rearslope="1";
-            selecthailoption(rbtn_rearslope, txt_rearslope,"3");
+            no_rearslope = "1";
+            selecthailoption(rbtn_rearslope, txt_rearslope, "3");
         } else if (vid == rbtn_leftslope.getId()) {
             clickonView("rbtn_leftslope");
 
-            no_leftslope="1";
-            selecthailoption(rbtn_leftslope, txt_leftslope,"4");
+            no_leftslope = "1";
+            selecthailoption(rbtn_leftslope, txt_leftslope, "4");
         } else if (vid == btntype.getId()) {
 
             clickonView("btntype");
@@ -12841,7 +12317,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 btnhailnodamages.setBackgroundResource(R.drawable.red_button_background);
                 btnhailnodamages.setTag("2");
                 //btnhailnodamages.setText(btndamagetype1.getText());
-                strhaildamage=btndamagetype1.getText().toString();
+                strhaildamage = btndamagetype1.getText().toString();
                 // btntype.setTag("2");
 
                 // btntype.callOnClick();
@@ -12852,13 +12328,12 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
                 btnhailnodamages.setBackgroundResource(R.drawable.button_background);
                 btnhailnodamages.setTag("1");
-                strhaildamage="";
+                strhaildamage = "";
                 //    btnhailnodamages.setText("");
                 getalphaname();
             }
 
-        }
-        else if (vid == btnhailmaterialdamages.getId()) {
+        } else if (vid == btnhailmaterialdamages.getId()) {
 
 
             clickonView("btnhailmaterialdamages");
@@ -12868,7 +12343,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 btnhailmaterialdamages.setBackgroundResource(R.drawable.red_button_background);
                 btnhailmaterialdamages.setTag("2");
                 //btnhailnodamages.setText(btndamagetype1.getText());
-                strhailmaterialdamage=btnhailmenu1.getText().toString();
+                strhailmaterialdamage = btnhailmenu1.getText().toString();
                 // btntype.setTag("2");
 
                 // btntype.callOnClick();
@@ -12877,23 +12352,19 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             } else if (btnhailmaterialdamages.getTag().equals("2")) {
                 btnhailmaterialdamages.setBackgroundResource(R.drawable.button_background);
                 btnhailmaterialdamages.setTag("1");
-                strhailmaterialdamage="";
+                strhailmaterialdamage = "";
                 //    btnhailnodamages.setText("");
                 getalphaname();
             }
 
-        }
-        else if (vid == btno.getId()) {
+        } else if (vid == btno.getId()) {
 
             clickonView("btno");
 
-            if(!btnocb.getText().toString().equalsIgnoreCase("O"))
-            {
+            if (!btnocb.getText().toString().equalsIgnoreCase("O")) {
                 btnocb.setTag("3");
                 btnocb.performClick();
-            }
-            else
-            {
+            } else {
                 btnocb.setTag("2");
                 btnocb.performClick();
 
@@ -13006,13 +12477,10 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             clickonView("btnnc");
 
 
-            if(!btnocb.getText().toString().equalsIgnoreCase("C"))
-            {
+            if (!btnocb.getText().toString().equalsIgnoreCase("C")) {
                 btnocb.setTag("1");
                 btnocb.performClick();
-            }
-            else
-            {
+            } else {
                 btnocb.setTag("2");
                 btnocb.performClick();
 
@@ -13112,7 +12580,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             clickonView("imgtop");
 
 
-
             btntype.setBackgroundResource(R.drawable.button_background);
             btntype.setTag("1");
 
@@ -13136,7 +12603,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
                 setarrowicon(imgtop, R.drawable.rticon);
                 btnocb.setTag("3");
-        selectocb();
+                selectocb();
                 strboc = "1";
                 strboctype = "Overview";
                 strfencegame = "Front Run";
@@ -13163,7 +12630,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 //                btntype.setTag("1");
 
 
-
                 if (btnrei.getText().toString().equals("R")) {
                     selectslope = " Rear ";
                 } else if (btnrei.getText().toString().equals("E")) {
@@ -13173,7 +12639,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 }
                 setarrowicon(imgbottom, R.drawable.rbicon);
                 btnocb.setTag("3");
-        selectocb();
+                selectocb();
                 strboc = "1";
                 strboctype = "Overview";
                 strfencegame = "Rear Run";
@@ -13210,14 +12676,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     selectslope = "Left ";
                 }
                 btnocb.setTag("3");
-        selectocb();
+                selectocb();
                 strboc = "1";
                 strboctype = "Overview";
                 strfencegame = "Left Run";
             }
 
         } else if (vid == imgright.getId()) {
-
 
 
             clickonView("imgright");
@@ -13241,7 +12706,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     selectslope = "Right ";
                 }
                 btnocb.setTag("3");
-        selectocb();
+                selectocb();
                 strboc = "1";
                 strboctype = "Overview";
                 strfencegame = "Right Run";
@@ -13251,7 +12716,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             clickonView("rlsetting");
 
 
-        } else {
+        }
+        else {
             if (vid == rltorch.getId()) {
                 clickonView("rltorch");
 
@@ -13291,7 +12757,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
                 }
 
-                              rlsetting.setVisibility(View.GONE);
+                rlsetting.setVisibility(View.GONE);
                 btnabc.setText("None");
             } else if (vid == btnroofadd.getId()) {
                 clickonView("btnroofadd");
@@ -13348,9 +12814,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 clickonView("btnlastphoto");
 
                 File latimagefile = new File(lastpathpf.getString("lastimgpath", ""));
-                Log.e("getlatimagefile","==>"+latimagefile.getAbsolutePath());
-
-
                 PopupMenu popupMenu = new PopupMenu(this, btnlastphoto);
                 popupMenu.getMenu().add("View last photo");
                 popupMenu.getMenu().add("Delete last photo");
@@ -13427,7 +12890,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
                 startActivity(new Intent(this, LiveStreamingActivity.class));
                 overridePendingTransition(R.anim.right_out, R.anim.left_out);
-            } else if (vid == imgbtncam.getId()) {
+            }
+            else if (vid == imgbtncam.getId()) {
 
                 clickonView("imgbtncam");
 
@@ -13610,7 +13074,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         e2.printStackTrace();
                     }
                 }
-            } else if (vid == imgbtnsetting.getId()) {
+            }
+            else if (vid == imgbtnsetting.getId()) {
                 clickonView("imgbtnsetting");
 
 //                startActivity(new Intent(mContext, SettingActivity.class));
@@ -13867,11 +13332,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         setDamageSelect();
 
 
-        if(btnrei.getText().equals("E") || btnrei.getText().equals("R"))
-        {
+        if (btnrei.getText().equals("E") || btnrei.getText().equals("R")) {
             serdefaultvalue();
         }
-
 
 
         btnr.setTag("1");
@@ -13881,19 +13344,14 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         btne.setBackgroundResource(R.drawable.button_background);
 
 
-        if(btnrei.getText().toString().equalsIgnoreCase("r"))
-        {
+        if (btnrei.getText().toString().equalsIgnoreCase("r")) {
             btnr.setTag("2");
             btnr.setBackgroundResource(R.drawable.red_button_background);
 
-        }
-        else if(btnrei.getText().toString().equalsIgnoreCase("e"))
-        {
+        } else if (btnrei.getText().toString().equalsIgnoreCase("e")) {
             btne.setTag("2");
             btne.setBackgroundResource(R.drawable.red_button_background);
-        }
-        else if(btnrei.getText().toString().equalsIgnoreCase("i"))
-        {
+        } else if (btnrei.getText().toString().equalsIgnoreCase("i")) {
 
         }
 
@@ -13901,17 +13359,13 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
     private void selectocb() {
 
-        Log.e("btnocbtag", "-->click");
-
-
         if (btnocb.getTag().equals("1")) {
 
-            Log.e("called close up", "called close up");
             btnocb.setTag("2");
             btnocb.setText("C");
             strboc = "2";
             strboctype = "Close up";
-            ocb1= "Close up";
+            ocb1 = "Close up";
             btnnc.setBackgroundResource(R.drawable.red_button_background);
             btno.setBackgroundResource(R.drawable.button_background);
 
@@ -13944,7 +13398,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
         } else if (btnocb.getTag().equals("2")) {
 
-            Log.e("Called blank", "Called blank");
             btnocb.setTag("3");
             btnocb.setText("B");
             btno.setText("O");
@@ -13953,18 +13406,15 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             i = 1;
             btno.setBackgroundResource(R.drawable.button_background);
             btnnc.setBackgroundResource(R.drawable.button_background);
-            ocb1= "Blank";
-            Log.e("Close up blank 3", "close blank 3:-" + clickedonewj);
-
+            ocb1 = "Blank";
         } else if (btnocb.getTag().equals("3")) {
 
-            Log.e("called overview", "");
             btnocb.setTag("1");
             btnocb.setText("O");
             i = 1;
             strboc = "1";
             strboctype = "Overview";
-            ocb1= "Overview";
+            ocb1 = "Overview";
             btno.setBackgroundResource(R.drawable.red_button_background);
             btnnc.setBackgroundResource(R.drawable.button_background);
                /* if (btnocb.getTag().equals("1")) {
@@ -14130,20 +13580,19 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     private void setnexthailslopvalue() {
 
 
-
         if (btnhailtype.getText().equals("Front Slope")) {
 
-            Log.e("slopselect===>","Front Slope");
+            Log.e("slopselect===>", "Front Slope");
         } else if (btnhailtype.getText().equals("Right Slope")) {
-            Log.e("slopselect===>","Right Slope");
+            Log.e("slopselect===>", "Right Slope");
 
 
         } else if (btnhailtype.getText().equals("Rear Slope")) {
-            Log.e("slopselect===>","Rear Slope");
+            Log.e("slopselect===>", "Rear Slope");
 
 
         } else if (btnhailtype.getText().equals("Left Slope")) {
-            Log.e("slopselect===>","Left Slope");
+            Log.e("slopselect===>", "Left Slope");
 
         }
 
@@ -14193,9 +13642,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 btnhailmaterialdamages.setTag("2");
                 btnhailmaterialdamages.setBackgroundResource(R.drawable.red_button_background);
                 btnhailmaterialdamages.setText(arg0.getTitle());
-                strhailmaterialdamage=arg0.getTitle().toString();
-
-
+                strhailmaterialdamage = arg0.getTitle().toString();
 
 
                 getalphaname();
@@ -14633,19 +14080,15 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 } else if (arg0.getTitle().toString().equals("New Aditional photo")) {
 
 //                    txtalphaname.setVisibility(View.VISIBLE);
-//                    txtalphaname.setText("add name");
 
-                    //txtalphaname.setText(addcostmphotoname);
                     hideallmenuadd();
 //                    btnInteriorMacro.setText("add name");
-//                    txtalphaname.setText("add name");
                     rlblankback.setVisibility(View.VISIBLE);
                     txtalphaname.setVisibility(View.VISIBLE);
                     btnrisk.setText("New Aditional photo");
                     btnimgmacro.setText("New Aditional photo");
                     getalphaname();
                     showcostmnamealert();
-                    //txtalphaname.setText("add name");
 
                     txtalphaname.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -14693,8 +14136,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         btnimgmacrosub.setText("Layers");
                         nextPhoto("Layers");
                         btnpitchmenu.setText("Blank");
-                    } else if (btnimgmacro.getText().toString().equals("Hail"))
-                    {
+                    } else if (btnimgmacro.getText().toString().equals("Hail")) {
 
 
                         //HailDefault
@@ -14708,7 +14150,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         txt_rearslope.setText("1");
                         txt_leftslope.setText("1");
 
-                        no_frontslope="1";
+                        no_frontslope = "1";
 
                         txt_frontslope.setVisibility(View.VISIBLE);
                         txt_rightslope.setVisibility(View.VISIBLE);
@@ -14716,8 +14158,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                         txt_leftslope.setVisibility(View.VISIBLE);
 
                         rlhailoptionview.setVisibility(View.VISIBLE);
-                        selecthailoption(rbtn_frontslope, txt_frontslope,"1");
-
+                        selecthailoption(rbtn_frontslope, txt_frontslope, "1");
 
 
                         setHailItem();
@@ -15307,12 +14748,12 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     }
 
 
-    private void addInteriorData(String areaname,String subareaname,String damagename,String roomtype,String no, String buildingtype) {
+    private void addInteriorData(String areaname, String subareaname, String damagename, String roomtype, String no, String buildingtype) {
 
         String claimId = PrefManager.getClaimId();
 
         opendatabase();
-        DB.execSQL("insert into tbl_interior_savedata ('areaname','subareaname','damagename','roomtype','no','claim_id','buildingtype')" + "values('" + areaname + "','" + subareaname + "','" + damagename + "','" + roomtype + "','" + no + "','"+claimId+"','"+buildingtype+"') ;");
+        DB.execSQL("insert into tbl_interior_savedata ('areaname','subareaname','damagename','roomtype','no','claim_id','buildingtype')" + "values('" + areaname + "','" + subareaname + "','" + damagename + "','" + roomtype + "','" + no + "','" + claimId + "','" + buildingtype + "') ;");
         DB.close();
 //        getInteriorSaveData();
 
@@ -15371,7 +14812,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     dialog.cancel();
 
                     addsubcat(value);
-                }}
+                }
+            }
         });
 
         alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -15385,11 +14827,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
     private void uploadMedia(String imgpath, String imgname) {
         try {
-
-            Log.e("saveimgpath", "===>" + imgpath);
-
-
-
             /*
             String charset = "UTF-8";
             File uploadFile1 = new File(imgpath);
@@ -15574,8 +15011,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         @Override
         protected void onPostExecute(String response) {
             pDialog.dismiss();
-            Log.e("Uploadimage", "==>" + response);
-
             try {
                 JSONArray jarr = new JSONArray(response);
 
@@ -15649,8 +15084,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         @Override
         protected void onPostExecute(String response) {
             pDialog.dismiss();
-            Log.e("Uploadimage", "==>" + response);
-
             try {
                 JSONArray jarr = new JSONArray(response);
 
@@ -15730,7 +15163,6 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         @Override
         protected void onPostExecute(String response) {
             pDialog.dismiss();
-            Log.e("Uploadimage", "==>" + response);
 
             try {
                 JSONArray jarr = new JSONArray(response);

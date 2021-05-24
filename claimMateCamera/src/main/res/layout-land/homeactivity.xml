@@ -507,7 +507,7 @@
                     android:layout_toLeftOf="@+id/btnarea"
                     android:background="@android:color/transparent"
                     android:tag="0"
-                    android:text="Damage"
+                    android:text="No Damage"
                     android:textColor="#ffffff"
                     android:textSize="14dp" />
 

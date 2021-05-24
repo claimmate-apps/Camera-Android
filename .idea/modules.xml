@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Camera.iml" filepath="$PROJECT_DIR$/Camera.iml" group="Camera" />
-      <module fileurl="file://$PROJECT_DIR$/camera/camera.iml" filepath="$PROJECT_DIR$/camera/camera.iml" group="Camera/camera" />
-      <module fileurl="file://$PROJECT_DIR$/claimMateCamera/claimMateCamera.iml" filepath="$PROJECT_DIR$/claimMateCamera/claimMateCamera.iml" group="Camera/claimMateCamera" />
-      <module fileurl="file://$PROJECT_DIR$/draglibrary/draglibrary.iml" filepath="$PROJECT_DIR$/draglibrary/draglibrary.iml" group="Camera/draglibrary" />
-      <module fileurl="file://$PROJECT_DIR$/webrtc-client/webrtc-client.iml" filepath="$PROJECT_DIR$/webrtc-client/webrtc-client.iml" group="Camera/webrtc-client" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Camera-Android.iml" filepath="$PROJECT_DIR$/.idea/modules/Camera-Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/camera/Camera-Android.camera.iml" filepath="$PROJECT_DIR$/.idea/modules/camera/Camera-Android.camera.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/claimMateCamera/Camera-Android.claimMateCamera.iml" filepath="$PROJECT_DIR$/.idea/modules/claimMateCamera/Camera-Android.claimMateCamera.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/draglibrary/Camera-Android.draglibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/draglibrary/Camera-Android.draglibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/webrtc-client/Camera-Android.webrtc-client.iml" filepath="$PROJECT_DIR$/.idea/modules/webrtc-client/Camera-Android.webrtc-client.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,104 @@
+com/commonsware/cwac/camera/CameraUtils.java
+ com.commonsware.cwac.camera.CameraUtils
+ com.commonsware.cwac.camera.CameraUtils$1
+ com.commonsware.cwac.camera.CameraUtils$SizeComparator
+com/android/mms/exif/JpegHeader.java
+ com.android.mms.exif.JpegHeader
+com/commonsware/cwac/camera/PreviewStrategy.java
+ com.commonsware.cwac.camera.PreviewStrategy
+com/commonsware/cwac/camera/BuildConfig.java
+ com.commonsware.cwac.camera.BuildConfig
+com/android/mms/exif/ExifData.java
+ com.android.mms.exif.ExifData
+com/android/mms/exif/ExifParser.java
+ com.android.mms.exif.ExifParser
+ com.android.mms.exif.ExifParser$ExifTagEvent
+ com.android.mms.exif.ExifParser$IfdEvent
+ com.android.mms.exif.ExifParser$ImageEvent
+com/commonsware/cwac/camera/DeviceProfile.java
+ com.commonsware.cwac.camera.DeviceProfile
+com/android/mms/exif/ExifTag.java
+ com.android.mms.exif.ExifTag
+com/commonsware/cwac/camera/CameraView.java
+ com.commonsware.cwac.camera.CameraView
+ com.commonsware.cwac.camera.CameraView$1
+ com.commonsware.cwac.camera.CameraView$OnOrientationChange
+ com.commonsware.cwac.camera.CameraView$PictureTransactionCallback
+com/commonsware/cwac/camera/ZoomTransaction.java
+ com.commonsware.cwac.camera.ZoomTransaction
+com/commonsware/cwac/camera/SimpleCameraHost.java
+ com.commonsware.cwac.camera.SimpleCameraHost
+ com.commonsware.cwac.camera.SimpleCameraHost$Builder
+com/commonsware/cwac/camera/TexturePreviewStrategy.java
+ com.commonsware.cwac.camera.TexturePreviewStrategy
+com/android/mms/exif/ExifInvalidFormatException.java
+ com.android.mms.exif.ExifInvalidFormatException
+com/android/mms/exif/ExifModifier.java
+ com.android.mms.exif.ExifModifier
+ com.android.mms.exif.ExifModifier$TagOffset
+com/android/mms/exif/ExifReader.java
+ com.android.mms.exif.ExifReader
+com/commonsware/cwac/camera/PictureTransaction.java
+ com.commonsware.cwac.camera.PictureTransaction
+com/commonsware/cwac/camera/CameraHostProvider.java
+ com.commonsware.cwac.camera.CameraHostProvider
+com/android/mms/exif/Rational.java
+ com.android.mms.exif.Rational
+com/android/mms/exif/OrderedDataOutputStream.java
+ com.android.mms.exif.OrderedDataOutputStream
+com/commonsware/cwac/camera/SimpleDeviceProfile.java
+ com.commonsware.cwac.camera.SimpleDeviceProfile
+ com.commonsware.cwac.camera.SimpleDeviceProfile$MotorolaRazrI
+com/commonsware/cwac/camera/SurfacePreviewStrategy.java
+ com.commonsware.cwac.camera.SurfacePreviewStrategy
+com/android/mms/exif/ByteBufferInputStream.java
+ com.android.mms.exif.ByteBufferInputStream
+com/android/mms/exif/ExifInterface.java
+ com.android.mms.exif.ExifInterface
+ com.android.mms.exif.ExifInterface$ColorSpace
+ com.android.mms.exif.ExifInterface$ComponentsConfiguration
+ com.android.mms.exif.ExifInterface$Compression
+ com.android.mms.exif.ExifInterface$Contrast
+ com.android.mms.exif.ExifInterface$ExposureMode
+ com.android.mms.exif.ExifInterface$ExposureProgram
+ com.android.mms.exif.ExifInterface$FileSource
+ com.android.mms.exif.ExifInterface$Flash
+ com.android.mms.exif.ExifInterface$GainControl
+ com.android.mms.exif.ExifInterface$GpsAltitudeRef
+ com.android.mms.exif.ExifInterface$GpsDifferential
+ com.android.mms.exif.ExifInterface$GpsLatitudeRef
+ com.android.mms.exif.ExifInterface$GpsLongitudeRef
+ com.android.mms.exif.ExifInterface$GpsMeasureMode
+ com.android.mms.exif.ExifInterface$GpsSpeedRef
+ com.android.mms.exif.ExifInterface$GpsStatus
+ com.android.mms.exif.ExifInterface$GpsTrackRef
+ com.android.mms.exif.ExifInterface$LightSource
+ com.android.mms.exif.ExifInterface$MeteringMode
+ com.android.mms.exif.ExifInterface$Orientation
+ com.android.mms.exif.ExifInterface$PhotometricInterpretation
+ com.android.mms.exif.ExifInterface$PlanarConfiguration
+ com.android.mms.exif.ExifInterface$ResolutionUnit
+ com.android.mms.exif.ExifInterface$Saturation
+ com.android.mms.exif.ExifInterface$SceneCapture
+ com.android.mms.exif.ExifInterface$SceneType
+ com.android.mms.exif.ExifInterface$SensingMethod
+ com.android.mms.exif.ExifInterface$Sharpness
+ com.android.mms.exif.ExifInterface$SubjectDistance
+ com.android.mms.exif.ExifInterface$WhiteBalance
+ com.android.mms.exif.ExifInterface$YCbCrPositioning
+com/commonsware/cwac/camera/CameraFragment.java
+ com.commonsware.cwac.camera.CameraFragment
+com/commonsware/cwac/camera/CameraHost.java
+ com.commonsware.cwac.camera.CameraHost
+ com.commonsware.cwac.camera.CameraHost$FailureReason
+ com.commonsware.cwac.camera.CameraHost$RecordingHint
+com/android/mms/exif/ExifOutputStream.java
+ com.android.mms.exif.ExifOutputStream
+com/android/mms/exif/CountedDataInputStream.java
+ com.android.mms.exif.CountedDataInputStream
+com/commonsware/cwac/camera/ImageCleanupTask.java
+ com.commonsware.cwac.camera.ImageCleanupTask
+com/android/mms/exif/IfdData.java
+ com.android.mms.exif.IfdData
+com/android/mms/exif/IfdId.java
+ com.android.mms.exif.IfdId

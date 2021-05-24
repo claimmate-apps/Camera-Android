@@ -23,7 +23,7 @@ public class ClaimSqlLiteDbHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     //Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-    public static  String claimdb_PATH = "";//"/data/data/com.claimmate.claimmatecamera21_20/databases/";
+    public static  String claimdb_PATH = "";//"/data/data/com.claimmate.claimmatecamera22_20/databases/";
     //	public static final String claimdb_PATH = "/data/data/com.claimmate.claimmatecamera18/databases/";
 //	public static final String claimdb_NAME = "claimmatecamera.sql";
     public static final String claimdb_NAME = "claimmatecamera.sqlite";

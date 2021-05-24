@@ -9,8 +9,8 @@
 9    -->
 10    <uses-sdk
 11        android:minSdkVersion="24"
-11-->/Volumes/Workshop/Android/Ongoing_Projects/Claimmate/Camera/draglibrary/src/main/AndroidManifest.xml
+11-->D:\ClientsProject\Camera-Android\draglibrary\src\main\AndroidManifest.xml
 12        android:targetSdkVersion="29" />
-12-->/Volumes/Workshop/Android/Ongoing_Projects/Claimmate/Camera/draglibrary/src/main/AndroidManifest.xml
+12-->D:\ClientsProject\Camera-Android\draglibrary\src\main\AndroidManifest.xml
 13
 14</manifest>
