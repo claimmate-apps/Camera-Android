@@ -23,6 +23,11 @@
     <string name="title_activity_camview">camview</string>
     <string name="title_activity_torchactivity">torchactivity</string>
 
+    <string name="error">Something went wrong!</string>
+    <string name="connection_faild">Connecting to server failed</string>
+    <string name="invalid_login">Invalid login</string>
+    <string name="str_back_one_more_end">Pressing once more will be terminated.</string>
+    <string name="enter_email">Enter Email</string>
 
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>

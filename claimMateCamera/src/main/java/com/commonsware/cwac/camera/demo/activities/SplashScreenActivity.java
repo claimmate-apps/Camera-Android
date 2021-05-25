@@ -12,6 +12,8 @@ import android.os.Handler;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ProgressBar;
@@ -92,6 +94,8 @@ public class SplashScreenActivity extends Activity {
                 spinner.setVisibility(View.GONE);
 
                 String struid = PrefManager.getUserId();
+
+                Log.d("User-Id===>", "===============>" + PrefManager.getUserId());
 
                 /*if (Helper.isFirstTime()) {
                     Intent i = new Intent(SplashScreenActivity.this, OneTimeActivity.class);

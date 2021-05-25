@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+
+import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 
 import android.text.TextUtils;
@@ -18,11 +20,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.commonsware.cwac.camera.demo.HomeActivity;
+import com.commonsware.cwac.camera.demo.common.BaseActivity;
+import com.commonsware.cwac.camera.demo.common.Commons;
 import com.commonsware.cwac.camera.demo.other.PrefManager;
 import com.commonsware.cwac.camera.demo.other.Utility;
 import com.commonsware.cwac.camera.demo.retrofit.APIInterface;
 import com.commonsware.cwac.camera.demo.retrofit.ApiClient;
+import com.commonsware.cwac.camera.demo.retrofit.ApiManager;
+import com.commonsware.cwac.camera.demo.retrofit.ICallback;
 import com.example.claimmate.R;
+import com.google.gson.JsonObject;
+import com.pixplicity.easyprefs.library.Prefs;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,7 +40,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class LoginActivity extends Activity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
     private final String TAG = "LoginActivity";
     private Context mContext;
@@ -41,8 +49,13 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     Button btnlogin, btnregister;
     TextView txtForgotPassword;
 
+    int requestSignUp = 502;
+    String _email = "", _password = "";
+    boolean _isFromLogout = false;
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
 
@@ -58,6 +71,38 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         btnregister.setOnClickListener(this);
         btnlogin.setOnClickListener(this);
         txtForgotPassword.setOnClickListener(this);
+
+        loadLayout();
+
+    }
+
+    private void loadLayout() {
+
+        _isFromLogout = getIntent().getBooleanExtra(Commons.KEY_LOGOUT, false);
+
+        if (_isFromLogout){
+
+            tvemail.setText("");
+            tvpassword.setText("");
+
+        }
+        else {
+
+            String email = Prefs.getString( Commons.PREFKEY_USEREMAIL, "");
+            String password = Prefs.getString(Commons.PREFKEY_USERPWD, "");
+
+            tvemail.setText(email);
+            tvpassword.setText(password);
+
+            if ( email.length()>0 && password.length() > 0 ) {
+
+                _email = tvemail.getText().toString();
+                _password = tvpassword.getText().toString();
+
+                progressLogin();
+            }
+
+        }
     }
 
     @Override
@@ -73,10 +118,15 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 }
             }
         } else if (view.getId() == btnregister.getId()) {
-            Intent register_act = new Intent(getApplicationContext(), RegisterActivity.class);
-            startActivity(register_act);
+            /*Intent register_act = new Intent(getApplicationContext(), RegisterActivity.class);
+            startActivity(register_act);*/
+            Intent register_act = new Intent(getApplicationContext(), SignUpActivity.class);
+            startActivityForResult(register_act, requestSignUp);
+
         } else if (view.getId() == txtForgotPassword.getId()) {
-            forgotPassword();
+            Intent register_act = new Intent(getApplicationContext(), ForgotActivity.class);
+            startActivity(register_act);
+            //forgotPassword();
         }
     }
 
@@ -90,7 +140,55 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         final String IMEI = "thisistempimei";
 
         Utility.showProgress(mContext);
-        ApiClient.getClient().create(APIInterface.class).login(tvemail.getText().toString(), tvpassword.getText().toString(), IMEI, "cam").enqueue(new Callback<String>() {
+
+        ApiManager.login(tvemail.getText().toString(), tvpassword.getText().toString(), new ICallback() {
+            @Override
+            public void onCompletion(ICallback.RESULT result, Object resultParam) {
+                Utility.dismissProgress();
+                switch (result){
+
+                    case FAILURE:
+
+                        if (resultParam == null)
+                            showToast1(getString(R.string.error));
+                        else {
+                            int resultCode = (Integer)resultParam;
+                            if (resultCode == 201)
+                                showToast1(getString(R.string.invalid_login));
+                        }
+                        break;
+
+
+                    case SUCCESS:
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                JsonObject jsonUser = ((JsonObject)resultParam).get(ApiManager.PARAMS.USER_DATA).getAsJsonObject();
+
+                                Log.d("user_id====>", jsonUser.get(ApiManager.PARAMS.USER_ID).getAsString());
+                                Log.d("user_name====>", jsonUser.get(ApiManager.PARAMS.FIRST_NAME).getAsString() + " " + jsonUser.get(ApiManager.PARAMS.LAST_NAME).getAsString());
+
+                                PrefManager.setUserId(jsonUser.get(ApiManager.PARAMS.USER_ID).getAsString());
+                                PrefManager.setFullName(jsonUser.get(ApiManager.PARAMS.FIRST_NAME).getAsString() + " " + jsonUser.get(ApiManager.PARAMS.LAST_NAME).getAsString());
+
+
+                                Prefs.putString(Commons.PREFKEY_USEREMAIL, tvemail.getText().toString());
+                                Prefs.putString(Commons.PREFKEY_USERPWD, tvpassword.getText().toString());
+
+                                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                                LoginActivity.this.finish();
+                            }
+                        });
+
+                        break;
+                }
+            }
+        });
+
+
+        /*ApiClient.getClient().create(APIInterface.class).login(tvemail.getText().toString(), tvpassword.getText().toString(), IMEI, "cam").enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, retrofit2.Response<String> response) {
                 Utility.dismissProgress();
@@ -125,7 +223,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 Utility.dismissProgress();
                 Log.i(TAG, "loginError = "+t.toString());
             }
-        });
+        });*/
 
         // Login old api
         /*final String stremail = tvemail.getText().toString().trim();
@@ -176,6 +274,72 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         };
         mRequestQueue.add(stringRequest);*/
     }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == requestSignUp){
+            if (resultCode == Activity.RESULT_OK){
+
+                _email = (String)data.getStringExtra(Commons.PREFKEY_USEREMAIL);
+                _password = (String) data.getStringExtra(Commons.PREFKEY_USERPWD);
+
+                progressLogin();
+
+            }
+        }
+    }
+
+    private void progressLogin(){
+
+        Utility.showProgress(mContext);
+
+        ApiManager.login(_email, _password, new ICallback() {
+            @Override
+            public void onCompletion(ICallback.RESULT result, Object resultParam) {
+                Utility.dismissProgress();
+                switch (result){
+
+                    case FAILURE:
+
+                        if (resultParam == null)
+                            showToast1(getString(R.string.error));
+
+                        else {
+
+                            int resultCode = (Integer)resultParam;
+
+                            if (resultCode == 201)
+                                showToast1(getString(R.string.invalid_login));
+                        }
+                        break;
+
+                    case SUCCESS:
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                JsonObject jsonUser = ((JsonObject)resultParam).get(ApiManager.PARAMS.USER_DATA).getAsJsonObject();
+
+                                PrefManager.setUserId(jsonUser.get(ApiManager.PARAMS.USER_ID).getAsString());
+                                PrefManager.setFullName(jsonUser.get(ApiManager.PARAMS.FIRST_NAME).getAsString() + " " + jsonUser.get(ApiManager.PARAMS.LAST_NAME).getAsString());
+
+                                Prefs.putString(Commons.PREFKEY_USEREMAIL, _email);
+                                Prefs.putString(Commons.PREFKEY_USERPWD, _password);
+
+                                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                                LoginActivity.this.finish();
+                            }
+                        });
+
+                        break;
+                }
+            }
+        });
+    }
+
 
     private void forgotPassword() {
         final Dialog dialog = new Dialog(mContext);

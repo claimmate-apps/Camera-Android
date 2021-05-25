@@ -109,6 +109,8 @@ import com.commonsware.cwac.camera.demo.activities.LoginActivity;
 import com.commonsware.cwac.camera.demo.activities.ReportActivity;
 import com.commonsware.cwac.camera.demo.activities.addclaimname;
 import com.commonsware.cwac.camera.demo.adpt.SlopListAdapter;
+import com.commonsware.cwac.camera.demo.common.BaseActivity;
+import com.commonsware.cwac.camera.demo.common.Commons;
 import com.commonsware.cwac.camera.demo.db.ClaimSqlLiteDbHelper;
 import com.commonsware.cwac.camera.demo.model.ClaimModel;
 import com.commonsware.cwac.camera.demo.model.QueModel;
@@ -125,12 +127,16 @@ import com.commonsware.cwac.camera.demo.other.Utility;
 import com.commonsware.cwac.camera.demo.other.customitemclicklistener;
 import com.commonsware.cwac.camera.demo.retrofit.APIInterface;
 import com.commonsware.cwac.camera.demo.retrofit.ApiClient;
+import com.commonsware.cwac.camera.demo.retrofit.ApiManager;
+import com.commonsware.cwac.camera.demo.retrofit.ICallback;
 import com.example.claimmate.R;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.gson.JsonObject;
+import com.pixplicity.easyprefs.library.Prefs;
 import com.rampo.updatechecker.UpdateChecker;
 
 import com.commonsware.cwac.camera.demo.other.MyApplication.TrackerName;
@@ -146,7 +152,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class HomeActivity extends Activity implements SimpleGestureFilter.SimpleGestureListener, SurfaceHolder.Callback, View.OnClickListener, UpdateCheckerResult, SensorEventListener, CompoundButton.OnCheckedChangeListener, View.OnLongClickListener {
+public class HomeActivity extends BaseActivity implements SimpleGestureFilter.SimpleGestureListener, SurfaceHolder.Callback, View.OnClickListener, UpdateCheckerResult, SensorEventListener, CompoundButton.OnCheckedChangeListener, View.OnLongClickListener {
 
     private String TAG = "HomeActivity";
     private Context mContext;
@@ -558,9 +564,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         setToken();
 
 
-        if (!Constants.addclaimname.trim().equalsIgnoreCase("")) {
+        /*if (!Constants.addclaimname.trim().equalsIgnoreCase("")) {
             AddClaimName(Constants.addclaimname.trim());
-        }
+        }*/
     }
 
     @Override
@@ -984,7 +990,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
     FirebaseAnalytics firebaseAnalytics;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -1780,6 +1786,9 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
         btn_repair_right.setOnClickListener(this);
         btn_repair_rear.setOnClickListener(this);
         btn_repair_left.setOnClickListener(this);
+
+        getRequest();
+
     }
 
     private void Select_Replace_Repair(AppCompatButton btn_Select_Replace_Repair, String slopno) {
@@ -8919,20 +8928,20 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
             System.out.println("data of value" + arrayListClaim.get(i).getName());
         }
 
-        popupMenu2.getMenu().add(Menu.NONE, arrayListClaim.size(), Menu.NONE, "Add New Claim");
+        //popupMenu2.getMenu().add(Menu.NONE, arrayListClaim.size(), Menu.NONE, "Add New Claim");
 
         popupMenu2.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
 
-                if (item.getTitle().toString().equals("Add New Claim")) {
+                /*if (item.getTitle().toString().equals("Add New Claim")) {
                     addClaim();
-                } else {
+                } else {*/
 //                    claimSelectPos = item.getItemId();
 
                     setclaimname(item.getTitle());
 //                    checkClaimDescription(arrayListClaim.get(claimSelectPos).getId());
-                }
+                //}
                 return false;
             }
         });
@@ -9022,6 +9031,8 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
     private void getClaimList() {
 
+        Log.e("btncattage","--->"+Integer.parseInt(btncat.getTag().toString()));
+
         if (Utility.haveInternet(mContext, true)) {
 //            Utility.showProgress(mContext);
             ApiClient.getClient().create(APIInterface.class).getClaimList(PrefManager.getUserId()).enqueue(new Callback<String>() {
@@ -9070,6 +9081,41 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                 }
             });
         }
+    }
+
+    public void getRequest(){
+
+        arrayListClaim = new ArrayList<>();
+        ApiManager.getRequest(PrefManager.getUserId(), new ICallback() {
+            @Override
+            public void onCompletion(RESULT result, Object resultParam) {
+
+                switch (result){
+                    case FAILURE:
+                        showToast1("There is no assigned claim list to you.");
+
+                        break;
+
+                    case SUCCESS:
+
+                        arrayListClaim = (ArrayList<ClaimModel>) resultParam;
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if(arrayListClaim.size() > 0){
+                                    setclaimname(arrayListClaim.get(0).getName());
+                                } else {
+                                    //setclaimname(appfoldername);
+                                    btncat.setText("None");
+
+                                }
+                            }
+                        });
+
+                        break;
+                }
+            }
+        });
     }
 
     private void checkClaimDescription(final String claimId) {
@@ -10399,6 +10445,17 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
 
     private void logout() {
 
+
+        PrefManager.logout();
+
+        Prefs.remove(Commons.PREFKEY_USEREMAIL);
+        Prefs.remove(Commons.PREFKEY_USERPWD);
+
+        Intent i = new Intent(this, LoginActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);
+        finish();
+        /*
         if (Utility.haveInternet(mContext, true)) {
             Utility.showProgress(mContext);
             ApiClient.getClient().create(APIInterface.class).logout(PrefManager.getUserId(), "cam").enqueue(new Callback<String>() {
@@ -10431,7 +10488,7 @@ public class HomeActivity extends Activity implements SimpleGestureFilter.Simple
                     Log.i(TAG, "logoutError = " + t.toString());
                 }
             });
-        }
+        }*/
     }
 
     public boolean checkPermission() {

@@ -52,6 +52,11 @@
         android:usesCleartextTraffic="true"
         android:requestLegacyExternalStorage="true"
         tools:targetApi="m">
+
+        <activity android:name="com.commonsware.cwac.camera.demo.activities.SignUpActivity"></activity>
+        <activity android:name="com.commonsware.cwac.camera.demo.activities.SecurityActivity" />
+        <activity android:name="com.commonsware.cwac.camera.demo.activities.ForgotActivity" />
+
         <activity android:name="com.commonsware.cwac.camera.demo.activities.addclaimname"
             android:screenOrientation="portrait"></activity>
         <activity

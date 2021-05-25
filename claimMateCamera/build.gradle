@@ -24,6 +24,26 @@ android {
     productFlavors {
     }
 
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    repositories {
+        mavenCentral()
+        maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
+        maven { url 'https://jitpack.io' }
+        jcenter()
+
+    }
+
 }
 
 dependencies {
@@ -53,5 +73,15 @@ dependencies {
     implementation 'com.jakewharton:butterknife:10.0.0'
     //    implementation 'com.google.android.gms:play-services:16.0.0'
     testImplementation 'junit:junit:4.13'
+
+    implementation 'com.squareup.okhttp3:okhttp:4.3.1'
+    implementation 'com.github.aabhasr1:OtpView:v1.1.2'
+    implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.2'
+    implementation 'com.kaopiz:kprogresshud:1.2.0'
+    implementation 'com.github.Dovar66:DToast:1.1.6'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
+    implementation 'com.amitshekhar.android:jackson-android-networking:1.0.2'
+    implementation 'com.pixplicity.easyprefs:library:1.9.0'
 }
 apply plugin: 'com.google.gms.google-services'
