@@ -35,6 +35,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.speech.RecognizerIntent;
 
 import androidx.annotation.NonNull;
@@ -82,6 +83,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -102,11 +104,16 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.android.volley.misc.AsyncTask;
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.commonsware.cwac.camera.demo.activities.AddClaimNameActivity;
 import com.commonsware.cwac.camera.demo.activities.AddValueActivity;
 import com.commonsware.cwac.camera.demo.activities.LiveStreamingActivity;
 import com.commonsware.cwac.camera.demo.activities.LoginActivity;
 import com.commonsware.cwac.camera.demo.activities.ReportActivity;
+import com.commonsware.cwac.camera.demo.activities.SignUpActivity;
 import com.commonsware.cwac.camera.demo.activities.addclaimname;
 import com.commonsware.cwac.camera.demo.adpt.SlopListAdapter;
 import com.commonsware.cwac.camera.demo.common.BaseActivity;
@@ -115,6 +122,7 @@ import com.commonsware.cwac.camera.demo.db.ClaimSqlLiteDbHelper;
 import com.commonsware.cwac.camera.demo.model.ClaimModel;
 import com.commonsware.cwac.camera.demo.model.QueModel;
 import com.commonsware.cwac.camera.demo.model.SlopCount;
+import com.commonsware.cwac.camera.demo.model.UserModel;
 import com.commonsware.cwac.camera.demo.other.Constants;
 import com.commonsware.cwac.camera.demo.other.FocusMarkerLayout;
 import com.commonsware.cwac.camera.demo.other.Helper;
@@ -151,6 +159,9 @@ import org.json.JSONObject;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.commonsware.cwac.camera.demo.common.Commons.GET_CLAIM_ID;
+import static com.commonsware.cwac.camera.demo.common.Commons.GET_COMPANIES;
 
 public class HomeActivity extends BaseActivity implements SimpleGestureFilter.SimpleGestureListener, SurfaceHolder.Callback, View.OnClickListener, UpdateCheckerResult, SensorEventListener, CompoundButton.OnCheckedChangeListener, View.OnLongClickListener {
 
@@ -526,7 +537,7 @@ public class HomeActivity extends BaseActivity implements SimpleGestureFilter.Si
     protected void onResume() {
         super.onResume();
 
-        getClaimList();
+        //getClaimList();
 
 //        showclaimnameoption(false);
 
@@ -563,10 +574,49 @@ public class HomeActivity extends BaseActivity implements SimpleGestureFilter.Si
 
         setToken();
 
+        getClaimID();
 
         /*if (!Constants.addclaimname.trim().equalsIgnoreCase("")) {
             AddClaimName(Constants.addclaimname.trim());
         }*/
+    }
+
+    void getClaimID(){
+        AndroidNetworking.post(GET_CLAIM_ID)
+                .addBodyParameter("inspector_id", PrefManager.getUserId())
+                .setTag(this)
+                .setPriority(Priority.MEDIUM)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            Log.d("cliam_info====>", response.toString());
+
+                            int resultCode = response.getInt(ApiManager.PARAMS.RESULT_CODE);
+                            if (resultCode == RESULT_OK) {
+                                String claim_id = response.getString("claim_id");
+                                if(!claim_id.equals("")){
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Log.d("claim_id===>", claim_id);
+                                        }
+                                    });
+
+                                }
+
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Log.d("cliam_info====>", "Network issue Catch!");
+                        }
+                    }
+                    @Override
+                    public void onError(ANError error) {
+                    }
+                });
     }
 
     @Override
@@ -1964,7 +2014,7 @@ public class HomeActivity extends BaseActivity implements SimpleGestureFilter.Si
     @Override
     protected void onStart() {
         super.onStart();
-        checkAuth();
+        //checkAuth();
     }
 
     private View.OnTouchListener onTouchListener() {

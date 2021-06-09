@@ -8,6 +8,7 @@ public class Commons {
 
     public static final String BASE_URL = "http://ladderassist.pro/";
     public static final String GET_COMPANIES = BASE_URL + "api/company/get_all";
+    public static final String GET_CLAIM_ID = BASE_URL + "api/claim/get_claim_id";
 
 
 

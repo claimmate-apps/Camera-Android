@@ -241,7 +241,7 @@ public class ApiManager {
 
                             String status = jsonClaim.get(PARAMS.STATUS).getAsString();
 
-                            if (status.equals("0") || status.equals("1") || status.equals("3"))
+                            if (status.equals("0") || status.equals("1") || status.equals("3") || status.equals("4"))
                                 claimArray.add(claim);
                         }
 
