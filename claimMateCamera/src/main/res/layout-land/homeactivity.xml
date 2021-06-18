@@ -188,52 +188,52 @@
                     android:background="@drawable/camicon" />
 
 
-              <!--  <Button
-                    android:id="@+id/btnoverview"
-                    android:layout_width="42dp"
-                    android:layout_height="42dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_below="@+id/imgbtncam"
-                    android:background="@drawable/button_background"
-                    android:tag="1"
-                    android:text="o"
-                    android:textColor="#ffffff"
-                    android:textSize="14dp"
-                    android:visibility="gone" />
+                <!--  <Button
+                      android:id="@+id/btnoverview"
+                      android:layout_width="42dp"
+                      android:layout_height="42dp"
+                      android:layout_marginLeft="10dp"
+                      android:layout_marginTop="15dp"
+                      android:layout_below="@+id/imgbtncam"
+                      android:background="@drawable/button_background"
+                      android:tag="1"
+                      android:text="o"
+                      android:textColor="#ffffff"
+                      android:textSize="14dp"
+                      android:visibility="gone" />
 
-                <Button
-                    android:id="@+id/btncloseup"
-                    android:layout_width="42dp"
-                    android:layout_height="42dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_toRightOf="@+id/btnocb"
-                    android:layout_below="@+id/imgbtncam"
-                    android:background="@drawable/button_background"
-                    android:tag="1"
-                    android:text="C"
-                    android:textColor="#ffffff"
+                  <Button
+                      android:id="@+id/btncloseup"
+                      android:layout_width="42dp"
+                      android:layout_height="42dp"
+                      android:layout_marginLeft="10dp"
+                      android:layout_marginTop="15dp"
+                      android:layout_toRightOf="@+id/btnocb"
+                      android:layout_below="@+id/imgbtncam"
+                      android:background="@drawable/button_background"
+                      android:tag="1"
+                      android:text="C"
+                      android:textColor="#ffffff"
 
-                    android:textSize="14dp"
-                    android:visibility="gone" />-->
+                      android:textSize="14dp"
+                      android:visibility="gone" />-->
 
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_below="@+id/btnocb"
                     android:id="@+id/lloc"
-                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btnocb"
                     android:layout_centerHorizontal="true"
-                    android:layout_height="wrap_content">
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
 
                     <Button
                         android:id="@+id/btnoverview"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginBottom="8dp"
                         android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
                         android:background="@drawable/button_background"
                         android:tag="1"
                         android:text="O"
@@ -242,13 +242,12 @@
                         android:visibility="visible" />
 
 
-
                     <Button
                         android:id="@+id/btncloseup"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginBottom="8dp"
                         android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
                         android:background="@drawable/button_background"
                         android:tag="1"
                         android:text="C"
@@ -262,7 +261,6 @@
                     android:id="@+id/btnocb"
                     android:layout_width="30dp"
 
-                    android:visibility="invisible"
                     android:layout_height="30dp"
                     android:layout_below="@+id/imgbtncam"
                     android:layout_centerHorizontal="true"
@@ -271,7 +269,8 @@
                     android:tag="1"
                     android:text="O"
                     android:textColor="#ffffff"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:visibility="invisible" />
 
                 <Button
                     android:id="@+id/btnrisk"
@@ -457,19 +456,19 @@
 
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:orientation="horizontal"
                     android:id="@+id/llrei"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="10dp"
-                    android:layout_height="wrap_content">
+                    android:orientation="horizontal">
 
                     <Button
                         android:id="@+id/btnr"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginBottom="8dp"
                         android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
                         android:background="@drawable/button_background"
                         android:tag="1"
                         android:text="R"
@@ -478,13 +477,12 @@
                         android:visibility="visible" />
 
 
-
                     <Button
                         android:id="@+id/btne"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
-                        android:layout_marginBottom="8dp"
                         android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
                         android:background="@drawable/button_background"
                         android:tag="1"
                         android:text="E"
@@ -493,8 +491,6 @@
                         android:visibility="visible" />
 
                 </LinearLayout>
-
-
 
 
                 <Button
@@ -510,8 +506,6 @@
                     android:text="No Damage"
                     android:textColor="#ffffff"
                     android:textSize="14dp" />
-
-
 
 
                 <Button
@@ -1599,17 +1593,17 @@
                     android:layout_width="50dp"
                     android:layout_height="55dp"
                     android:layout_alignParentTop="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
                     android:layout_toEndOf="@+id/btnhailtype"
                     android:layout_toRightOf="@+id/btnhailtype"
+                    android:background="@android:color/transparent"
                     android:ems="10"
                     android:inputType="number"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginLeft="12dp"
                     android:text="1"
                     android:textColor="#ffffff"
-                    android:visibility="gone"
-                    android:background="@android:color/transparent"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"
+                    android:visibility="gone" />
 
                 <Button
                     android:id="@+id/btnhailmenu1"
@@ -1646,17 +1640,16 @@
                     android:id="@+id/btnnodamagetype"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_alignRight="@+id/btnhailmaterialdamages"
-                        android:layout_marginLeft="8dp"
                     android:layout_above="@+id/btnhailmaterialdamages"
-                    android:background="@drawable/button_background"
+                    android:layout_alignRight="@+id/btnhailmaterialdamages"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginBottom="8dp"
+                    android:background="@drawable/button_background"
                     android:tag="0"
-                    android:visibility="visible"
                     android:text="No Damage"
                     android:textColor="#ffffff"
-                    android:textSize="14dp" />
-
+                    android:textSize="14dp"
+                    android:visibility="visible" />
 
 
                 <Button
@@ -1673,15 +1666,16 @@
                     android:textColor="#ffffff"
                     android:textSize="14dp"
                     android:visibility="gone" />
+
                 <Button
                     android:id="@+id/btnhailnodamages"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
 
+                    android:layout_above="@+id/btnhailskip"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_marginBottom="8dp"
-                    android:layout_above="@+id/btnhailskip"
                     android:background="@drawable/button_background"
                     android:tag="1"
                     android:text="Hail Damage"
@@ -1695,13 +1689,13 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
 
-                    android:layout_marginBottom="8dp"
                     android:layout_above="@+id/btnhailskip"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_toLeftOf="@+id/btnhailnodamages"
                     android:background="@drawable/button_background"
                     android:tag="1"
                     android:text="Hail Damage"
-                    android:layout_marginRight="5dp"
                     android:textColor="#ffffff"
                     android:textSize="14dp"
                     android:visibility="visible" />
@@ -2199,49 +2193,45 @@
                 android:background="@drawable/flashofficon"
                 android:tag="3" />
 
-<!--
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:orientation="horizontal"
-                android:layout_toLeftOf="@+id/btnnodamages"
-                android:layout_alignParentBottom="true"
+            <!--
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_toLeftOf="@+id/btnnodamages"
+                            android:layout_alignParentBottom="true"
 
-                android:layout_height="wrap_content">
+                            android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/btnoverview"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginRight="8dp"
-                    android:background="@drawable/button_background"
-                    android:tag="1"
-                    android:text="O"
-                    android:textColor="#ffffff"
-                    android:textSize="14dp"
-                    android:visibility="visible" />
-
-
-
-                <Button
-                    android:id="@+id/btncloseup"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginRight="8dp"
-                    android:background="@drawable/button_background"
-                    android:tag="1"
-                    android:text="C"
-                    android:textColor="#ffffff"
-                    android:textSize="14dp"
-                    android:visibility="visible" />
-
-            </LinearLayout>
--->
+                            <Button
+                                android:id="@+id/btnoverview"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginRight="8dp"
+                                android:background="@drawable/button_background"
+                                android:tag="1"
+                                android:text="O"
+                                android:textColor="#ffffff"
+                                android:textSize="14dp"
+                                android:visibility="visible" />
 
 
 
+                            <Button
+                                android:id="@+id/btncloseup"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginRight="8dp"
+                                android:background="@drawable/button_background"
+                                android:tag="1"
+                                android:text="C"
+                                android:textColor="#ffffff"
+                                android:textSize="14dp"
+                                android:visibility="visible" />
 
+                        </LinearLayout>
+            -->
 
 
             <Button
@@ -2262,12 +2252,12 @@
                 android:id="@+id/btnSubAreaTogal"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="8dp"
+                android:layout_toLeftOf="@+id/btnnodamages"
                 android:background="@drawable/red_button_background"
                 android:singleLine="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="8dp"
-                android:layout_marginRight="5dp"
-                android:layout_toLeftOf="@+id/btnnodamages"
                 android:tag="2"
                 android:text="Red Out"
                 android:textColor="#ffffff"
@@ -2375,7 +2365,6 @@
                     android:textColor="#ffffff"
                     android:textSize="14dp"
                     android:visibility="gone" />
-
 
 
             </LinearLayout>
@@ -2505,26 +2494,27 @@
                     <LinearLayout
                         android:id="@+id/llmain"
                         android:layout_width="match_parent"
-                        android:orientation="vertical"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="match_parent"
-                            android:text="Camera Settings"
-                            android:textSize="16dp"
-                            android:textStyle="bold"
-                            android:textColor="@color/black"
+                            android:layout_height="38dp"
                             android:gravity="center"
-                            android:layout_height="38dp"/>
+                            android:text="Camera Settings"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:orientation="vertical"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
                             <RelativeLayout
+                                android:id="@+id/rl_photoinfomenu"
                                 android:layout_width="match_parent"
                                 android:layout_height="45dp"
-                                android:id="@+id/rl_photoinfomenu"
                                 android:background="@color/black"
                                 android:visibility="visible">
 
@@ -2539,15 +2529,15 @@
                                     android:textStyle="bold" />
 
                                 <androidx.appcompat.widget.AppCompatImageView
-                                    android:layout_width="16dp"
-                                    android:src="@drawable/ic_menu_arrow"
-                                    android:backgroundTint="@color/white"
                                     android:id="@+id/img_photo_information"
-                                    android:layout_centerVertical="true"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
                                     android:layout_alignParentRight="true"
-                                    android:rotation="270"
+                                    android:layout_centerVertical="true"
                                     android:layout_marginEnd="15dp"
-                                    android:layout_height="16dp"/>
+                                    android:backgroundTint="@color/white"
+                                    android:rotation="270"
+                                    android:src="@drawable/ic_menu_arrow" />
 
 
                             </RelativeLayout>
@@ -2557,17 +2547,17 @@
                                 android:id="@+id/ll_photo_information_submenu"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:visibility="gone"
                                 android:layout_marginStart="10dp"
-                                android:orientation="vertical">
+                                android:orientation="vertical"
+                                android:visibility="gone">
 
 
                                 <TextView
                                     android:id="@+id/textView2"
-                                    android:layout_marginTop="10dp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_alignParentTop="true"
+                                    android:layout_marginTop="10dp"
                                     android:gravity="center_vertical"
                                     android:paddingRight="5dp"
                                     android:text="Insured Name"
@@ -2597,7 +2587,6 @@
                                     android:textColor="@color/black" />
 
 
-
                                 <CheckBox
                                     android:id="@+id/chkApi"
                                     android:layout_width="wrap_content"
@@ -2616,60 +2605,55 @@
 
 
                             <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:background="@color/black"
-                                android:layout_marginTop="5dp"
-                                android:visibility="visible"
                                 android:id="@+id/rl_defaultmenu"
-                                android:layout_height="45dp">
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/black"
+                                android:visibility="visible">
 
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
                                     android:gravity="center_vertical"
                                     android:text="@string/default_button_selections"
                                     android:textColor="@color/white"
-                                    android:layout_marginStart="10dp"
                                     android:textSize="14dp"
-                                    android:textStyle="bold"
-                                    />
+                                    android:textStyle="bold" />
 
 
                                 <androidx.appcompat.widget.AppCompatImageView
-                                    android:layout_width="16dp"
-                                    android:src="@drawable/ic_menu_arrow"
-                                    android:backgroundTint="@color/white"
                                     android:id="@+id/img_default_button"
-                                    android:layout_centerVertical="true"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
                                     android:layout_alignParentRight="true"
-                                    android:rotation="270"
+                                    android:layout_centerVertical="true"
                                     android:layout_marginEnd="15dp"
-                                    android:layout_height="16dp"/>
-
+                                    android:backgroundTint="@color/white"
+                                    android:rotation="270"
+                                    android:src="@drawable/ic_menu_arrow" />
 
 
                             </RelativeLayout>
 
-
-
-
                             <LinearLayout
-                                android:layout_width="match_parent"
-                                android:orientation="vertical"
-                                android:layout_marginStart="10dp"
                                 android:id="@+id/ll_default_button_submenu"
-                                android:visibility="gone"
-                                android:layout_height="wrap_content">
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
 
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Damage"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/black"
                                     android:layout_marginTop="10dp"
-                                    android:textSize="15dp" />
+                                    android:text="Damage"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
 
                                 <RadioGroup
                                     android:layout_width="match_parent"
@@ -2701,18 +2685,18 @@
 
                                 <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
-                                    android:background="@color/black"
+                                    android:layout_height="0.8dp"
                                     android:layout_marginTop="6dp"
                                     android:layout_marginBottom="6dp"
-                                    android:layout_height="0.8dp"/>
+                                    android:background="@color/black" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Area"
-                                    android:textStyle="bold"
                                     android:textColor="@color/black"
-                                    android:textSize="15dp" />
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
 
                                 <RadioGroup
                                     android:layout_width="match_parent"
@@ -2741,21 +2725,22 @@
                                         android:text="Leave whichever"
                                         android:textColor="@color/black" />
                                 </RadioGroup>
+
                                 <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
-                                    android:background="@color/black"
+                                    android:layout_height="0.8dp"
                                     android:layout_marginTop="6dp"
                                     android:layout_marginBottom="6dp"
-                                    android:layout_height="0.8dp"/>
+                                    android:background="@color/black" />
 
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Area Sub Cattegory"
-                                    android:textStyle="bold"
                                     android:textColor="@color/black"
-                                    android:textSize="15dp" />
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
 
                                 <RadioGroup
                                     android:layout_width="match_parent"
@@ -2784,19 +2769,21 @@
                                         android:text="Leave whichever"
                                         android:textColor="@color/black" />
                                 </RadioGroup>
+
                                 <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
-                                    android:background="@color/black"
+                                    android:layout_height="0.8dp"
                                     android:layout_marginTop="6dp"
                                     android:layout_marginBottom="6dp"
-                                    android:layout_height="0.8dp"/>
+                                    android:background="@color/black" />
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Always start room with"
-                                    android:textStyle="bold"
                                     android:textColor="@color/black"
-                                    android:textSize="15dp" />
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
 
                                 <RadioGroup
                                     android:layout_width="match_parent"
@@ -2827,19 +2814,19 @@
 
                                 <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
-                                    android:background="@color/black"
+                                    android:layout_height="0.8dp"
                                     android:layout_marginTop="6dp"
                                     android:layout_marginBottom="6dp"
-                                    android:layout_height="0.8dp"/>
+                                    android:background="@color/black" />
 
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Material"
-                                    android:textStyle="bold"
                                     android:textColor="@color/black"
-                                    android:textSize="15dp" />
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
 
                                 <RadioGroup
                                     android:layout_width="match_parent"
@@ -2868,21 +2855,22 @@
                                         android:text="Leave whichever"
                                         android:textColor="@color/black" />
                                 </RadioGroup>
+
                                 <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
-                                    android:background="@color/black"
+                                    android:layout_height="0.8dp"
                                     android:layout_marginTop="6dp"
                                     android:layout_marginBottom="6dp"
-                                    android:layout_height="0.8dp"/>
+                                    android:background="@color/black" />
 
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="View Keep Current"
-                                    android:textStyle="bold"
                                     android:textColor="@color/black"
-                                    android:textSize="15dp" />
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
 
                                 <RadioGroup
                                     android:layout_width="match_parent"
@@ -2914,6 +2902,7 @@
                                 </RadioGroup>
 
                             </LinearLayout>
+
                             <Button
                                 android:id="@+id/btnaddclaimname"
                                 android:layout_width="match_parent"
@@ -2921,58 +2910,55 @@
                                 android:layout_alignParentRight="true"
                                 android:layout_marginTop="6dp"
                                 android:background="@color/black"
-                                android:visibility="visible"
                                 android:gravity="center_vertical|left"
                                 android:paddingLeft="10dp"
                                 android:text="Add Claim Name"
                                 android:textAllCaps="false"
-                                android:textStyle="bold"
                                 android:textColor="@color/white"
-                                android:textSize="14dp" />
+                                android:textSize="14dp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
 
 
                             <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:background="@color/black"
                                 android:id="@+id/rl_menuoption"
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
                                 android:layout_marginTop="5dp"
-                                android:layout_height="45dp">
+                                android:background="@color/black">
 
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
                                     android:gravity="center_vertical"
                                     android:text="Menu Options"
                                     android:textColor="@color/white"
-                                    android:layout_marginStart="10dp"
                                     android:textSize="14dp"
-                                    android:textStyle="bold"
-                                    />
+                                    android:textStyle="bold" />
 
 
                                 <androidx.appcompat.widget.AppCompatImageView
-                                    android:layout_width="16dp"
-                                    android:src="@drawable/ic_menu_arrow"
-                                    android:backgroundTint="@color/white"
                                     android:id="@+id/img_menuoption"
-                                    android:layout_centerVertical="true"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
                                     android:layout_alignParentRight="true"
-                                    android:rotation="270"
+                                    android:layout_centerVertical="true"
                                     android:layout_marginEnd="15dp"
-                                    android:layout_height="16dp"/>
-
+                                    android:backgroundTint="@color/white"
+                                    android:rotation="270"
+                                    android:src="@drawable/ic_menu_arrow" />
 
 
                             </RelativeLayout>
 
-
                             <LinearLayout
-                                android:layout_width="match_parent"
-                                android:orientation="vertical"
-                                android:layout_marginStart="10dp"
                                 android:id="@+id/ll_menu_options_submenu"
-                                android:visibility="gone"
-                                android:layout_height="wrap_content">
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
 
                                 <Button
                                     android:id="@+id/btnmacroadd"
@@ -2980,62 +2966,62 @@
                                     android:layout_height="wrap_content"
                                     android:layout_alignParentRight="true"
                                     android:layout_marginTop="5dp"
-                                    android:textAllCaps="false"
                                     android:background="@android:color/transparent"
-                                    android:textStyle="bold"
                                     android:gravity="center_vertical|left"
                                     android:text="Add Macro"
+                                    android:textAllCaps="false"
                                     android:textColor="@color/black"
-                                    android:textSize="14dp" />
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
 
 
                                 <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
-                                    android:background="@color/black"
+                                    android:layout_height="0.8dp"
 
-                                    android:layout_height="0.8dp"/>
+                                    android:background="@color/black" />
 
 
                                 <Button
                                     android:id="@+id/btnroofadd"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:textAllCaps="false"
-
-                                    android:textStyle="bold"
                                     android:layout_alignParentRight="true"
+
                                     android:background="@android:color/transparent"
                                     android:gravity="center_vertical|left"
                                     android:text="Add Roof"
+                                    android:textAllCaps="false"
                                     android:textColor="@color/black"
-                                    android:textSize="14dp" />
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
 
 
                                 <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
-                                    android:background="@color/black"
+                                    android:layout_height="0.8dp"
 
-                                    android:layout_height="0.8dp"/>
+                                    android:background="@color/black" />
 
 
                                 <Button
                                     android:id="@+id/btnaddelevations"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:textStyle="bold"
-                                    android:textAllCaps="false"
-
                                     android:background="@android:color/transparent"
                                     android:gravity="center_vertical|left"
+
                                     android:text="Add Elevations"
+                                    android:textAllCaps="false"
                                     android:textColor="@color/black"
-                                    android:textSize="14dp" />
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
 
                                 <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
-                                    android:background="@color/black"
+                                    android:layout_height="0.8dp"
 
-                                    android:layout_height="0.8dp"/>
+                                    android:background="@color/black" />
 
 
                                 <Button
@@ -3045,20 +3031,19 @@
                                     android:background="@android:color/transparent"
                                     android:gravity="center_vertical|left"
                                     android:text="Add Interior"
-                                    android:textStyle="bold"
                                     android:textAllCaps="false"
-
                                     android:textColor="@color/black"
+
                                     android:textSize="14dp"
+                                    android:textStyle="bold"
                                     android:visibility="visible" />
 
 
                                 <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
-                                    android:background="@color/black"
+                                    android:layout_height="0.8dp"
 
-                                    android:layout_height="0.8dp"/>
-
+                                    android:background="@color/black" />
 
 
                                 <Button
@@ -3066,19 +3051,18 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:background="@android:color/transparent"
-                                    android:textAllCaps="false"
-                                    android:textStyle="bold"
                                     android:gravity="center_vertical|left"
                                     android:text="Add Interior Subcategory"
+                                    android:textAllCaps="false"
                                     android:textColor="@color/black"
-                                    android:textSize="14dp" />
-
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
 
 
                                 <androidx.appcompat.widget.AppCompatImageView
                                     android:layout_width="match_parent"
-                                    android:background="@color/black"
-                                    android:layout_height="0.8dp"/>
+                                    android:layout_height="0.8dp"
+                                    android:background="@color/black" />
 
 
                                 <Button
@@ -3090,13 +3074,11 @@
                                     android:gravity="center_vertical|left"
                                     android:text="Add Damage"
                                     android:textAllCaps="false"
-                                    android:textStyle="bold"
                                     android:textColor="@color/black"
-                                    android:textSize="14dp" />
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
 
                             </LinearLayout>
-
-
 
                             <Button
                                 android:id="@+id/btnscope"
@@ -3105,14 +3087,53 @@
                                 android:layout_alignParentRight="true"
                                 android:layout_marginTop="6dp"
                                 android:background="@color/black"
-                                android:visibility="visible"
                                 android:gravity="center_vertical|left"
                                 android:paddingLeft="10dp"
                                 android:text="Scope"
                                 android:textAllCaps="false"
-                                android:textStyle="bold"
                                 android:textColor="@color/white"
-                                android:textSize="14dp" />
+                                android:textSize="14dp"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+
+
+                            <RelativeLayout
+                                android:id="@+id/rl_timestamp"
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/black"
+                                android:visibility="visible">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="10dp"
+                                    android:gravity="center_vertical"
+                                    android:text="Time Stamp in Photo"
+                                    android:textColor="@color/white"
+                                    android:textSize="14dp"
+                                    android:textStyle="bold" />
+
+                                <androidx.appcompat.widget.AppCompatCheckBox
+                                    android:id="@+id/cbTimeStamp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginEnd="15dp"
+                                    android:theme="@style/CheckBoxTheme"/>
+
+<!--                                <androidx.appcompat.widget.SwitchCompat-->
+<!--                                    android:id="@+id/scTimeStamp"-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_alignParentRight="true"-->
+<!--                                    android:layout_centerVertical="true"-->
+<!--                                    android:layout_marginEnd="15dp"-->
+<!--                                    android:theme="@style/SwitchTheme" />-->
+
+                            </RelativeLayout>
 
                             <Button
                                 android:id="@+id/btnLogout"
@@ -3120,14 +3141,14 @@
                                 android:layout_height="wrap_content"
 
 
+                                android:layout_marginTop="6dp"
                                 android:background="@color/black"
                                 android:gravity="center_vertical|left"
-                                android:text="Logout"
-                                android:textColor="@color/white"
-                                android:layout_marginTop="6dp"
-                                android:textAllCaps="false"
-                                android:textSize="14dp"
                                 android:paddingLeft="10dp"
+                                android:text="Logout"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="14dp"
 
                                 android:visibility="visible" />
 
@@ -3251,28 +3272,28 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
-<!--
-                          <RadioButton
-                                android:id="@+id/rbDamageMark"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Mark red"
-                                android:textColor="@color/black" />
+                            <!--
+                                                      <RadioButton
+                                                            android:id="@+id/rbDamageMark"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="Mark red"
+                                                            android:textColor="@color/black" />
 
-                            <RadioButton
-                                android:id="@+id/rbDamageUnmark"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="UnMark Red"
-                                android:textColor="@color/black" />
+                                                        <RadioButton
+                                                            android:id="@+id/rbDamageUnmark"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:text="UnMark Red"
+                                                            android:textColor="@color/black" />
 
-                            <RadioButton
-                                android:id="@+id/rbDamageLeave"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:checked="true"
-                                android:text="Leave whichever"
-                                android:textColor="@color/black" />-->
+                                                        <RadioButton
+                                                            android:id="@+id/rbDamageLeave"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:checked="true"
+                                                            android:text="Leave whichever"
+                                                            android:textColor="@color/black" />-->
                         </RadioGroup>
                     </LinearLayout>
 
@@ -3301,27 +3322,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                          <!--   <RadioButton
-                                android:id="@+id/rbAreaMark"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Mark red"
-                                android:textColor="@color/black" />
+                            <!--   <RadioButton
+                                  android:id="@+id/rbAreaMark"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="Mark red"
+                                  android:textColor="@color/black" />
 
-                            <RadioButton
-                                android:id="@+id/rbAreaUnmark"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="UnMark Red"
-                                android:textColor="@color/black" />
+                              <RadioButton
+                                  android:id="@+id/rbAreaUnmark"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="UnMark Red"
+                                  android:textColor="@color/black" />
 
-                            <RadioButton
-                                android:id="@+id/rbAreaLeave"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:checked="true"
-                                android:text="Leave whichever"
-                                android:textColor="@color/black" />-->
+                              <RadioButton
+                                  android:id="@+id/rbAreaLeave"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:checked="true"
+                                  android:text="Leave whichever"
+                                  android:textColor="@color/black" />-->
                         </RadioGroup>
                     </LinearLayout>
 
@@ -3350,27 +3371,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                         <!--   <RadioButton
-                                android:id="@+id/rbAreaSubMark"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Mark red"
-                                android:textColor="@color/black" />
+                            <!--   <RadioButton
+                                   android:id="@+id/rbAreaSubMark"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:text="Mark red"
+                                   android:textColor="@color/black" />
 
-                            <RadioButton
-                                android:id="@+id/rbAreaSubUnmark"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="UnMark Red"
-                                android:textColor="@color/black" />
+                               <RadioButton
+                                   android:id="@+id/rbAreaSubUnmark"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:text="UnMark Red"
+                                   android:textColor="@color/black" />
 
-                            <RadioButton
-                                android:id="@+id/rbAreaSubLeave"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:checked="true"
-                                android:text="Leave whichever"
-                                android:textColor="@color/black" />-->
+                               <RadioButton
+                                   android:id="@+id/rbAreaSubLeave"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:checked="true"
+                                   android:text="Leave whichever"
+                                   android:textColor="@color/black" />-->
                         </RadioGroup>
                     </LinearLayout>
 
@@ -3399,26 +3420,26 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                         <!--  <RadioButton
-                                android:id="@+id/rbCeiling"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Ceiling"
-                                android:textColor="@color/black" />
+                            <!--  <RadioButton
+                                   android:id="@+id/rbCeiling"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:text="Ceiling"
+                                   android:textColor="@color/black" />
 
-                            <RadioButton
-                                android:id="@+id/rbWall"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Wall"
-                                android:textColor="@color/black" />
+                               <RadioButton
+                                   android:id="@+id/rbWall"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:text="Wall"
+                                   android:textColor="@color/black" />
 
-                            <RadioButton
-                                android:id="@+id/rbFloor"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Floor"
-                                android:textColor="@color/black" />-->
+                               <RadioButton
+                                   android:id="@+id/rbFloor"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:text="Floor"
+                                   android:textColor="@color/black" />-->
                         </RadioGroup>
                     </LinearLayout>
 
@@ -3447,27 +3468,27 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                       <!--    <RadioButton
-                                android:id="@+id/rbMaterialMark"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Mark red"
-                                android:textColor="@color/black" />
+                            <!--    <RadioButton
+                                     android:id="@+id/rbMaterialMark"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:text="Mark red"
+                                     android:textColor="@color/black" />
 
-                            <RadioButton
-                                android:id="@+id/rbMaterialUnmark"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="UnMark red"
-                                android:textColor="@color/black" />
+                                 <RadioButton
+                                     android:id="@+id/rbMaterialUnmark"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:text="UnMark red"
+                                     android:textColor="@color/black" />
 
-                            <RadioButton
-                                android:id="@+id/rbMaterialLeave"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:checked="true"
-                                android:text="Leave whichever"
-                                android:textColor="@color/black" />-->
+                                 <RadioButton
+                                     android:id="@+id/rbMaterialLeave"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:checked="true"
+                                     android:text="Leave whichever"
+                                     android:textColor="@color/black" />-->
                         </RadioGroup>
                     </LinearLayout>
 
@@ -3496,152 +3517,151 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                           <!-- <RadioButton
-                                android:id="@+id/rbOverview"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:checked="true"
-                                android:text="Overview"
-                                android:textColor="@color/black" />
+                            <!-- <RadioButton
+                                 android:id="@+id/rbOverview"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:checked="true"
+                                 android:text="Overview"
+                                 android:textColor="@color/black" />
 
-                            <RadioButton
-                                android:id="@+id/rbCloseUp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Close up"
-                                android:textColor="@color/black" />
+                             <RadioButton
+                                 android:id="@+id/rbCloseUp"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="Close up"
+                                 android:textColor="@color/black" />
 
-                            <RadioButton
-                                android:id="@+id/rbBlank"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Blank"
-                                android:textColor="@color/black" />-->
+                             <RadioButton
+                                 android:id="@+id/rbBlank"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="Blank"
+                                 android:textColor="@color/black" />-->
                         </RadioGroup>
                     </LinearLayout>
 
-              <!--      <Button
-                        android:id="@+id/btnaddclaimname"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/llView"
-                        android:layout_alignStart="@+id/llView"
-                        android:layout_alignLeft="@+id/llView"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/bottom_line"
-                        android:gravity="center_vertical|left"
-                        android:paddingLeft="5dp"
-                        android:text="Add Claim Name"
-                        android:textColor="@color/black"
-                        android:textSize="15dp" />-->
+                    <!--      <Button
+                              android:id="@+id/btnaddclaimname"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_below="@+id/llView"
+                              android:layout_alignStart="@+id/llView"
+                              android:layout_alignLeft="@+id/llView"
+                              android:layout_alignParentRight="true"
+                              android:layout_marginTop="5dp"
+                              android:layout_marginRight="10dp"
+                              android:background="@drawable/bottom_line"
+                              android:gravity="center_vertical|left"
+                              android:paddingLeft="5dp"
+                              android:text="Add Claim Name"
+                              android:textColor="@color/black"
+                              android:textSize="15dp" />-->
 
 
+                    <!-- <Button
+                         android:id="@+id/btnmacroadd"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@+id/btnscope"
+                         android:layout_alignStart="@+id/chkdate"
+                         android:layout_alignLeft="@+id/chkdate"
+                         android:layout_alignParentRight="true"
+                         android:layout_marginTop="5dp"
+                         android:layout_marginRight="10dp"
+                         android:background="@drawable/bottom_line"
+                         android:gravity="center_vertical|left"
+                         android:paddingLeft="5dp"
+                         android:text="Add Macro"
+                         android:textColor="@color/black"
+                         android:textSize="15dp" />
 
-                   <!-- <Button
-                        android:id="@+id/btnmacroadd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/btnscope"
-                        android:layout_alignStart="@+id/chkdate"
-                        android:layout_alignLeft="@+id/chkdate"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/bottom_line"
-                        android:gravity="center_vertical|left"
-                        android:paddingLeft="5dp"
-                        android:text="Add Macro"
-                        android:textColor="@color/black"
-                        android:textSize="15dp" />
+                     <Button
+                         android:id="@+id/btnroofadd"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@+id/btnmacroadd"
+                         android:layout_alignStart="@+id/chkdate"
+                         android:layout_alignLeft="@+id/chkdate"
+                         android:layout_alignParentRight="true"
+                         android:layout_marginTop="5dp"
+                         android:layout_marginRight="10dp"
+                         android:background="@drawable/bottom_line"
+                         android:gravity="center_vertical|left"
+                         android:paddingLeft="5dp"
+                         android:text="Add Roof"
+                         android:textColor="@color/black"
+                         android:textSize="15dp" />
 
-                    <Button
-                        android:id="@+id/btnroofadd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/btnmacroadd"
-                        android:layout_alignStart="@+id/chkdate"
-                        android:layout_alignLeft="@+id/chkdate"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="10dp"
-                        android:background="@drawable/bottom_line"
-                        android:gravity="center_vertical|left"
-                        android:paddingLeft="5dp"
-                        android:text="Add Roof"
-                        android:textColor="@color/black"
-                        android:textSize="15dp" />
+                     <Button
+                         android:id="@+id/btnaddelevations"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@+id/btnroofadd"
+                         android:layout_alignStart="@+id/btnroofadd"
+                         android:layout_alignLeft="@+id/btnroofadd"
+                         android:layout_alignEnd="@+id/btnroofadd"
+                         android:layout_alignRight="@+id/btnroofadd"
+                         android:layout_marginTop="5dp"
+                         android:background="@drawable/bottom_line"
+                         android:gravity="center_vertical|left"
+                         android:paddingLeft="5dp"
+                         android:text="Add Elevations"
+                         android:textColor="@color/black"
+                         android:textSize="15dp" />
 
-                    <Button
-                        android:id="@+id/btnaddelevations"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/btnroofadd"
-                        android:layout_alignStart="@+id/btnroofadd"
-                        android:layout_alignLeft="@+id/btnroofadd"
-                        android:layout_alignEnd="@+id/btnroofadd"
-                        android:layout_alignRight="@+id/btnroofadd"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bottom_line"
-                        android:gravity="center_vertical|left"
-                        android:paddingLeft="5dp"
-                        android:text="Add Elevations"
-                        android:textColor="@color/black"
-                        android:textSize="15dp" />
+                     <Button
+                         android:id="@+id/btnaddinterior"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@+id/btnaddelevations"
+                         android:layout_alignStart="@+id/btnaddelevations"
+                         android:layout_alignLeft="@+id/btnaddelevations"
+                         android:layout_alignEnd="@+id/btnaddelevations"
+                         android:layout_alignRight="@+id/btnaddelevations"
+                         android:layout_marginTop="5dp"
+                         android:background="@drawable/bottom_line"
+                         android:gravity="center_vertical|left"
+                         android:paddingLeft="5dp"
+                         android:text="Add Interior"
+                         android:textColor="@color/black"
+                         android:textSize="15dp"
+                         android:visibility="visible" />
 
-                    <Button
-                        android:id="@+id/btnaddinterior"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/btnaddelevations"
-                        android:layout_alignStart="@+id/btnaddelevations"
-                        android:layout_alignLeft="@+id/btnaddelevations"
-                        android:layout_alignEnd="@+id/btnaddelevations"
-                        android:layout_alignRight="@+id/btnaddelevations"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bottom_line"
-                        android:gravity="center_vertical|left"
-                        android:paddingLeft="5dp"
-                        android:text="Add Interior"
-                        android:textColor="@color/black"
-                        android:textSize="15dp"
-                        android:visibility="visible" />
+                     <Button
+                         android:id="@+id/btnesubcatgry"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@+id/btnaddinterior"
+                         android:layout_alignStart="@+id/btnaddelevations"
+                         android:layout_alignLeft="@+id/btnaddelevations"
+                         android:layout_alignEnd="@+id/btnaddelevations"
+                         android:layout_alignRight="@+id/btnaddelevations"
+                         android:layout_marginTop="5dp"
+                         android:background="@drawable/bottom_line"
+                         android:gravity="center_vertical|left"
+                         android:paddingLeft="5dp"
+                         android:text="Add Interior Subcategory"
+                         android:textColor="@color/black"
+                         android:textSize="15dp" />
 
-                    <Button
-                        android:id="@+id/btnesubcatgry"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/btnaddinterior"
-                        android:layout_alignStart="@+id/btnaddelevations"
-                        android:layout_alignLeft="@+id/btnaddelevations"
-                        android:layout_alignEnd="@+id/btnaddelevations"
-                        android:layout_alignRight="@+id/btnaddelevations"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bottom_line"
-                        android:gravity="center_vertical|left"
-                        android:paddingLeft="5dp"
-                        android:text="Add Interior Subcategory"
-                        android:textColor="@color/black"
-                        android:textSize="15dp" />
-
-                    <Button
-                        android:id="@+id/btnadddamage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/btnesubcatgry"
-                        android:layout_alignStart="@+id/btnaddinterior"
-                        android:layout_alignLeft="@+id/btnaddinterior"
-                        android:layout_alignEnd="@+id/btnaddinterior"
-                        android:layout_alignRight="@+id/btnaddinterior"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bottom_line"
-                        android:gravity="center_vertical|left"
-                        android:paddingLeft="5dp"
-                        android:text="Add Damage"
-                        android:textColor="@color/black"
-                        android:textSize="15dp" />
--->
+                     <Button
+                         android:id="@+id/btnadddamage"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_below="@+id/btnesubcatgry"
+                         android:layout_alignStart="@+id/btnaddinterior"
+                         android:layout_alignLeft="@+id/btnaddinterior"
+                         android:layout_alignEnd="@+id/btnaddinterior"
+                         android:layout_alignRight="@+id/btnaddinterior"
+                         android:layout_marginTop="5dp"
+                         android:background="@drawable/bottom_line"
+                         android:gravity="center_vertical|left"
+                         android:paddingLeft="5dp"
+                         android:text="Add Damage"
+                         android:textColor="@color/black"
+                         android:textSize="15dp" />
+ -->
                     <Button
                         android:id="@+id/btnAddDocument"
                         android:layout_width="wrap_content"
@@ -3700,23 +3720,23 @@
                         android:textColor="@color/black"
                         android:textSize="15dp"
                         android:visibility="gone" />
-                  <!--  <Button
-                        android:id="@+id/btnLogout"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/edtreplace"
-                        android:layout_alignStart="@+id/btnaddinterior"
-                        android:layout_alignLeft="@+id/btnaddinterior"
-                        android:layout_alignEnd="@+id/btnaddinterior"
-                        android:layout_alignRight="@+id/btnaddinterior"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/bottom_line"
-                        android:gravity="center_vertical|left"
-                        android:paddingLeft="5dp"
-                        android:text="Logout"
-                        android:textColor="@color/black"
-                        android:textSize="15dp"
-                        android:visibility="visible" />-->
+                    <!--  <Button
+                          android:id="@+id/btnLogout"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_below="@+id/edtreplace"
+                          android:layout_alignStart="@+id/btnaddinterior"
+                          android:layout_alignLeft="@+id/btnaddinterior"
+                          android:layout_alignEnd="@+id/btnaddinterior"
+                          android:layout_alignRight="@+id/btnaddinterior"
+                          android:layout_marginTop="5dp"
+                          android:background="@drawable/bottom_line"
+                          android:gravity="center_vertical|left"
+                          android:paddingLeft="5dp"
+                          android:text="Logout"
+                          android:textColor="@color/black"
+                          android:textSize="15dp"
+                          android:visibility="visible" />-->
 
                 </RelativeLayout>
             </androidx.core.widget.NestedScrollView>
@@ -3768,8 +3788,8 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/rlhailoptionback"
+                android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true">
 
                 <include

@@ -1916,6 +1916,7 @@ id camera
 id camera_preview
 id cancel_action
 id cancel_button
+id cbTimeStamp
 id center
 id center_horizontal
 id center_vertical
@@ -2317,6 +2318,7 @@ id rl_defaultmenu
 id rl_header
 id rl_menuoption
 id rl_photoinfomenu
+id rl_timestamp
 id rlactionbar
 id rladdtionalback
 id rladdvalue
@@ -3154,6 +3156,7 @@ style Base_Widget_MaterialComponents_TextView
 style CardView
 style CardView_Dark
 style CardView_Light
+style CheckBoxTheme
 style EmptyTheme
 style HorizontalLine
 style MaterialAlertDialog_MaterialComponents
@@ -3221,6 +3224,7 @@ style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year
 style ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox
 style ShapeAppearanceOverlay_TopLeftCut
 style ShapeAppearanceOverlay_TopRightDifferentCornerSize
+style SwitchTheme
 style Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day
 style Test_Theme_MaterialComponents_MaterialCalendar
 style Test_Widget_MaterialComponents_MaterialCalendar

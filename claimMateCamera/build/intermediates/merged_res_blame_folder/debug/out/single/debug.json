@@ -36,12 +36,12 @@
         "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\drawable-hdpi\\change_orintation.png"
     },
     {
-        "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\layout_item_onetime_page.xml.flat",
-        "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\layout\\item_onetime_page.xml"
-    },
-    {
         "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\layout_list_item.xml.flat",
         "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\layout_item_onetime_page.xml.flat",
+        "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\layout\\item_onetime_page.xml"
     },
     {
         "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\layout_list_item_click_remove.xml.flat",
@@ -312,12 +312,12 @@
         "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\drawable\\btn_take_photo.xml"
     },
     {
-        "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\drawable_ic_close_white_24dp.xml.flat",
-        "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\drawable\\ic_close_white_24dp.xml"
-    },
-    {
         "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\layout_item_interior_prep.xml.flat",
         "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\layout\\item_interior_prep.xml"
+    },
+    {
+        "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\drawable_ic_close_white_24dp.xml.flat",
+        "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\drawable\\ic_close_white_24dp.xml"
     },
     {
         "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_live_ic.png.flat",
@@ -328,12 +328,12 @@
         "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\layout\\dialog_edit_option.xml"
     },
     {
-        "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\layout_row_slopno.xml.flat",
-        "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\layout\\row_slopno.xml"
-    },
-    {
         "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\layout_insulationnew.xml.flat",
         "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\layout\\insulationnew.xml"
+    },
+    {
+        "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\layout_row_slopno.xml.flat",
+        "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\layout\\row_slopno.xml"
     },
     {
         "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\drawable_composer_music.png.flat",
@@ -368,12 +368,12 @@
         "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\anim\\lodder_zoom_in_anim.xml"
     },
     {
-        "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\layout_activity_scope_name.xml.flat",
-        "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\layout\\activity_scope_name.xml"
-    },
-    {
         "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\layout_activity_one_time.xml.flat",
         "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\layout\\activity_one_time.xml"
+    },
+    {
+        "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\layout_activity_scope_name.xml.flat",
+        "source": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\src\\main\\res\\layout\\activity_scope_name.xml"
     },
     {
         "merged": "D:\\ClientsProject\\Camera-Android\\claimMateCamera\\build\\intermediates\\res\\merged\\debug\\layout_popup_add_claim.xml.flat",

@@ -479,8 +479,8 @@ com/commonsware/cwac/camera/demo/HomeActivity.java
  com.commonsware.cwac.camera.demo.HomeActivity$14
  com.commonsware.cwac.camera.demo.HomeActivity$15
  com.commonsware.cwac.camera.demo.HomeActivity$16
- com.commonsware.cwac.camera.demo.HomeActivity$16$1
  com.commonsware.cwac.camera.demo.HomeActivity$17
+ com.commonsware.cwac.camera.demo.HomeActivity$17$1
  com.commonsware.cwac.camera.demo.HomeActivity$18
  com.commonsware.cwac.camera.demo.HomeActivity$19
  com.commonsware.cwac.camera.demo.HomeActivity$2
@@ -505,25 +505,25 @@ com/commonsware/cwac/camera/demo/HomeActivity.java
  com.commonsware.cwac.camera.demo.HomeActivity$37
  com.commonsware.cwac.camera.demo.HomeActivity$38
  com.commonsware.cwac.camera.demo.HomeActivity$39
- com.commonsware.cwac.camera.demo.HomeActivity$39$1
- com.commonsware.cwac.camera.demo.HomeActivity$39$2
- com.commonsware.cwac.camera.demo.HomeActivity$39$3
- com.commonsware.cwac.camera.demo.HomeActivity$39$4
- com.commonsware.cwac.camera.demo.HomeActivity$39$5
  com.commonsware.cwac.camera.demo.HomeActivity$4
  com.commonsware.cwac.camera.demo.HomeActivity$40
+ com.commonsware.cwac.camera.demo.HomeActivity$40$1
+ com.commonsware.cwac.camera.demo.HomeActivity$40$2
+ com.commonsware.cwac.camera.demo.HomeActivity$40$3
+ com.commonsware.cwac.camera.demo.HomeActivity$40$4
+ com.commonsware.cwac.camera.demo.HomeActivity$40$5
  com.commonsware.cwac.camera.demo.HomeActivity$41
- com.commonsware.cwac.camera.demo.HomeActivity$41$1
  com.commonsware.cwac.camera.demo.HomeActivity$42
+ com.commonsware.cwac.camera.demo.HomeActivity$42$1
  com.commonsware.cwac.camera.demo.HomeActivity$43
- com.commonsware.cwac.camera.demo.HomeActivity$43$1
- com.commonsware.cwac.camera.demo.HomeActivity$43$2
- com.commonsware.cwac.camera.demo.HomeActivity$43$3
- com.commonsware.cwac.camera.demo.HomeActivity$43$4
- com.commonsware.cwac.camera.demo.HomeActivity$43$5
- com.commonsware.cwac.camera.demo.HomeActivity$43$5$1
- com.commonsware.cwac.camera.demo.HomeActivity$43$5$2
  com.commonsware.cwac.camera.demo.HomeActivity$44
+ com.commonsware.cwac.camera.demo.HomeActivity$44$1
+ com.commonsware.cwac.camera.demo.HomeActivity$44$2
+ com.commonsware.cwac.camera.demo.HomeActivity$44$3
+ com.commonsware.cwac.camera.demo.HomeActivity$44$4
+ com.commonsware.cwac.camera.demo.HomeActivity$44$5
+ com.commonsware.cwac.camera.demo.HomeActivity$44$5$1
+ com.commonsware.cwac.camera.demo.HomeActivity$44$5$2
  com.commonsware.cwac.camera.demo.HomeActivity$45
  com.commonsware.cwac.camera.demo.HomeActivity$46
  com.commonsware.cwac.camera.demo.HomeActivity$47
@@ -542,15 +542,15 @@ com/commonsware/cwac/camera/demo/HomeActivity.java
  com.commonsware.cwac.camera.demo.HomeActivity$59
  com.commonsware.cwac.camera.demo.HomeActivity$6
  com.commonsware.cwac.camera.demo.HomeActivity$60
- com.commonsware.cwac.camera.demo.HomeActivity$60$1
  com.commonsware.cwac.camera.demo.HomeActivity$61
  com.commonsware.cwac.camera.demo.HomeActivity$61$1
  com.commonsware.cwac.camera.demo.HomeActivity$62
  com.commonsware.cwac.camera.demo.HomeActivity$62$1
  com.commonsware.cwac.camera.demo.HomeActivity$63
+ com.commonsware.cwac.camera.demo.HomeActivity$63$1
  com.commonsware.cwac.camera.demo.HomeActivity$64
- com.commonsware.cwac.camera.demo.HomeActivity$64$1
  com.commonsware.cwac.camera.demo.HomeActivity$65
+ com.commonsware.cwac.camera.demo.HomeActivity$65$1
  com.commonsware.cwac.camera.demo.HomeActivity$66
  com.commonsware.cwac.camera.demo.HomeActivity$67
  com.commonsware.cwac.camera.demo.HomeActivity$68
@@ -579,20 +579,21 @@ com/commonsware/cwac/camera/demo/HomeActivity.java
  com.commonsware.cwac.camera.demo.HomeActivity$89
  com.commonsware.cwac.camera.demo.HomeActivity$9
  com.commonsware.cwac.camera.demo.HomeActivity$90
- com.commonsware.cwac.camera.demo.HomeActivity$90$1
  com.commonsware.cwac.camera.demo.HomeActivity$91
+ com.commonsware.cwac.camera.demo.HomeActivity$91$1
  com.commonsware.cwac.camera.demo.HomeActivity$92
  com.commonsware.cwac.camera.demo.HomeActivity$93
- com.commonsware.cwac.camera.demo.HomeActivity$93$1
- com.commonsware.cwac.camera.demo.HomeActivity$93$2
- com.commonsware.cwac.camera.demo.HomeActivity$93$3
- com.commonsware.cwac.camera.demo.HomeActivity$93$4
- com.commonsware.cwac.camera.demo.HomeActivity$93$5
  com.commonsware.cwac.camera.demo.HomeActivity$94
+ com.commonsware.cwac.camera.demo.HomeActivity$94$1
+ com.commonsware.cwac.camera.demo.HomeActivity$94$2
+ com.commonsware.cwac.camera.demo.HomeActivity$94$3
+ com.commonsware.cwac.camera.demo.HomeActivity$94$4
+ com.commonsware.cwac.camera.demo.HomeActivity$94$5
  com.commonsware.cwac.camera.demo.HomeActivity$95
  com.commonsware.cwac.camera.demo.HomeActivity$96
  com.commonsware.cwac.camera.demo.HomeActivity$97
  com.commonsware.cwac.camera.demo.HomeActivity$98
+ com.commonsware.cwac.camera.demo.HomeActivity$99
  com.commonsware.cwac.camera.demo.HomeActivity$LWHRoomMacroAdpt
  com.commonsware.cwac.camera.demo.HomeActivity$LWHRoomMacroAdpt$1
  com.commonsware.cwac.camera.demo.HomeActivity$SingleMediaScanner

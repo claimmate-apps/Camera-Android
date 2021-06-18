@@ -34,4 +34,24 @@
 		<item name="android:backgroundDimEnabled">false</item>
 	</style>
 
+	<style name="SwitchTheme" parent="Theme.AppCompat.Light">
+		<!-- colorPrimary is used for the default action bar background -->
+		<item name="colorPrimary">#ffffff</item>
+
+		<!-- colorPrimaryDark is used for the status bar -->
+		<item name="colorPrimaryDark">#ffffff</item>
+
+		<!-- colorAccent is used as the default value for colorControlActivated,
+             which is used to tint widgets -->
+		<item name="colorAccent">#ffffff</item>
+
+		<!-- You can also set colorControlNormal, colorControlActivated
+             colorControlHighlight, and colorSwitchThumbNormal. -->
+
+	</style>
+
+	<style name="CheckBoxTheme" parent="Theme.AppCompat.Light">
+		<item name="colorControlNormal">#a1a1a1</item>
+		<item name="colorControlActivated">#ffffff</item>
+	</style>
 </resources>
